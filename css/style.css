@@ -1,0 +1,368 @@
+body, html {
+    margin: 0px 0px 20px 0px;
+    padding: 0px;
+    background-color: rgba(241, 241, 241, 1);
+    font-family: arial;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
+ 
+.container {
+    width: 754px;
+    margin: 0px auto;
+    overflow: auto;
+    background-color: #fff;
+}
+
+.ormax_logo {
+    float: left;
+    padding: 30px;
+}
+
+.hinnasto_teksti {
+    height: 30px;
+    padding: 40px 30px 5px 50px;
+    font-weight: bold;
+    font-size: 125%;
+    background-color: #fff;  
+}
+
+.tiiliteksti {
+    height: 30px;
+    padding:  5px 30px 20px 60px;
+    background-color: #fff;
+}
+
+.taulukko {
+    float: left;
+    vertical-align: middle;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-left:  1px solid #cccccc;
+    border-right:  1px solid #cccccc;
+    border-bottom:  1px solid #cccccc;
+}
+
+.taulukko_otsikko {
+    padding: 15px 20px 15px 20px; 
+    border-left: 1px solid #c62d1f;
+    border-right: 1px solid #c62d1f;  
+    color: #f4f4f4;
+}
+
+.tuoteryhma {
+    padding: 10px 20px 2px 20px;
+    vertical-align: bottom;
+    font-weight: bold;
+}
+
+.taulukko_solu {
+    padding:  0px 5px 0px 30px;
+    white-space: nowrap;
+    border-top: 1px dashed #ebebeb;
+    border-bottom: 1px dashed #ebebeb;
+    text-align: right;
+}
+
+.tuotenumero, .yksikko_hinta, .paino, .yksikko_paino {
+    display: none;
+}
+
+.tuotenimi.taulukko_solu {
+    text-align: left;
+}
+
+.maara.taulukko_solu {
+    padding:  0px 10px 0px 10px;
+}
+
+.maara.input {
+    width: 70px;
+}
+
+.laske {
+    padding: 10px 0px 20px 0px;
+}
+
+.hinta.taulukko_solu {
+    padding:  0px 10px 0px 10px;
+    border-right:  1px solid #cccccc;
+}
+
+.paino.taulukko_solu {
+    padding:  0px 20px 0px 10px;
+}
+
+.yhteensa {
+    font-weight: bold;
+    text-align: right;
+    padding: 10px;
+}
+
+.vasen_kehys {
+   border-left:  1px solid #cccccc; 
+}
+
+.oikea_kehys {
+   border-right:  1px solid #cccccc; 
+}
+
+.taulukko_alarivi {
+    padding: 10px;
+}
+
+.sivualue {
+    float: left;  
+}
+
+.sivualue_otsikko {
+    padding: 15px 20px 15px 20px; 
+    border-left: 1px solid #c62d1f;
+    border-right: 1px solid #c62d1f;  
+    color: #f4f4f4;
+}
+
+.sivu_laatikko {   
+    width: 220px;
+    margin:  15px 0px 15px 20px;
+    padding: 0px 20px 20px 20px;
+    display: table; 
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    border:  1px solid #cccccc;
+}
+
+.sivu_otsikko {
+    padding: 6px 20px;
+    margin: 0px -20px 20px -20px;
+    -moz-border-radius-topleft: 15px;
+    -moz-border-radius-topright: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.sivu_laatikko.loppusumma {
+    width:  260px;
+    padding: 0px;
+    border-color: #969696;
+}
+
+.sivu_otsikko_vasen {
+    float: left;
+    width: 80px;
+    padding: 6px 10px 6px 20px;
+    -moz-border-radius-topleft: 15px;
+    border-top-left-radius: 15px;
+}
+
+.sivu_otsikko_oikea {
+    float: right;
+    width: 124px;
+    padding: 6px 10px 6px 15px;
+    -moz-border-radius-topright: 15px;
+    border-top-right-radius: 15px;
+    border-left: 1px solid #969696;
+}
+
+.sivu_oikea {
+    float: right;
+    width: 124px;
+    padding: 20px 15px 20px 10px;
+    border-left: 1px solid #969696;
+    text-align: center;
+}
+
+.sivu_vasen {
+    float: left;
+    width: 80px;
+    padding: 20px 10px 20px 20px;
+    text-align: center;
+}
+
+.alv_vaakarivi {
+    padding:  2px 20px 2px 20px;
+    background-color: #e8e8e8;
+    font-size: 75%;
+    border-top: 1px dashed #666666;
+    border-bottom: 1px dashed #666666;
+}
+
+.rivi {
+    min-height: 22px; 
+    max-height: 50px; 
+    vertical-align: middle;
+    display: table-row;
+}
+
+.laatikko_keskella {
+    width: 100px;  
+    margin: 0px 5px 0px 60px;
+}
+
+.sivu_keskella {
+    width: 100px;  
+    margin: 0px 5px 0px 100px;
+}
+
+.input_oikealla {
+    float: right;
+    width: 100px;
+    margin: 5px 0px 5px 0px;
+}
+
+.tietoalue {
+    float: right;
+    width: 100px;
+    height: 18px;
+    margin: 5px 0px 5px 0px;
+    padding:  1px 0px 1px 0px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background: -moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: -webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: -o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: -ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #666666;
+    color: #666666;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0px 1px 0px #ffffff;
+}
+
+.teksti_vasemmalla {
+    float: left;
+    height: 20px;
+    margin: 5px 20px 5px 0px;
+}
+
+.gradient_punainen {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+	background: -moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background: -webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background: -o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background: -ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background: linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+}
+
+.gradient_harmaa {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dcdcdc), color-stop(1, #f6f6f6));
+	background: -moz-linear-gradient(top, #dcdcdc 5%, #f6f6f6 100%);
+	background: -webkit-linear-gradient(top, #dcdcdc 5%, #f6f6f6 100%);
+	background: -o-linear-gradient(top, #dcdcdc 5%, #f6f6f6 100%);
+	background: -ms-linear-gradient(top, #dcdcdc 5%, #f6f6f6 100%);
+	background: linear-gradient(to bottom, #dcdcdc 5%, #f6f6f6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dcdcdc', endColorstr='#f6f6f6',GradientType=0);  
+}
+
+.gradient_tummanharmaa {
+    background: #c9c9c9; /* Old browsers */
+    background: -moz-linear-gradient(top,  #969696 0%,#c9c9c9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#969696), color-stop(100%,#c9c9c9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #969696 0%,#c9c9c9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #969696 0%,#c9c9c9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #969696 0%,#c9c9c9 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #969696 0%,#c9c9c9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#969696', endColorstr='#c9c9c9',GradientType=0 ); /* IE6-8 */
+}
+
+.teksti_valkoinen {
+    color: #ffffff;
+	font-size: 15px;
+	font-weight: bold;
+    font-stretch: semi-expanded;
+	text-shadow: 1px 1px 0px #500000;
+}
+
+.teksti_tumma {
+    color: #2a2a2a;
+	font-size: 15px;
+	font-weight: bold;
+    font-stretch: semi-expanded;
+	text-shadow: 1px 1px 0px #dcdcdc;
+}
+
+.painike {
+    margin-top: 10px;
+    padding: 6px 0px 6px 0px;
+	-moz-box-shadow: inset 0px 1px 0px 0px #f5978e;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #f5978e;
+	box-shadow: inset 0px 1px 0px 0px #f5978e;
+	background-color: #f24537;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #d02718;
+    text-align: center;
+	cursor: pointer;
+}
+
+.painike:hover {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+	background: -moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background: -webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background: -o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background: -ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background: linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+	background-color: #c62d1f;
+    border-radius: 6px;
+    border: 1px solid #810e05;
+}
+
+.painike:active {
+	position: relative;
+	top: 1px;
+}
+
+.input {
+	-moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+	box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background: -moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: -webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: -o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: -ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #dcdcdc;
+	display: inline-block;
+    padding: 1px 0px 1px 0px;
+	cursor: pointer;
+	color: #666666;
+	font-size: 15px;
+	font-weight: bold;
+    text-align: center;
+	text-shadow: 0px 1px 0px #ffffff;
+}
+
+.input:hover {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+	background: -moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background: -webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background: -o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background: -ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+	background-color: #f6f6f6;
+}
+
+.input:active {
+	position: relative;
+	top: 1px;
+}
