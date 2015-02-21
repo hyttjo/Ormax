@@ -1,13 +1,14 @@
-$('#ormax_laskentataulukko').calx({
-	autocalculate: false
-});
+$(document).ready(function() {
+    $('#main_table').calx({
+	    autocalculate: false
+    });
 	    
-$('#tyhjenna').click(function(){
-	$('#ormax_laskentataulukko').calx('update');
-});
+    $('#empty_table').click(function(){
+	    $('#main_table').calx('update');
+    });
 
-
-$(document).ready("#laske_toimituskustannukset").click(function () {
-    $("#ormax_laskentataulukko").calx('refresh');
-    $("#ormax_laskentataulukko").calx('update');
+    $('#calc_delivery_cost').click(function () {
+        $('#main_table').calx('refresh');
+        $('#main_table').calx('update');
+    });
 });

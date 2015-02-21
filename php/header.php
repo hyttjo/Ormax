@@ -3,12 +3,14 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
     <head>
-        <meta charset="utf-8" />
-        <title></title>
+        <link rel="stylesheet" type="text/css" href="../css/header.css">
     </head>
     <body>
-        
+        <img id="ormax_logo" src="img/ormax_logo.png" alt="Ormax tiilikatot logo"></img>
+        <p id="site_title">Hinnastolaskenta 2015</p>
+        <p id="tile_name">Ormax-betonikattotiili</p>       
     </body>
 </html>
