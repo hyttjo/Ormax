@@ -5,4 +5,16 @@
 #side_area table {
     width:  260px;
     margin: 0px 20px 20px 20px;
+    padding: 0px 20px 20px 20px;
+    border:  1px solid grey;
+}
+
+#side_area th {
+    padding: 6px 20px;
+    margin: 0px -20px 20px -20px;
+    border:  1px solid grey;
+}
+
+#side_area td {
+    border:  1px solid grey;
 }

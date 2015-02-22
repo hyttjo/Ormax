@@ -15,7 +15,7 @@
             <tr>
             <tr>
                 <td>
-                    <input data-cell="F1" type="number"></input>
+                    <input data-cell="H1" type="number"></input>
                 </td>
                 <td>
                     <b>%</b>
@@ -30,7 +30,7 @@
             <tr>
                 <td>Postinumero:</td>
                 <td>
-                    <input id="postal_code" data-cell="F2" type="text"></input>
+                    <input id="postal_code" type="text"></input>
                 </td>
             <tr>
             <tr>
@@ -42,7 +42,7 @@
             <tr>
                 <td>Rahtihinta:</td>
                 <td>
-                    <p id="delivery_cost"></p>
+                    <p id="delivery_cost" data-cell="H2"></p>
                 </td>
             <tr>
             <tr>
@@ -61,15 +61,15 @@
                 <td colspan="2">Arvonlisävero 0 %</td>
             </tr>
             <tr>
-                <td data-cell ="F5" data-formula="G1" data-format="€ 0[.]00"></td>
-                <td data-cell ="F6" data-formula="F5" data-format="€ 0[.]00"></td>
+                <td data-cell ="H3" data-formula="F100" data-format="€ 0[.]00"></td>
+                <td data-cell ="H4" data-formula="H3+H2" data-format="€ 0[.]00"></td>
             </tr>
             <tr>
                 <td colspan="2">Sis. arvonlisäveron 24%</td>
             </tr>
             <tr>
-                <td data-cell ="F7" data-formula="F5*1.24" data-format="€ 0[.]00"></td>
-                <td data-cell ="F8" data-formula="F6*1.24" data-format="€ 0[.]00"></td>
+                <td data-cell ="H5" data-formula="H3*1.24" data-format="€ 0[.]00"></td>
+                <td data-cell ="H6" data-formula="H4*1.24" data-format="€ 0[.]00"></td>
             </tr>
         </table>
         <button id="empty_table">Tyhjennä taulukko</button>

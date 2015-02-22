@@ -1,11 +1,49 @@
 table {
-    border: 1px solid grey;
+    vertical-align: middle;
+    border-collapse: collapse;
 }
 
 th {
-    border: 1px solid grey;
+    padding: 15px 20px 15px 20px; 
+    border-left: 1px solid #c62d1f;
+    border-right: 1px solid #c62d1f;
+    text-align: center;  
+    color: #f4f4f4;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+	background: -moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background: -webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background: -o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background: -ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+	background: linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
 }
 
-td {
-    border: 1px solid grey;
+.A, .E, .F, .G {
+  display: none;  
+}
+
+.product_cat {
+    padding: 10px 20px 2px 20px;
+    vertical-align: bottom;
+    font-weight: bold;
+    border-right: 1px solid grey;
+}
+
+.product {
+    padding:  0px 5px 0px 5px;
+    white-space: nowrap;
+    border-top: 1px dashed #ebebeb;
+    border-bottom: 1px dashed #ebebeb;   
+}
+
+.product.B {
+    padding-left: 30px;
+}
+
+.D {
+    min-width: 80px;
+}
+
+.H {
+    border-left: 1px solid grey;
 }
