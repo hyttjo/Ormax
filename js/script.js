@@ -11,4 +11,11 @@ $(document).ready(function() {
         $('#main_table').calx('refresh');
         $('#main_table').calx('update');
     });
+
+    $('#discount').on('keyup', function(){
+        var regex = /^[a-zA-z]+$/;
+           if(!regex.test(this.value)){
+              alert(this.id + ' is a required field.');
+           }
+    });
 });

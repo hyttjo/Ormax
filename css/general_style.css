@@ -22,7 +22,7 @@ input {
 
 button {
     width:  100px;
-    margin-top: 10px;
+    margin-bottom: 5px;
     padding: 6px 0px 6px 0px;
     font-weight: bold;
     color: #f4f4f4;
@@ -52,4 +52,8 @@ button:hover {
 button:active {
 	position: relative;
 	top: 1px;
+}
+
+.center {
+    text-align: center;
 }

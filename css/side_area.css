@@ -3,18 +3,65 @@
 }
 
 #side_area table {
-    width:  260px;
-    margin: 0px 20px 20px 20px;
-    padding: 0px 20px 20px 20px;
-    border:  1px solid grey;
+    width:  300px;
+    margin: 0px 20px 30px 20px;
+    padding: 0px 20px 30px 20px;
 }
 
 #side_area th {
-    padding: 6px 20px;
-    margin: 0px -20px 20px -20px;
-    border:  1px solid grey;
+    padding: 6px 15px;
+    margin: 0px -20px;
+    text-align: left;
 }
 
 #side_area td {
-    border:  1px solid grey;
+    padding: 5px 20px;
+}
+
+#side_area th:first-child {
+    -moz-border-radius-topleft: 15px;
+    border-top-left-radius: 15px;
+    border-left: 0px;
+}
+
+#side_area th:last-child {
+    -moz-border-radius-topright: 15px;
+    border-top-right-radius: 15px;
+    border-right: 0px;
+}
+
+#side_area tr:last-child {
+    border-bottom: 1px solid grey;
+}
+
+#side_area tr:not(:first-child) {
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+}
+
+#discount_table td {
+    padding: 20px 20px 20px 20px;
+}
+
+#delivery_cost_table tr:nth-child(2) > *, #delivery_cost_table tr:nth-child(5) > * {
+    padding-top: 20px;
+}
+
+#total_cost_table td {
+    padding: 20px 20px;
+    font-weight: bold;
+    text-align: center;
+    border-left: 1px solid grey;
+}
+
+#total_cost_table .alv_row {
+    padding:  2px 20px 2px 20px;
+    background-color: #e8e8e8;
+    font-size: 75%;
+    border-bottom: 1px dashed grey;
+    text-align: left;
+}
+
+#total_cost_table tr:nth-child(4) > * {
+    border-top: 1px dashed grey;
 }
