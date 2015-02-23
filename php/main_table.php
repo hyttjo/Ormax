@@ -51,7 +51,7 @@
             <tr>
                 <td class="A product"><?php echo $product_id ?></td>
                 <td class="B product"><?php echo $product_name; ?></td> 
-                <td class="C product"><input data-cell="<?php echo $amount_id; ?>"></input></td>
+                <td class="C product"><input data-cell="<?php echo $amount_id; ?>" min="0" max="999999"></input></td>
                 <td class="D product" data-cell="<?php echo $calc_price_id; ?>" data-formula="<?php echo $price_formula; ?>" data-format="0[.]00"></td>
                 <td class="E product" data-cell="<?php echo $price_id; ?>" data-format="0[.]00"><?php echo $row['hinta']; ?></td> 
                 <td class="F product" data-cell="<?php echo $calc_weight_id; ?>" data-formula="<?php echo $weight_formula; ?>" data-format="0[.]00"></td>

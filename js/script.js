@@ -1,21 +1,28 @@
-$(document).ready(function() {
-    $('#main_table').calx({
-	    autocalculate: false
-    });
-	    
-    $('#empty_table').click(function(){
-	    $('#main_table').calx('update');
-    });
+$(document).ready(function () {
+    $('#main_table').calx();
 
     $('#calc_delivery_cost').click(function () {
-        $('#main_table').calx('refresh');
-        $('#main_table').calx('update');
+        var postal_code = $('#postal_code').val();
+
+        $.ajax({
+            type: 'post',
+            url: 'php/scripts/calc_delivery_cost.php',
+            data: 'postal_code=' + postal_code,
+            success: function (data) {
+                var result = $.parseJSON(data);
+                $('#city').val(result[0]);
+                $('#delivery_cost').val(result[1]);
+                $('#main_table').calx();
+            }
+        });    
     });
 
-    $('#discount').on('keyup', function(){
-        var regex = /^[a-zA-z]+$/;
-           if(!regex.test(this.value)){
-              alert(this.id + ' is a required field.');
-           }
+    $('#empty_table').click(function () {
+        $('#discount').val('');
+        $('#postal_code').val('');
+        $('#city').val('');
+        $('#delivery_cost').val('');
+        $('.C').find('input').val('');
+        $('#main_table').calx();       
     });
 });

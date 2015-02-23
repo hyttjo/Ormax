@@ -18,6 +18,11 @@ body, html {
 
 input {
     max-width: 80px;
+    text-align: center;
+}
+
+input:read-only {
+    background-color: #f4f4f4;
 }
 
 button {
@@ -26,6 +31,7 @@ button {
     padding: 6px 0px 6px 0px;
     font-weight: bold;
     color: #f4f4f4;
+    text-shadow: 1px 1px 0px #500000;
 	-moz-box-shadow: inset 0px 1px 0px 0px #f5978e;
 	-webkit-box-shadow: inset 0px 1px 0px 0px #f5978e;
 	box-shadow: inset 0px 1px 0px 0px #f5978e;

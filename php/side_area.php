@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <td class="center">
-                    <input id="discount" data-cell="H1" type="number" min="0" max="100"><b>  %</b></input>
+                    <input id="discount" data-cell="H1" type="number" min="0" max="100"><b>%</b></input>
                 </td>
             </tr>
         </table>
