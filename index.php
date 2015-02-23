@@ -16,6 +16,7 @@
         <script src="js/libs/numeral.min.js"></script>
         <script src="js/libs/jquery-calx-2.0.5.min.js"></script>
         <script src="js/script.js"></script>
+        <script src="js/google_analytics.js"></script>
     </head>
     <body>
         <div id="container">

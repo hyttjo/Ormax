@@ -45,8 +45,11 @@
                             $price_id = "E" . $id;
                             $calc_weight_id = "F" . $id;
                             $price_formula = $amount_id . "*" . $price_id . "*((100-H1)/100)";
-                            $weight_id = "G" . $id;             
-                            $weight_formula = $amount_id . "*" . $weight_id;
+                            $weight_id = "G" . $id;
+
+                            if ($category['kategoria'] != 'Kattotiilet' && $category['kategoria'] != 'Erikoistiilet') {           
+                                $weight_formula = $amount_id . "*" . $weight_id;
+                            }
                 ?>
             <tr>
                 <td class="A product"><?php echo $product_id ?></td>
