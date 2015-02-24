@@ -1,16 +1,26 @@
-img {
-    float: left;
+header table {
+    width: 100%;
+    overflow: hidden;
+}
+
+#ormax_logo {
     margin: 20px 20px 20px 50px;
 }
 
 h1 {
-    padding: 20px 0px 0px 200px;
+    padding: 0px 0px 10px 0px;
     font-weight: bold;
     font-size: 125%;
 }
 
-h2 {
-    padding: 0px 0px 0px 200px;
-    font-size: 100%;
-    font-weight: normal;
+select {
+    margin-bottom: 20px;
+}
+
+#tile_image {
+    float: right;
+    max-width: 350px;
+    margin: 10px -20px 10px 0px;
+    padding: 0px;
+    overflow: hidden;
 }

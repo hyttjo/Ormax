@@ -1,5 +1,5 @@
 <?php
-    $xml = simplexml_load_file("xml\ormax.xml") or die("XML tiedostoa ei pysty lukemaan");
+
 ?>
 
 <!DOCTYPE html>

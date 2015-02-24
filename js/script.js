@@ -1,6 +1,11 @@
 $(document).ready(function () {
     $('#main_table').calx();
 
+    $('#tile_selection').change(function () {
+        var tile = $(this).val();
+        $(location).attr('href', 'index.php?tiili=' + tile);
+    });
+
     function calc_tile_amount() {
         var tile_sum = 0;
         $('input.Kattotiilet').each(function (i, e) {
@@ -34,6 +39,13 @@ $(document).ready(function () {
         return product_weight;
     }
 
+    function calc_product_price() {
+        var product_price = parseFloat($("td[data-cell='D100']").text());
+        var pallet_price = parseFloat($("td[data-cell='D62']").text());
+
+        return product_price - pallet_price;
+    }
+
     function calc_pallet_amount() {
         var pallet_amount = 0;
         maintile_amount = parseInt($('input.Lapetiili').val());
@@ -60,20 +72,22 @@ $(document).ready(function () {
 
     $('#calc_delivery_cost').click(function () {
         var postal_code = $('#postal_code').val();
+        var product_price = calc_product_price();
         var pallet_amount = $('input.Lava').val();
         var tile_amount = calc_tile_amount();
-
         var other_product_weight = parseFloat($("td[data-cell='F100']").text());
+        var insurance = $('#insurance_delivery').prop('checked');
+        var lift = $('#lift_to_roof').prop('checked');
 
         $.ajax({
             type: 'post',
             url: 'php/scripts/calc_delivery_cost.php',
-            data: 'postal_code=' + postal_code + '&tile_amount=' + tile_amount + '&other_product_weight=' + other_product_weight + '&pallet_amount=' + pallet_amount,
+            data: 'postal_code=' + postal_code + '&tile_amount=' + tile_amount + '&product_price=' + product_price + '&other_product_weight=' + other_product_weight + '&pallet_amount=' + pallet_amount + '&insurance=' + insurance + '&lift=' + lift,
             success: function (data) {
                 var result = $.parseJSON(data);
                 $('#city').val(result[0]);
                 $('#delivery_cost').val(result[1]);
-                alert("rahti: " + result[1] + " tiilet: " + result[2] + " muut: " + result[3] + " vakuutus: " + result[4] + " pakkaus: " + result[5] + " nosto: " + result[6] + " rahtialue: " + result[7] + " tiilimäärä: " + result[8] + " painoryhmä: " + result[9] + " lavamäärä: " + result[10]);
+                alert("rahti: " + result[1] + " tiilet: " + result[2] + " muut: " + result[3] + " vakuutus: " + result[4] + " pakkaus: " + result[5] + " nosto: " + result[6] + " rahtialue: " + result[7] + " tiilimäärä: " + result[8] + " painoryhmä: " + result[9] + " lavamäärä: " + result[10] + " tuotteiden hinta: " + result[11]);
                 $('#main_table').calx();
             }
         });

@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Tiili nimi="Ormax-betonikattotiili">
+<Tiili nimi="Protector+ -betonikattotiili">
     <Tuotteet>
         <Kategoria kategoria="Kattotiilet">
-            <Tuote tuotenumero="160000208" nimi="Lapetiili" tyyppi="lape"></Tuote>
-            <Tuote tuotenumero="260000208" nimi="Harjatiili" tyyppi="harja"></Tuote>
-            <Tuote tuotenumero="220025208" nimi="Puolitiili" tyyppi="puoli"></Tuote>
-            <Tuote tuotenumero="260020208" nimi="Päätyreunatiili" tyyppi="reuna"></Tuote>
+            <Tuote tuotenumero="170001122" nimi="Lapetiili" tyyppi="lape"></Tuote>
+            <Tuote tuotenumero="275100122" nimi="Harjatiili" tyyppi="harja"></Tuote>
+            <Tuote tuotenumero="275025122" nimi="Puolitiili" tyyppi="puoli"></Tuote>
+            <Tuote tuotenumero="279319122" nimi="Päätyreunatiili" tyyppi="reuna"></Tuote>
         </Kategoria>
         <Kategoria kategoria="Erikoistiilet">
-            <Tuote tuotenumero="299309208" nimi="Aloitusharjatiili"></Tuote>
-            <Tuote tuotenumero="299310208" nimi="Lopetusharjatiili"></Tuote>
-            <Tuote tuotenumero="280003208" nimi="Ulkot. aloitusharjatiili"></Tuote>      
-            <Tuote tuotenumero="248010208" nimi="Ulkot. X-harjatiili"></Tuote>
-            <Tuote tuotenumero="248008208" nimi="X-harjatili"></Tuote>
-            <Tuote tuotenumero="248006208" nimi="Y-harjatiili"></Tuote>
+            <Tuote tuotenumero="275311122" nimi="Aloitusharjatiili"></Tuote>
+            <Tuote tuotenumero="275216122" nimi="Lopetusharjatiili"></Tuote>
+            <Tuote tuotenumero="275214122" nimi="Ulkot. aloitusharjatiili"></Tuote>      
+            <Tuote tuotenumero="275203122" nimi="Ulkot. X-harjatiili"></Tuote>
+            <Tuote tuotenumero="275202122" nimi="X-harjatili"></Tuote>
+            <Tuote tuotenumero="275215122" nimi="Y-harjatiili"></Tuote>
         </Kategoria>
         <Kategoria kategoria="Kiinnikkeet">
             <Tuote tuotenumero="306210100" nimi="Lapetiilinaula"></Tuote>

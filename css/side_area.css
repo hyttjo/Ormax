@@ -45,8 +45,14 @@
     margin-right: 10px;
 }
 
-#delivery_cost_table tr:nth-child(2) > *, #delivery_cost_table tr:nth-child(5) > * {
+#delivery_cost_table tr:nth-child(6) > * {
     padding-top: 20px;
+}
+
+#delivery_cost_table tr:nth-child(2) > * {
+    padding: 10px 0px 10px 15px;
+    vertical-align: middle;
+    font-size: 85%;
 }
 
 #total_cost_table td {

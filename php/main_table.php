@@ -2,6 +2,14 @@
     session_start();
     include 'scripts/mysql.php'; 
 
+    if($_GET['tiili']) {
+        $tile = $_GET['tiili'];
+    }else {
+        $tile = "ormax";
+    }
+    
+    $xml = simplexml_load_file('xml\\' . $tile . '.xml') or die("XML tiedostoa ei pysty lukemaan");
+
     $id = 0;
 ?>
 
@@ -24,7 +32,8 @@
                 <th class="H"></th>    
             </tr>
             <?php 
-                foreach ($xml -> children() as $category) {
+            foreach ($xml -> children() as $tile) {
+                foreach ($tile -> children() as $category) {
                     $category_name = $category['kategoria'];
             ?>
             <tr>
@@ -72,6 +81,7 @@
                         }
                     } 
                 }
+            }
             ?>
             <tr>
                 <td colspan="3"></td>

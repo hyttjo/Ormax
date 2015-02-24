@@ -2,9 +2,12 @@
     include 'mysql.php';
 
     $postal_code = $_POST['postal_code'];
+    $product_price = $_POST['product_price'];
     $tile_amount = $_POST['tile_amount'];
     $other_product_weight = $_POST['other_product_weight'];
-    $pallet_amount = $_POST['pallet_amount'];
+    $pallet_amount = $_POST['pallet_amount']; 
+    $insurance_true_false = $_POST['insurance'];
+    $lift_true_false = $_POST['lift'];
 
     $tiles_delivery_cost = 0;
     $other_product_delivery_cost = 0;
@@ -54,6 +57,14 @@
         $packaging_cost = 17;
     }
 
+    if ($insurance_true_false == 'true') {
+        $insurance = $product_price * 0.008;
+    }
+
+    if ($lift_true_false == 'true') {
+        $lift_to_roof = $tile_amount / 1000 * 149;
+    }
+
     $delivery_cost = $tiles_delivery_cost + $other_product_delivery_cost + $insurance + $packaging_cost + $lift_to_roof;
 
     echo json_encode(array(
@@ -67,5 +78,6 @@
         $delivery_area, 
         $tile_amount,
         $weight_range,
-        $pallet_amount));
+        $pallet_amount,
+        $product_price));
 ?>

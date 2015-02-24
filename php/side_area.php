@@ -25,6 +25,14 @@
                 <th colspan="2">Toimituskustannukset</th>
             </tr>
             <tr>
+                <td>
+                    <input id="insurance_delivery" type="checkbox" value="insurance" checked>Kuljetusvakuutus</input>
+                </td>
+                <td>
+                    <input id="lift_to_roof" type="checkbox" value="lift">Katolle nosto</input>
+                </td>
+            </tr>
+            <tr>
                 <td>Postinumero:</td>
                 <td>
                     <input id="postal_code" type="text" pattern="[0-9]{5}"></input>
