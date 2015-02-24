@@ -10,7 +10,7 @@
     </head>
     <body>
         <img id="ormax_logo" src="img/ormax_logo.png" alt="Ormax tiilikatot logo"></img>
-        <p id="site_title">Hinnastolaskenta 2015</p>
-        <p id="tile_name">Ormax-betonikattotiili</p>       
+        <h1>Hinnastolaskenta 2015</h1>
+        <h2>Ormax-betonikattotiili</h2>       
     </body>
 </html>

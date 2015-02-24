@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Tuotteet>
     <Kategoria kategoria="Kattotiilet">
-        <Tuote tuotenumero="160000208" nimi="Lapetiili"></Tuote>
-        <Tuote tuotenumero="260000208" nimi="Harjatiili"></Tuote>
-        <Tuote tuotenumero="220025208" nimi="Puolitiili"></Tuote>
-        <Tuote tuotenumero="260020208" nimi="Päätyreunatiili"></Tuote>
+        <Tuote tuotenumero="160000208" nimi="Lapetiili" tyyppi="lape"></Tuote>
+        <Tuote tuotenumero="260000208" nimi="Harjatiili" tyyppi="harja"></Tuote>
+        <Tuote tuotenumero="220025208" nimi="Puolitiili" tyyppi="puoli"></Tuote>
+        <Tuote tuotenumero="260020208" nimi="Päätyreunatiili" tyyppi="reuna"></Tuote>
     </Kategoria>
     <Kategoria kategoria="Erikoistiilet">
         <Tuote tuotenumero="299309208" nimi="Aloitusharjatiili"></Tuote>

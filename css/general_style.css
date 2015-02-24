@@ -18,6 +18,9 @@ body, html {
 
 input {
     max-width: 80px;
+    -mox-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
     text-align: center;
 }
 
