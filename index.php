@@ -18,7 +18,7 @@
                        "css/main_table.css",
                        "css/side_area.css",
                        "css/footer.css",
-                       "js/libs/jquery-2.1.3.min.js",
+                       "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js",
                        "js/libs/numeral.min.js",
                        "js/libs/jquery-calx-2.0.5.min.js",
                        "js/script.js",
