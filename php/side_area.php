@@ -5,9 +5,6 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="../css/side_area.css">
-    </head>
     <body>
         <table id="discount_table">
             <tr>

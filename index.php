@@ -10,13 +10,19 @@
 
         <title>Ormax Monier Oy - Hinnastolaskenta 2015</title>
 
-        <link rel="stylesheet" type="text/css" href="css/general_style.css">
+        <script src="js/libs/head.min.js"></script>
 
-        <script src="js/libs/jquery-2.1.3.min.js"></script>
-        <script src="js/libs/numeral.min.js"></script>
-        <script src="js/libs/jquery-calx-2.0.5.min.js"></script>
-        <script src="js/script.js"></script>
-        <script src="js/google_analytics.js"></script>
+        <script>
+            head.js("css/general_style.css",
+                    "css/header.css",
+                    "css/main_table.css",
+                    "css/side_area.css",
+                    "js/libs/jquery-2.1.3.min.js",
+                    "js/libs/numeral.min.js",
+                    "js/libs/jquery-calx-2.0.5.min.js",
+                    "js/script.js",
+                    "js/google_analytics.js");
+        </script>
     </head>
     <body>
         <div id="container">
@@ -25,9 +31,10 @@
             </header>
         
             <?php include 'php/main_table.php'; ?>
+        
+            <footer>
+                <?php include 'php/footer.php'; ?>
+            </footer>
         </div>
-
-        <footer>
-        </footer>
     </body>
 </html>

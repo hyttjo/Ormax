@@ -15,6 +15,7 @@ h1 {
 
 select {
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 #tile_image {

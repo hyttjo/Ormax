@@ -13,6 +13,7 @@
     $other_product_delivery_cost = 0;
     $insurance = 0;
     $packaging_cost = 0;
+    $can_lift_to_roof; 
     $lift_to_roof = 0;
 
     $weight_range = '0-50';
@@ -35,8 +36,11 @@
     $delivery_result = mysqli_query($con, $query);
 
     while ($row = mysqli_fetch_array($delivery_result)) { 
-        $city = $row['kunta'];
-        $delivery_area = $row['rahtihinta'];  
+        if ($row) {
+            $city = $row['kunta'];
+            $delivery_area = $row['rahtihinta'];
+            $can_lift_to_roof = $row['Katollenosto']; 
+        }
     }
 
     if ($tile_amount == 0 && $other_product_weight > 0) {
@@ -67,7 +71,20 @@
 
     $delivery_cost = $tiles_delivery_cost + $other_product_delivery_cost + $insurance + $packaging_cost + $lift_to_roof;
 
+    if($can_lift_to_roof == NULL && $lift_true_false == 'true') {
+        $fail_message = 'Katolle nosto ei mahdollista kyseiselle postinumeroalueelle.';
+    }
+
+    if($delivery_area == null) {
+        $fail_message = 'Postinumerolle ei ole määritelty rahtihintaa, kokeile toista postinumeroa.';
+    }
+
+    if($city == null) {
+        $fail_message = 'Postinumerolla ei löydy kuntaa.';
+    }
+
     echo json_encode(array(
+        $fail_message,
         $city, 
         $delivery_cost, 
         $tiles_delivery_cost, 

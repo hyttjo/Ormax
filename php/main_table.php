@@ -16,9 +16,6 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="../css/main_table.css">
-    </head>
     <body>  
         <table id="main_table">
              <tr>
@@ -83,9 +80,6 @@
                 }
             }
             ?>
-            <tr>
-                <td colspan="3"></td>
-            </tr>
             <tr id="last_row">
                 <td class="A"></td>
                 <td class="B"></td>
