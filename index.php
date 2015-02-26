@@ -13,15 +13,15 @@
         <script src="js/libs/head.min.js"></script>
 
         <script>
-            head.js("css/general_style.css",
-                    "css/header.css",
-                    "css/main_table.css",
-                    "css/side_area.css",
-                    "js/libs/jquery-2.1.3.min.js",
-                    "js/libs/numeral.min.js",
-                    "js/libs/jquery-calx-2.0.5.min.js",
-                    "js/script.js",
-                    "js/google_analytics.js");
+            head.load(["css/general_style.css",
+                       "css/header.css",
+                       "css/main_table.css",
+                       "css/side_area.css",
+                       "js/libs/jquery-2.1.3.min.js",
+                       "js/libs/numeral.min.js",
+                       "js/libs/jquery-calx-2.0.5.min.js",
+                       "js/script.js",
+                       "js/google_analytics.js"]);
         </script>
     </head>
     <body>
