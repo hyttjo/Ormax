@@ -32,11 +32,7 @@ select {
     background-color: #c62d1f;
     border-bottom: 1px solid grey;
 }
-#963f3f {
-    
-}#c62d1f {
-    
-}
+
 #logged_in_header img {
     max-height: 18px;
     margin: 0px 0px -4px 0px;
@@ -51,7 +47,7 @@ select {
     text-decoration: none;
     font-size: 80%;
     color: #f24537;
-    border-left: 1px solid #f04b4b;
+    border-left: 1px solid grey;
     background-color: #c62d1f;
 }
 
@@ -60,30 +56,87 @@ select {
     background-color: #f04b4b; 
 }
 
-.hide_login_header {
-    display: none;
-}
-
 #logged_in_header.krauta {
     background-color: #e6e6e6;
 }
 
+#logged_in_header.krauta #logout {
+    color: #202020;
+    background-color: #A1A1A1;
+}
+
+#logged_in_header.krauta #logout:hover {
+    color: #363636;
+    background-color: #BDBDBD;
+}
+
 #logged_in_header.rautia {
     background-color: #00599e;
+}
+    
+#logged_in_header.rautia #logout {
+    color: #4d8bbb;
+    background-color: #003E6F;
+}
+
+#logged_in_header.rautia #logout:hover {
+    color: #003E6F;
+    background-color: #4d8bbb;
 }
 
 #logged_in_header.puukeskus {
     background-color: #ffdd00;
 }
 
+#logged_in_header.puukeskus #logout {
+    color: #ffe74d;
+    background-color: #b29b00;
+}
+
+#logged_in_header.puukeskus #logout:hover {
+    color: #b29b00;
+    background-color: #ffe74d;
+}
+
 #logged_in_header.byggmax {
     background-color: #ffe716;
+}
+
+#logged_in_header.byggmax #logout {
+    color: #ffee5c;
+    background-color: #b2a20f;
+}
+
+#logged_in_header.byggmax #logout:hover {
+    color: #b2a20f;
+    background-color: #ffee5c;
 }
 
 #logged_in_header.rautanet {
     background-color: #004fa1;
 }
 
+#logged_in_header.rautanet #logout {
+    color: #4d84bd;
+    background-color: #003771;
+}
+
+#logged_in_header.rautanet #logout:hover {
+    color: #003771;
+    background-color: #4d84bd;
+}
+
 #logged_in_header.srauta {
     background-color: #ffffff;
+}
+
+
+#logged_in_header.srauta #logout {
+    color: #8f8f8f;
+    background-color: #f1f1f1;
+}
+
+#logged_in_header.srauta #logout:hover {
+    color: #f1f1f1;
+    background-color: #8f8f8f;
 }

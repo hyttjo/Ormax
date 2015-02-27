@@ -16,20 +16,16 @@
 
         <title>Ormax Monier Oy - Hinnastolaskenta 2015</title>
 
-        <script src="js/libs/head.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <script src="../js/libs/head.min.js"></script>
 
         <script>
-            head.js(["css/general_style.css",
-                     "css/login.css",
-                     "css/header.css",
-                     "css/main_table.css",
-                     "css/side_area.css",
-                     "css/footer.css",
-                     "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js",
-                     "js/libs/numeral.min.js",
-                     "js/libs/jquery-calx-2.0.5.min.js",
-                     "js/script.js",
-                     "js/google_analytics.js"]);
+            head.js(["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+                     "../js/libs/numeral.min.js",
+                     "../js/libs/jquery-calx-2.0.5.min.js",
+                     "../js/script.js",
+                     "../js/google_analytics.js"]);
         </script>
     </head>
     <body>

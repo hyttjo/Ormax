@@ -1,14 +1,23 @@
-#login {
+#login_wrapper {
     position: relative;
+    width: 400px; 
+    height:  100%;
+    margin: 0px auto;
+}
+
+#login {
+    position: absolute;
     width:  400px;
     top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
     transform: translateY(-50%);
     margin: 0px auto;
     padding: 0px;
     background-color: #ffffff;
     border:  1px solid grey;
     -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
+    -webkit-border-radius: 15px; 
     border-radius: 15px;
 }
 
