@@ -21,7 +21,69 @@ select {
 #tile_image {
     float: right;
     max-width: 350px;
-    margin: -2px -10px -2px 0px;
+    margin: -1px -10px -1px 0px;
     padding: 0px;
     overflow: hidden;
+}
+
+#logged_in_header {
+    position: relative;
+    padding: 0px;
+    background-color: #c62d1f;
+    border-bottom: 1px solid grey;
+}
+#963f3f {
+    
+}#c62d1f {
+    
+}
+#logged_in_header img {
+    max-height: 18px;
+    margin: 0px 0px -4px 0px;
+}
+
+#logout {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    max-height: 18px;
+    padding: 2px 10px 1px 10px;
+    text-decoration: none;
+    font-size: 80%;
+    color: #f24537;
+    border-left: 1px solid #f04b4b;
+    background-color: #c62d1f;
+}
+
+#logout:hover {
+    color: #efefef;
+    background-color: #f04b4b; 
+}
+
+.hide_login_header {
+    display: none;
+}
+
+#logged_in_header.krauta {
+    background-color: #e6e6e6;
+}
+
+#logged_in_header.rautia {
+    background-color: #00599e;
+}
+
+#logged_in_header.puukeskus {
+    background-color: #ffdd00;
+}
+
+#logged_in_header.byggmax {
+    background-color: #ffe716;
+}
+
+#logged_in_header.rautanet {
+    background-color: #004fa1;
+}
+
+#logged_in_header.srauta {
+    background-color: #ffffff;
 }

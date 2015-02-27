@@ -1,5 +1,11 @@
 <?php
+    session_start();
 
+    if($_SESSION['logged_in']) {
+       $user = $_SESSION['username'];
+    } else {
+       header('Location: php/login.php'); 
+    }
 ?>
 
 <!DOCTYPE html>
@@ -14,15 +20,16 @@
 
         <script>
             head.js(["css/general_style.css",
-                       "css/header.css",
-                       "css/main_table.css",
-                       "css/side_area.css",
-                       "css/footer.css",
-                       "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js",
-                       "js/libs/numeral.min.js",
-                       "js/libs/jquery-calx-2.0.5.min.js",
-                       "js/script.js",
-                       "js/google_analytics.js"]);
+                     "css/login.css",
+                     "css/header.css",
+                     "css/main_table.css",
+                     "css/side_area.css",
+                     "css/footer.css",
+                     "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+                     "js/libs/numeral.min.js",
+                     "js/libs/jquery-calx-2.0.5.min.js",
+                     "js/script.js",
+                     "js/google_analytics.js"]);
         </script>
     </head>
     <body>

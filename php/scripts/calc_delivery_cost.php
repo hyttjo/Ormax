@@ -71,7 +71,7 @@
 
     $delivery_cost = $tiles_delivery_cost + $other_product_delivery_cost + $insurance + $packaging_cost + $lift_to_roof;
 
-    if($can_lift_to_roof == NULL && $lift_true_false == 'true') {
+    if($can_lift_to_roof == null && $lift_true_false == 'true') {
         $fail_message = 'Katolle nosto ei mahdollista kyseiselle postinumeroalueelle.';
     }
 

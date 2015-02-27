@@ -1,4 +1,6 @@
 <?php
+    session_start();    
+
     $tile_selection = $_GET['tiili'];
 
     if ($tile_selection == 'ormax') {
@@ -7,7 +9,7 @@
         $protector_selected = 'selected';
     } else {
         $tile_selection = 'ormax';
-    }    
+    }  
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +17,12 @@
 <html>
     <body>
         <table>
+            <tr>
+                <td id="logged_in_header" class="<?php echo $user  ?>" colspan="3">
+                    <img src="img/<?php echo $user ?>.png" alt="Käyttäjän logo"></img>
+                    <a id="logout" href="php/scripts/logout.php">KIRJAUDU ULOS</a>
+                </td>
+            </tr>
             <tr>
                 <td>
                     <img id="ormax_logo" src="img/ormax_logo.png" alt="Ormax tiilikatot logo"></img>
