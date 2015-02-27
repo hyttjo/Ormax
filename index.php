@@ -13,7 +13,7 @@
         <script src="js/libs/head.min.js"></script>
 
         <script>
-            head.load(["css/general_style.css",
+            head.js(["css/general_style.css",
                        "css/header.css",
                        "css/main_table.css",
                        "css/side_area.css",

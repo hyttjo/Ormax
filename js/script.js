@@ -104,7 +104,7 @@ $(document).ready(function () {
                         alert(result[0]);
                     }
 
-                    //alert("rahti: " + result[1] + " tiilet: " + result[2] + " muut: " + result[3] + " vakuutus: " + result[4] + " pakkaus: " + result[5] + " nosto: " + result[6] + " rahtialue: " + result[7] + " tiilimäärä: " + result[8] + " painoryhmä: " + result[9] + " lavamäärä: " + result[10] + " tuotteiden hinta: " + result[11]);
+                    alert("rahti: " + result[1] + " tiilet: " + result[2] + " muut: " + result[3] + " vakuutus: " + result[4] + " pakkaus: " + result[5] + " nosto: " + result[6] + " rahtialue: " + result[7] + " tiilimäärä: " + result[8] + " painoryhmä: " + result[9] + " lavamäärä: " + result[10] + " tuotteiden hinta: " + result[11]);
                     $('#main_table').calx();
                 }
             });

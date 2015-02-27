@@ -96,5 +96,6 @@
         $tile_amount,
         $weight_range,
         $pallet_amount,
-        $product_price));
+        $product_price,
+        $can_lift_to_roof));
 ?>
