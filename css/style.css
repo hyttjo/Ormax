@@ -173,15 +173,17 @@ select {
 }
 
 #tile_image {
-    float: right;
-    max-width: 350px;
-    margin: -1px -10px -1px 0px;
     padding: 0px;
+    text-align:  right;
+}
+
+#tile_image img {
+    max-width: 350px;
+    margin: 0px -10px -5px 0px;
     overflow: hidden;
 }
 
-#logged_in_header {
-    position: relative;
+#logged_in_header td {
     padding: 0px;
     background-color: #c62d1f;
     border-bottom: 1px solid grey;
@@ -192,107 +194,105 @@ select {
     margin: 0px 0px -4px 0px;
 }
 
-#logout {
-    position: absolute;
-    top: 0px;
-    right: 0px;
+#logout a {
+    float: right;
     max-height: 18px;
     padding: 2px 10px 1px 10px;
     text-decoration: none;
     font-size: 80%;
-    color: #f24537;
+    color: #efefef;
     border-left: 1px solid grey;
-    background-color: #c62d1f;
+    background-color: #CC4235;
 }
 
-#logout:hover {
-    color: #efefef;
+#logout a:hover {
+    color: #7A2820;
     background-color: #f04b4b; 
 }
 
-#logged_in_header.krauta {
+#logged_in_header.krauta td {
     background-color: #e6e6e6;
 }
 
-#logged_in_header.krauta #logout {
+#logged_in_header.krauta #logout a {
     color: #202020;
     background-color: #A1A1A1;
 }
 
-#logged_in_header.krauta #logout:hover {
+#logged_in_header.krauta #logout a:hover {
     color: #363636;
     background-color: #BDBDBD;
 }
 
-#logged_in_header.rautia {
+#logged_in_header.rautia td {
     background-color: #00599e;
 }
     
-#logged_in_header.rautia #logout {
-    color: #4d8bbb;
+#logged_in_header.rautia #logout a {
+    color: #CCD7E3;
     background-color: #003E6F;
 }
 
-#logged_in_header.rautia #logout:hover {
+#logged_in_header.rautia #logout a:hover {
     color: #003E6F;
     background-color: #4d8bbb;
 }
 
-#logged_in_header.puukeskus {
+#logged_in_header.puukeskus td {
     background-color: #ffdd00;
 }
 
-#logged_in_header.puukeskus #logout {
-    color: #ffe74d;
-    background-color: #b29b00;
+#logged_in_header.puukeskus #logout a {
+    color: #94B3A5;
+    background-color: #004a2a;
 }
 
-#logged_in_header.puukeskus #logout:hover {
-    color: #b29b00;
-    background-color: #ffe74d;
+#logged_in_header.puukeskus #logout a:hover {
+    color: #004a2a;
+    background-color: #66927F;
 }
 
-#logged_in_header.byggmax {
+#logged_in_header.byggmax td {
     background-color: #ffe716;
 }
 
-#logged_in_header.byggmax #logout {
+#logged_in_header.byggmax #logout a {
+    color: #F1BFBC;
+    background-color: #cf2a1f;
+}
+
+#logged_in_header.byggmax #logout a:hover {
     color: #ffee5c;
-    background-color: #b2a20f;
+    background-color: #911D16;
 }
 
-#logged_in_header.byggmax #logout:hover {
-    color: #b2a20f;
-    background-color: #ffee5c;
-}
-
-#logged_in_header.rautanet {
+#logged_in_header.rautanet td {
     background-color: #004fa1;
 }
 
-#logged_in_header.rautanet #logout {
-    color: #4d84bd;
+#logged_in_header.rautanet #logout a {
+    color: #CCD7E3;
     background-color: #003771;
 }
 
-#logged_in_header.rautanet #logout:hover {
+#logged_in_header.rautanet #logout a:hover {
     color: #003771;
     background-color: #4d84bd;
 }
 
-#logged_in_header.srauta {
+#logged_in_header.srauta td
+ {
     background-color: #ffffff;
 }
 
-
-#logged_in_header.srauta #logout {
-    color: #8f8f8f;
-    background-color: #f1f1f1;
+#logged_in_header.srauta #logout a {
+    color: #f3f3f3;
+    background-color: #077f48;
 }
 
-#logged_in_header.srauta #logout:hover {
-    color: #f1f1f1;
-    background-color: #8f8f8f;
+#logged_in_header.srauta #logout a:hover {
+    color: #077f48;
+    background-color: #f39612;
 }
 
 /******* Main Table ********/

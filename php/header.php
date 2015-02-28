@@ -17,10 +17,12 @@
 <html>
     <body>
         <table>
-            <tr>
-                <td id="logged_in_header" class="<?php echo $user  ?>" colspan="3">
-                    <img src="img/<?php echo $user ?>.png" alt="Käyttäjän logo"></img>
-                    <a id="logout" href="php/scripts/logout.php">KIRJAUDU ULOS</a>
+            <tr id="logged_in_header" class="<?php echo $user ?>">
+                <td colspan="2">
+                    <img src="img/<?php echo $user ?>.png" alt="Käyttäjän logo"></img> 
+                </td>
+                <td id="logout">
+                    <a href="php/scripts/logout.php">KIRJAUDU ULOS</a>
                 </td>
             </tr>
             <tr>
@@ -34,8 +36,8 @@
                         <option value="protector" <?php echo $protector_selected; ?>>Protector-betonikattotiili</option>
                     </select>
                 </td>
-                <td>
-                    <img id="tile_image" src="img/<?php echo $tile_selection ?>.jpg" alt="Tiilikuva"></img>
+                <td id="tile_image">
+                    <img src="img/<?php echo $tile_selection ?>.jpg" alt="Tiilikuva"></img>
                 </td>
                 </tr>
         </table>     
