@@ -13,7 +13,7 @@
     $other_product_delivery_cost = 0;
     $insurance = 0;
     $packaging_cost = 0;
-    $can_lift_to_roof = ''; 
+    $can_lift_to_roof; 
     $lift_to_roof = 0;
 
     $weight_range = '0-50';
@@ -39,7 +39,7 @@
         if ($row) {
             $city = $row['kunta'];
             $delivery_area = $row['rahtihinta'];
-            $can_lift_to_roof = $row['Katollenosto']; 
+            $can_lift_to_roof = $row['katollenosto']; 
         }
     }
 
@@ -71,9 +71,8 @@
 
     $delivery_cost = $tiles_delivery_cost + $other_product_delivery_cost + $insurance + $packaging_cost + $lift_to_roof;
 
-    if($can_lift_to_roof != 'Kylla' && $lift_true_false == 'true') {
-        $fail_message = $can_lift_to_roof;
-        //$fail_message = 'Katolle nosto ei mahdollista kyseiselle postinumeroalueelle.';
+    if($can_lift_to_roof == null && $lift_true_false == 'true') {
+        $fail_message = 'Katolle nosto ei mahdollista kyseiselle postinumeroalueelle.';
     }
 
     if($delivery_area == null) {

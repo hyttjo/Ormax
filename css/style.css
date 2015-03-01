@@ -257,7 +257,7 @@ select {
 }
 
 #logged_in_header.byggmax #logout a {
-    color: #F1BFBC;
+    color: 	#FAEAE9;
     background-color: #cf2a1f;
 }
 
@@ -293,6 +293,21 @@ select {
 #logged_in_header.srauta #logout a:hover {
     color: #077f48;
     background-color: #f39612;
+}
+
+#logged_in_header.kodinterra td
+ {
+    background-color: #007948;
+}
+
+#logged_in_header.kodinterra #logout a {
+    color: #f3f3f3;
+    background-color: #005532;
+}
+
+#logged_in_header.kodinterra #logout a:hover {
+    color: #005532;
+    background-color: #4DA17F;
 }
 
 /******* Main Table ********/
