@@ -84,7 +84,7 @@
                 <td class="A"></td>
                 <td class="B"></td>
                 <td class="C">Yhteensä:</td>
-                <td class="D" data-cell="D100" data-formula="SUM(D1:D99)" data-format="€ 0[.]00"></td>
+                <td class="D" data-cell="D100" data-formula="SUM(D1:D99)" data-format="0[.]00 $"></td>
                 <td class="E"></td>
                 <td class="F" data-cell="F100" data-formula="SUM(F1:F99)" data-format="0[.]00"></td>
                 <td class="G"></td>

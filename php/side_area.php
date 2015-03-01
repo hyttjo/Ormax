@@ -63,15 +63,15 @@
                 <td class="alv_row" colspan="2">Arvonlisävero 0 %</td>
             </tr>
             <tr>
-                <td data-cell ="H3" data-formula="D100" data-format="€ 0[.]00"></td>
-                <td data-cell ="H4" data-formula="H3+H2" data-format="€ 0[.]00"></td>
+                <td data-cell ="H3" data-formula="D100" data-format="0[.]00 $"></td>
+                <td data-cell ="H4" data-formula="H3+H2" data-format="0[.]00 $"></td>
             </tr>
             <tr>
                 <td  class="alv_row" colspan="2">Sis. arvonlisäveron 24 %</td>
             </tr>
             <tr>
-                <td data-cell ="H5" data-formula="H3*1.24" data-format="€ 0[.]00"></td>
-                <td data-cell ="H6" data-formula="H4*1.24" data-format="€ 0[.]00"></td>
+                <td data-cell ="H5" data-formula="H3*1.24" data-format="0[.]00 $"></td>
+                <td data-cell ="H6" data-formula="H4*1.24" data-format="0[.]00 $"></td>
             </tr>
         </table>
         <div class="center">

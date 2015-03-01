@@ -1,4 +1,25 @@
 $(document).ready(function () {
+    numeral.language('fi', {
+        delimiters: {
+            thousands: ' ',
+            decimal: '.'
+        },
+        abbreviations: {
+            thousand: 't.',
+            million: 'milj.',
+            billion: 'mrd.',
+            trillion: 'trilj.'
+        },
+        ordinal : function (number) {
+            return '';
+        },
+        currency: {
+            symbol: '€'
+        }
+    });
+ 
+    numeral.language('fi');
+
     $('#main_table').calx();
 
     $('#tile_selection').change(function () {

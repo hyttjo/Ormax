@@ -69,7 +69,7 @@
         $lift_to_roof = $tile_amount / 1000 * 149;
     }
 
-    $delivery_cost = $tiles_delivery_cost + $other_product_delivery_cost + $insurance + $packaging_cost + $lift_to_roof;
+    $delivery_cost = number_format($tiles_delivery_cost + $other_product_delivery_cost + $insurance + $packaging_cost + $lift_to_roof, 2);
 
     if($can_lift_to_roof == null && $lift_true_false == 'true') {
         $fail_message = 'Katolle nosto ei mahdollista kyseiselle postinumeroalueelle.';
