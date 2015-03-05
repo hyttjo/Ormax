@@ -24,7 +24,7 @@
 
         <title>Ormax Monier Oy - Hinnastolaskenta 2015</title>
 
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/style1.css">
         <!--[if IE]>
 	        <link rel="stylesheet" type="text/css" href="css/ie9_and_older_style.css">
         <![endif]-->
@@ -35,7 +35,7 @@
             head.js(["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js",
                      "../js/libs/numeral.min.js",
                      "../js/libs/jquery-calx-2.0.5.min.js",
-                     "../js/script.js",
+                     "../js/script1.js",
                      "../js/google_analytics.js"]);
         </script>
     </head>

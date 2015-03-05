@@ -268,11 +268,11 @@ $(document).ready(function () {
                             alert('Katollenostoa ei laskettu toimituskuluihin koska kattotiilien yhteismäärä on 0');
                         }
                         if (tile == 'minster') {
-                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita: <br>Minster tiilellä nämä ovat <b>Tummanharmaa</b> ja <b>Antrasiitti</b> värisävyt');
+                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita: \n Minster tiilellä nämä ovat Tummanharmaa ja Antrasiitti värisävyt');
                         } else if (tile == 'turmalin') {
-                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita: <br>Turmalin tiilellä nämä ovat </b>Enkopoitu Antrasiitti</b> ja <b>Lasitettu Musta</b> värisävyt');
+                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita: \n Turmalin tiilellä nämä ovat Enkopoitu Antrasiitti ja Lasitettu Musta värisävyt');
                         } else if (tile == 'granat') {
-                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita: <br>Granat tiilellä tämä on </b>Savitiilenpunainen</b> värisävy');
+                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita: \n Granat tiilellä tämä on Savitiilenpunainen värisävy');
                         }
                     } else {
                         $('#city').val('');
