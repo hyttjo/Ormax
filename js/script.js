@@ -10,14 +10,14 @@ $(document).ready(function () {
             billion: 'mrd.',
             trillion: 'trilj.'
         },
-        ordinal : function (number) {
+        ordinal: function (number) {
             return '';
         },
         currency: {
             symbol: '€'
         }
     });
- 
+
     numeral.language('fi');
 
     $('#main_table').calx();
@@ -36,6 +36,17 @@ $(document).ready(function () {
             }
         });
         return tile_sum;
+    }
+
+    function calc_metal_product_amount() {
+        var metal_sum = 0;
+        $('input.Peltituotteet').each(function (i, e) {
+            var v = parseInt($(e).val());
+            if (!isNaN(v)) {
+                metal_sum += v;
+            }
+        });
+        return metal_sum;
     }
 
     function calc_pipe_amount() {
@@ -69,15 +80,19 @@ $(document).ready(function () {
 
     function calc_pallet_amount() {
         var pallet_amount = 0;
-        maintile_amount = parseInt($('input.Lapetiili').val());
-        ridgetile_amount = parseInt($('input.Harjatiili').val());
-        vergetile_amount = parseInt($('input.Päätyreunatiili').val());
+        var maintile_amount = parseInt($('input.Lapetiili').val());
+        var ridgetile_amount = parseInt($('input.Harjatiili').val());
+        var vergetile_amount = parseInt($('input.Päätyreunatiili').val());
         var pipe_amount = calc_pipe_amount();
         var weight_for_pallet_products = calc_weight_for_pallet_products();
+        var pallet_size = $('#tile_pallet_size').text();
+        var ridge_pallet_size = $('#ridge_pallet_size').text();
+        var verge_pallet_size = $('#verge_pallet_size').text();
+        var max_tiles_without_pallet = $('#max_tiles_without_pallet').text();
 
-        if (maintile_amount > 42) { pallet_amount = Math.ceil(maintile_amount / 252); }
-        if (ridgetile_amount > 0) { pallet_amount = pallet_amount + Math.ceil(ridgetile_amount / 50); }
-        if (vergetile_amount > 0) { pallet_amount = pallet_amount + Math.ceil(vergetile_amount / 60); }
+        if (maintile_amount > max_tiles_without_pallet) { pallet_amount = Math.ceil(maintile_amount / pallet_size); }
+        if (ridgetile_amount > 0) { pallet_amount = pallet_amount + Math.ceil(ridgetile_amount / ridge_pallet_size); }
+        if (vergetile_amount > 0) { pallet_amount = pallet_amount + Math.ceil(vergetile_amount / verge_pallet_size); }
         pallet_amount = pallet_amount + Math.ceil(pipe_amount / 5);
         pallet_amount = pallet_amount + Math.ceil(weight_for_pallet_products / 75);
 
@@ -99,7 +114,137 @@ $(document).ready(function () {
         }
     });
 
+    $('#calc_amounts').click(function () {
+        var tile = $('#tile_code').text();
+        var roof_shape = $('#roof_shape').val();
+        var roof_area = $('#roof_area').val();
+        var ridge_length = $('#ridge_length').val();
+        var ridge_tightening_material = $('#ridge_tightening_material').val();
+        var verge_material = $('#verge_material').val();
+        var verge_length = $('#verge_length').val();
+        var underlayer = $('#underlayer').val();
+        var min_sold_size = parseFloat($('#min_sold_size').text());
+        var square_meter_demand = parseFloat($('#square_meter_demand').text());
+        var ridge_demand = parseFloat($('#ridge_demand').text());
+        var verge_demand = parseFloat($('#verge_demand').text());
+        var tile_fixing_demand = parseFloat($('#tile_fixing_demand').text());
+        var ridge_fixing_demand = parseFloat($('#ridge_fixing_demand').text());
+        var verge_fixing_demand = parseFloat($('#verge_fixing_demand').text());
+
+        empty_table();
+
+        // Lapetiili ja kiinnikkeiden laskenta
+        if (roof_area != '') {
+            $('input.Lapetiili').val(Math.ceil(square_meter_demand * roof_area * 1.05 / min_sold_size) * min_sold_size);
+            $('input.Lapetiilinaula').val(Math.ceil(roof_area / tile_fixing_demand));
+            $('input.Lapetiilen_kiinnike').val(Math.ceil(roof_area / tile_fixing_demand));
+            $('input.U-koukku').val(Math.ceil(roof_area / tile_fixing_demand));
+        }
+
+        // Harjatiili ja kiinnikkeiden laskenta
+        if (ridge_length != '') {
+            if (roof_shape == 'Harjakatto') {
+                var ridge_tile_amount = Math.ceil(ridge_length * ridge_demand);
+                $('input.Harjatiili').val(Math.ceil(ridge_tile_amount * 1.05));
+                $('input.Harjatiilen_kiinnike').val(Math.ceil(ridge_tile_amount / ridge_fixing_demand));
+                $('input.Harjatiilinaula').val(Math.ceil(ridge_tile_amount / ridge_fixing_demand));
+
+                if (verge_material == 'Pelti') {
+                    $('input.Päätykappale').val(2);
+                } else {
+                    $('input.Aloitusharjatiili').val(1);
+                    $('input.Lopetusharjatiili').val(1);
+                }
+
+                $('input.Päätyharjatiili').val(2);
+                $('input.Liitosharjatiili').val(1);
+
+                if (roof_area != '') { // Lintuesteiden ja tippapeltien laskenta
+                    $('input.Lintueste_5m').val(Math.ceil(ridge_length * 2 / 5));
+                    $('input.Tippapelti_2m').val(Math.ceil(ridge_length * 2 / 1.9));
+                }
+
+                if (tile == 'minster' || tile == 'turmalin') {
+                    $('input.Päätykappale').val(2);
+                }
+            } else {
+                var monoridge_metal_amount = Math.ceil(ridge_length * 1.05 / 1.9);
+                var metal_product_amount = calc_metal_product_amount();
+                $('input.Pulpettikaton_yläräystäspelti_2m').val(monoridge_metal_amount);
+                $('input.Listaruuvi').val(Math.ceil((metal_product_amount + monoridge_metal_amount) / 50));
+
+                if (roof_area != '') { // Lintuesteiden ja tippapeltien laskenta
+                    $('input.Lintueste_5m').val(Math.ceil(ridge_length / 5));
+                    $('input.Tippapelti_2m').val(Math.ceil(ridge_length / 1.9));
+                }
+            }
+        }
+
+        // Harjatiivisteiden laskenta
+        if (ridge_tightening_material != 'Ei mitään' && ridge_length != '') {
+            if (ridge_tightening_material == 'Betoninen') {
+                if (roof_shape == 'Pulpettikatto') {
+                    $('input.Betoninen_harjatiiviste').val(Math.ceil(ridge_length * 3.35));
+                } else {
+                    $('input.Betoninen_harjatiiviste').val(Math.ceil(ridge_length * 6.7));
+                }
+            } else if (ridge_tightening_material == 'Muovinen') {
+                if (roof_shape == 'Pulpettikatto') {
+                    alert('Pulpettikatolla ei voi käyttää muovista harjatiivistettä');
+                } else {
+                    $('input.Muovinen_harjatiiviste').val(Math.ceil(ridge_length * 2.3));
+                }
+            } else if (ridge_tightening_material == 'Figaroll') {
+                if (roof_shape == 'Pulpettikatto') {
+                    alert('Pulpettikatolla ei voi käyttää Figaroll Plus harjatiivistettä');
+                } else {
+                    $('input.Figaroll_Plus').val(Math.ceil(ridge_length / 5));
+                }
+            } else if (ridge_tightening_material == 'Metalroll') {
+                if (roof_shape == 'Pulpettikatto') {
+                    alert('Pulpettikatolla ei voi käyttää Metalroll harjatiivistettä');
+                } else {
+                    $('input.Metalroll').val(Math.ceil(ridge_length / 5));
+                }
+            }
+        }
+
+        // Päätyjen laskenta
+        if (verge_material != 'Ei mitään' && verge_length != '') {
+            if (verge_material == 'Tiili') {
+                var verge_tile_amount = verge_length * 1.05 * verge_demand;
+                $('input.Päätyreunatiili').val(Math.ceil(verge_tile_amount));
+                $('input.Tupla-aaltotiili').val(Math.ceil(verge_tile_amount));
+                $('input.Reunatiiliruuvi').val(Math.ceil(verge_tile_amount / verge_fixing_demand));
+                $('input.Päätytiili_vasen').val(Math.ceil(verge_tile_amount));
+                $('input.Puolipäätytiili_vasen').val(Math.ceil(verge_tile_amount));
+                $('input.Päätytiili_oikea').val(Math.ceil(verge_tile_amount));
+                $('input.Puolipäätytiili_oikea').val(Math.ceil(verge_tile_amount));
+            } else {
+                var verge_metal_amount = verge_length * 1.05 / 1.9;
+                var metal_product_amount = calc_metal_product_amount();
+                $('input.Päätyräystäspelti_2m').val(Math.ceil(verge_metal_amount));
+                $('input.Listaruuvi').val(Math.ceil((metal_product_amount + verge_metal_amount) / 50));
+                $('input.Tiivistepala').val(Math.ceil(verge_length * 1.05 / 0.35 / 25));
+            }
+        }
+
+        // Aluskate laskenta
+        if (underlayer != 'Ei mitään' && roof_area != '') {
+            if (underlayer == 'Universal') {
+                $('input.Divoroll_Universal').val(Math.ceil(roof_area / 67.5));
+            } else if (underlayer == 'Universal 2S') {
+                $('input.Divoroll_Universal_2S').val(Math.ceil(roof_area / 67.5));
+            } else if (underlayer == 'Top Ru') {
+                $('input.Divoroll_Top_Ru').val(Math.ceil(roof_area / 67.5));
+            }
+        }
+
+        calc_pallet_amount();
+    });
+
     $('#calc_delivery_cost').click(function () {
+        var tile = $('#tile_code').text();
         var postal_code = $('#postal_code').val();
         var product_price = calc_product_price();
         var pallet_amount = $('input.Lava').val();
@@ -119,6 +264,16 @@ $(document).ready(function () {
                     if (result[0] == null) {
                         $('#city').val(result[1]);
                         $('#delivery_cost').val(result[2]);
+                        if (tile_amount < 1 && lift) {
+                            alert('Katollenostoa ei laskettu toimituskuluihin koska kattotiilien yhteismäärä on 0');
+                        }
+                        if (tile == 'minster') {
+                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita: <br>Minster tiilellä nämä ovat <b>Tummanharmaa</b> ja <b>Antrasiitti</b> värisävyt');
+                        } else if (tile == 'turmalin') {
+                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita: <br>Turmalin tiilellä nämä ovat </b>Enkopoitu Antrasiitti</b> ja <b>Lasitettu Musta</b> värisävyt');
+                        } else if (tile == 'granat') {
+                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita: <br>Granat tiilellä tämä on </b>Savitiilenpunainen</b> värisävy');
+                        }
                     } else {
                         $('#city').val('');
                         $('#delivery_cost').val('');
@@ -134,12 +289,27 @@ $(document).ready(function () {
         }
     });
 
-    $('#empty_table').click(function () {
+    function empty_table() {
         $('#discount').val('');
         $('#postal_code').val('');
         $('#city').val('');
         $('#delivery_cost').val('');
         $('.C').find('input').val('');
         $('#main_table').calx();
+    }
+
+    function empty_calc_amounts_table() {
+        $('#roof_shape').val('Harjakatto');
+        $('#roof_area').val('');
+        $('#ridge_length').val('');
+        $('#ridge_tightening_material').val('Ei mitään');
+        $('#verge_material').val('Ei mitään');
+        $('#verge_length').val('');
+        $('#underlayer').val('Ei mitään');
+    }
+
+    $('#empty_table').click(function () {
+        empty_table();
+        empty_calc_amounts_table();
     });
 });

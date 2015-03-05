@@ -2,10 +2,10 @@
 <Tiili nimi="Ormax-betonikattotiili">
     <Tuotteet>
         <Kategoria kategoria="Kattotiilet">
-            <Tuote tuotenumero="160000208" nimi="Lapetiili" tyyppi="lape"></Tuote>
-            <Tuote tuotenumero="260000208" nimi="Harjatiili" tyyppi="harja"></Tuote>
-            <Tuote tuotenumero="220025208" nimi="Puolitiili" tyyppi="puoli"></Tuote>
-            <Tuote tuotenumero="260020208" nimi="Päätyreunatiili" tyyppi="reuna"></Tuote>
+            <Tuote tuotenumero="160000208" nimi="Lapetiili"></Tuote>
+            <Tuote tuotenumero="260000208" nimi="Harjatiili"></Tuote>
+            <Tuote tuotenumero="220025208" nimi="Puolitiili"></Tuote>
+            <Tuote tuotenumero="260020208" nimi="Päätyreunatiili"></Tuote>
         </Kategoria>
         <Kategoria kategoria="Erikoistiilet">
             <Tuote tuotenumero="299309208" nimi="Aloitusharjatiili"></Tuote>
@@ -84,4 +84,35 @@
             <Tuote tuotenumero="578370005" nimi="Lava"></Tuote>
         </Kategoria>
     </Tuotteet>
+    <Tiilitiedot>
+        <Info lavakoko="252"></Info>
+        <Info harjatiilien_lavakoko="50"></Info>
+        <Info päätyreunatiilien_lavakoko="60"></Info>
+        <Info minimimyyntierä="42"></Info>
+        <Info maksimi_tiilet_ilman_lavaa="42"></Info>
+        <Info neliömenekki="9.5"></Info>
+        <Info harjatiilimenekki="3"></Info>
+        <Info päätyreunatiilimenekki="3"></Info>
+        <Info lapetiilikiinnikemenekki="100"></Info>
+        <Info harjatiilikiinnikemenekki="50"></Info>
+        <Info päätykiinnikemenekki="50"></Info>
+        <Info harjatiiviste_tuotemäärä="4">
+            <Tuote>Ei mitään</Tuote>
+            <Tuote>Betoninen</Tuote>
+            <Tuote>Muovinen</Tuote>
+            <Tuote>Figaroll</Tuote>
+            <Tuote>Metalroll</Tuote>
+        </Info>
+        <Info päätymateriaali_tuotemäärä="2">
+            <Tuote>Ei mitään</Tuote>
+            <Tuote>Tiili</Tuote>
+            <Tuote>Pelti</Tuote>
+        </Info>
+        <Info aluskate_tuotemäärä="3">
+            <Tuote>Ei mitään</Tuote>
+            <Tuote>Universal</Tuote>
+            <Tuote>Universal 2S</Tuote>
+            <Tuote>Top Ru</Tuote>
+        </Info>
+    </Tiilitiedot>
 </Tiili>

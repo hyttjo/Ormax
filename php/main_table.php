@@ -2,14 +2,6 @@
     session_start();
     include 'scripts/mysql.php'; 
 
-    if($_GET['tiili']) {
-        $tile = $_GET['tiili'];
-    }else {
-        $tile = "ormax";
-    }
-    
-    $xml = simplexml_load_file('xml\\' . $tile . '.xml') or die("XML tiedostoa ei pysty lukemaan");
-
     $id = 0;
 ?>
 
@@ -29,8 +21,8 @@
                 <th class="H"></th>    
             </tr>
             <?php 
-            foreach ($xml -> children() as $tile) {
-                foreach ($tile -> children() as $category) {
+            foreach ($xml -> Tuotteet as $products) {
+                foreach ($products -> children() as $category) {
                     $category_name = $category['kategoria'];
             ?>
             <tr>
@@ -51,7 +43,12 @@
                             $calc_price_id = "D" . $id; 
                             $price_id = "E" . $id;
                             $calc_weight_id = "F" . $id;
-                            $price_formula = $amount_id . "*" . $price_id . "*((100-H1)/100)";
+
+                            if($category_name == 'Lavat') {
+                                $price_formula = $amount_id . "*" . $price_id;    
+                            } else {
+                                $price_formula = $amount_id . "*" . $price_id . "*((100-H1)/100)";    
+                            }
                             $weight_id = "G" . $id;
 
                             if ($category_name != 'Kattotiilet' && $category_name != 'Erikoistiilet') {           

@@ -1,24 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Tiili nimi="Protector+ -betonikattotiili">
+<Tiili nimi="Turmalin-savikattotiili">
     <Tuotteet>
         <Kategoria kategoria="Kattotiilet">
-            <Tuote tuotenumero="170001122" nimi="Lapetiili"></Tuote>
-            <Tuote tuotenumero="275100122" nimi="Harjatiili"></Tuote>
-            <Tuote tuotenumero="275025122" nimi="Puolitiili"></Tuote>
-            <Tuote tuotenumero="279319122" nimi="Päätyreunatiili"></Tuote>
+            <Tuote tuotenumero="197001157" nimi="Lapetiili"></Tuote>
+            <Tuote tuotenumero="297006157" nimi="Harjatiili"></Tuote>
+            <Tuote tuotenumero="297001157" nimi="Puolitiili"></Tuote>
+            <Tuote tuotenumero="297003157" nimi="Päätytiili vasen"></Tuote>
+            <Tuote tuotenumero="297013157" nimi="Puolipäätytiili vasen"></Tuote>
+            <Tuote tuotenumero="297004157" nimi="Päätytiili oikea"></Tuote>
+            <Tuote tuotenumero="297014157" nimi="Puolipäätytiili oikea"></Tuote>
         </Kategoria>
         <Kategoria kategoria="Erikoistiilet">
-            <Tuote tuotenumero="275311122" nimi="Aloitusharjatiili"></Tuote>
-            <Tuote tuotenumero="275216122" nimi="Lopetusharjatiili"></Tuote>
-            <Tuote tuotenumero="275214122" nimi="Ulkot. aloitusharjatiili"></Tuote>      
-            <Tuote tuotenumero="275203122" nimi="Ulkot. X-harjatiili"></Tuote>
-            <Tuote tuotenumero="275202122" nimi="X-harjatili"></Tuote>
-            <Tuote tuotenumero="275215122" nimi="Y-harjatiili"></Tuote>
+            <Tuote tuotenumero="297007157" nimi="Aloitusharjatiili"></Tuote>
+            <Tuote tuotenumero="297008157" nimi="Lopetusharjatiili"></Tuote>
+            <Tuote tuotenumero="297095157" nimi="Y-harjatiili"></Tuote>      
         </Kategoria>
         <Kategoria kategoria="Kiinnikkeet">
-            <Tuote tuotenumero="306210100" nimi="Lapetiilinaula"></Tuote>
-            <Tuote tuotenumero="306523508" nimi="Harjatiilen kiinnike"></Tuote>
-            <Tuote tuotenumero="306390008" nimi="Reunatiiliruuvi"></Tuote>      
+            <Tuote tuotenumero="306100200" nimi="Lapetiilen kiinnike"></Tuote>
+            <Tuote tuotenumero="306527996" nimi="Harjatiilen kiinnike"></Tuote>     
             <Tuote tuotenumero="306300408" nimi="Listaruuvi"></Tuote>
             <Tuote tuotenumero="306300205" nimi="Harjapuun kiinnityskulma"></Tuote>
             <Tuote tuotenumero="306500115" nimi="Leikatun tiilen kiinnike"></Tuote>
@@ -41,14 +40,10 @@
             <Tuote tuotenumero="309900008" nimi="Sisätaitetiiviste 5m"></Tuote>
         </Kategoria>
         <Kategoria kategoria="Tiivisteet">
-            <Tuote tuotenumero="303310008" nimi="Päätykappale"></Tuote>
-            <Tuote tuotenumero="299308208" nimi="Betoninen harjatiiviste"></Tuote>
-            <Tuote tuotenumero="303200108" nimi="Muovinen harjatiiviste"></Tuote>      
-            <Tuote tuotenumero="303910408" nimi="Figaroll Plus"></Tuote>
+            <Tuote tuotenumero="399100018" nimi="Tiivistepala"></Tuote>     
             <Tuote tuotenumero="303100008" nimi="Metalroll"></Tuote>
             <Tuote tuotenumero="305900108" nimi="Wakaflex 5m"></Tuote>
             <Tuote tuotenumero="305300008" nimi="Wakaflex 1m"></Tuote>
-            <Tuote tuotenumero="307411180" nimi="Lintueste 5m"></Tuote>
         </Kategoria>
         <Kategoria kategoria="Aluskatteet">
             <Tuote tuotenumero="304910308" nimi="Divoroll Top Ru"></Tuote>
@@ -56,10 +51,9 @@
             <Tuote tuotenumero="304500199" nimi="Divoroll Universal 2S"></Tuote>      
         </Kategoria>
         <Kategoria kategoria="Kattoturvat">
-            <Tuote tuotenumero="810000208" nimi="Kattosiltapaketti 3m"></Tuote>
-            <Tuote tuotenumero="810000108" nimi="Lumiestepaketti 1-putk. 3m"></Tuote>
-            <Tuote tuotenumero="810001108" nimi="Lumiestepaketti 2-putk. 3m"></Tuote>      
-            <Tuote tuotenumero="377347171" nimi="Tikasaskelma"></Tuote>
+            <Tuote tuotenumero="810000008" nimi="Kattosiltapaketti 3m"></Tuote>
+            <Tuote tuotenumero="810000028" nimi="Lumiestepaketti 2-putk. 3m"></Tuote>      
+            <Tuote tuotenumero="377355171" nimi="Tikasaskelma"></Tuote>
             <Tuote tuotenumero="810000304" nimi="Seinätikaspaketti 3,3m"></Tuote>
             <Tuote tuotenumero="810000404" nimi="Seinätikaspaketti 4,2m"></Tuote>
             <Tuote tuotenumero="810000506" nimi="Seinätikaspaketti 5,4m"></Tuote>
@@ -69,38 +63,36 @@
             <Tuote tuotenumero="302321208" nimi="Turvatikkaan sivutankosarja"></Tuote>
         </Kategoria>
         <Kategoria kategoria="Läpiviennit">
-            <Tuote tuotenumero="308300308" nimi="Kattoluukku"></Tuote>
-            <Tuote tuotenumero="301300008" nimi="Eristämätön 110mm"></Tuote>
-            <Tuote tuotenumero="301300508" nimi="Eristetty 110mm"></Tuote>      
-            <Tuote tuotenumero="301300108" nimi="Eristetty 125mm"></Tuote>
-            <Tuote tuotenumero="301300208" nimi="Eristetty 160mm"></Tuote>
-            <Tuote tuotenumero="810000608" nimi="Huippuimuri 125mm"></Tuote>
-            <Tuote tuotenumero="892150008" nimi="Radonimuri"></Tuote>
+            <Tuote tuotenumero="308103008" nimi="Kattoluukku"></Tuote>
+            <Tuote tuotenumero="892171108" nimi="Eristämätön 110mm"></Tuote>
+            <Tuote tuotenumero="892172111" nimi="Eristetty 110mm"></Tuote>      
+            <Tuote tuotenumero="892173108" nimi="Eristetty 125mm"></Tuote>
+            <Tuote tuotenumero="892174111" nimi="Eristetty 160mm"></Tuote>
+            <Tuote tuotenumero="892170408" nimi="Huippuimuri 125mm"></Tuote>
+            <Tuote tuotenumero="892170008" nimi="Radonimuri"></Tuote>
+            <Tuote tuotenumero="341005008" nimi="Läpivientikappale"></Tuote>
+            <Tuote tuotenumero="341011008" nimi="Läpivientilevy"></Tuote>
             <Tuote tuotenumero="301300708" nimi="Tuuletusputken hattu 110mm"></Tuote>
             <Tuote tuotenumero="301300808" nimi="Tuuletusputken hattu 125mm"></Tuote>      
-            <Tuote tuotenumero="301311108" nimi="Harjatuuletustiili"></Tuote>
         </Kategoria>
         <Kategoria kategoria="Lavat">
             <Tuote tuotenumero="578370005" nimi="Lava"></Tuote>
         </Kategoria>
     </Tuotteet>
     <Tiilitiedot>
-        <Info lavakoko="252"></Info>
-        <Info harjatiilien_lavakoko="50"></Info>
+        <Info lavakoko="210"></Info>
+        <Info harjatiilien_lavakoko="80"></Info>
         <Info päätyreunatiilien_lavakoko="60"></Info>
-        <Info minimimyyntierä="42"></Info>
-        <Info maksimi_tiilet_ilman_lavaa="42"></Info>
-        <Info neliömenekki="9.5"></Info>
+        <Info minimimyyntierä="105"></Info>
+        <Info maksimi_tiilet_ilman_lavaa="10"></Info>
+        <Info neliömenekki="11.5"></Info>
         <Info harjatiilimenekki="3"></Info>
-        <Info päätyreunatiilimenekki="3"></Info>
-        <Info lapetiilikiinnikemenekki="100"></Info>
+        <Info päätyreunatiilimenekki="0.75"></Info>
+        <Info lapetiilikiinnikemenekki="65.22"></Info>
         <Info harjatiilikiinnikemenekki="50"></Info>
         <Info päätykiinnikemenekki="50"></Info>
-        <Info harjatiiviste_tuotemäärä="4">
+        <Info harjatiiviste_tuotemäärä="1">
             <Tuote>Ei mitään</Tuote>
-            <Tuote>Betoninen</Tuote>
-            <Tuote>Muovinen</Tuote>
-            <Tuote>Figaroll</Tuote>
             <Tuote>Metalroll</Tuote>
         </Info>
         <Info päätymateriaali_tuotemäärä="2">

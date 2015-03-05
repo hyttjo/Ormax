@@ -4,13 +4,15 @@ body, html {
     height: 100%;
     margin: 0px 0px 20px 0px;
     padding: 0px;
-    background-color: rgba(241, 241, 241, 1);
     font-family: arial;
     text-align: center;
+    background-color: #f1f1f1;
 }
 
 #container {
     display: inline-block;
+    min-width: 810px;
+    max-width: fit-content;
     margin:  0px auto;
     background-color: #ffffff;
     border-left: 1px solid grey;
@@ -210,60 +212,18 @@ select {
     background-color: #f04b4b; 
 }
 
-#logged_in_header.krauta td {
+#logged_in_header.rautakesko td {
     background-color: #e6e6e6;
 }
 
-#logged_in_header.krauta #logout a {
+#logged_in_header.rautakesko #logout a {
     color: #202020;
     background-color: #A1A1A1;
 }
 
-#logged_in_header.krauta #logout a:hover {
+#logged_in_header.rautakesko #logout a:hover {
     color: #363636;
     background-color: #BDBDBD;
-}
-
-#logged_in_header.rautia td {
-    background-color: #00599e;
-}
-    
-#logged_in_header.rautia #logout a {
-    color: #CCD7E3;
-    background-color: #003E6F;
-}
-
-#logged_in_header.rautia #logout a:hover {
-    color: #003E6F;
-    background-color: #4d8bbb;
-}
-
-#logged_in_header.puukeskus td {
-    background-color: #ffdd00;
-}
-
-#logged_in_header.puukeskus #logout a {
-    color: #94B3A5;
-    background-color: #004a2a;
-}
-
-#logged_in_header.puukeskus #logout a:hover {
-    color: #004a2a;
-    background-color: #66927F;
-}
-
-#logged_in_header.byggmax td {
-    background-color: #ffe716;
-}
-
-#logged_in_header.byggmax #logout a {
-    color: 	#FAEAE9;
-    background-color: #cf2a1f;
-}
-
-#logged_in_header.byggmax #logout a:hover {
-    color: #ffee5c;
-    background-color: #911D16;
 }
 
 #logged_in_header.rautanet td {
@@ -280,39 +240,52 @@ select {
     background-color: #4d84bd;
 }
 
-#logged_in_header.srauta td
- {
+#logged_in_header.starkki td {
+    background-color: #d8004b;
+}
+
+#logged_in_header.starkki #logout a {
+    color: #f3f3f3;
+    background-color: #E0336F;
+}
+
+#logged_in_header.starkki #logout a:hover {
+    color: #f3f3f3;
+    background-color: #970034;
+}
+
+#logged_in_header.hankkija td {
+    background-color: #0c9859;
+}
+
+#logged_in_header.hankkija #logout a {
+    color: #f3f3f3;
+    background-color: #00630b;
+}
+
+#logged_in_header.hankkija #logout a:hover {
+    color: #f3f3f3;
+    background-color: #62da54;
+}
+
+#logged_in_header.sok td {
     background-color: #ffffff;
 }
 
-#logged_in_header.srauta #logout a {
+#logged_in_header.sok #logout a {
     color: #f3f3f3;
-    background-color: #077f48;
+    background-color: #055fa9;
 }
 
-#logged_in_header.srauta #logout a:hover {
-    color: #077f48;
-    background-color: #f39612;
-}
-
-#logged_in_header.kodinterra td
- {
-    background-color: #007948;
-}
-
-#logged_in_header.kodinterra #logout a {
+#logged_in_header.sok #logout a:hover {
     color: #f3f3f3;
-    background-color: #005532;
-}
-
-#logged_in_header.kodinterra #logout a:hover {
-    color: #005532;
-    background-color: #4DA17F;
+    background-color: #0d469d;
 }
 
 /******* Main Table ********/
 
 table {
+    width: 100%;
     vertical-align: middle;
     border-collapse: collapse;
 }
@@ -428,6 +401,31 @@ td.D {
     padding: 5px 20px;
 }
 
+#calc_amounts_table tr:nth-child(2) > * {
+    padding-top: 15px;
+}
+
+#calc_amounts_table td:nth-child(even) {
+    padding-left: 0px;
+}
+
+#calc_amounts_table select {
+    width: 105px;
+    margin-bottom: 0px;
+}
+
+#calc_amounts_table input {
+    max-width: 75px;
+}
+
+#calc_amounts_table span {
+    font-size: 90%;
+}
+
+#calc_amounts_table tr:last-child > * {
+    padding-top: 20px;
+}
+
 #discount_table td {
     padding: 20px 20px 20px 20px;
 }
@@ -437,14 +435,14 @@ td.D {
     margin-right: 10px;
 }
 
-#delivery_cost_table tr:nth-child(6) > * {
-    padding-top: 20px;
-}
-
 #delivery_cost_table tr:nth-child(2) > * {
     padding: 10px 0px 10px 15px;
     vertical-align: middle;
     font-size: 85%;
+}
+
+#delivery_cost_table tr:last-child > * {
+    padding-top: 20px;
 }
 
 #total_cost_table td {
@@ -467,6 +465,14 @@ td.D {
 
 [data-cell='H4'], [data-cell='H6'] {
     border-left: 1px solid grey;
+}
+
+#empty_table {
+    margin-bottom: 30px;
+}
+
+#tile_info_table {
+    display: none;
 }
 
 /******* Footer ********/

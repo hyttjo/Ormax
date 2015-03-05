@@ -6,6 +6,14 @@
     } else {
        header('Location: php/login.php'); 
     }
+
+    if($_GET['tiili']) {
+        $tile = $_GET['tiili'];
+    }else {
+        $tile = "ormax";
+    }
+    
+    $xml = simplexml_load_file('xml\\' . $tile . '.xml') or die("XML tiedostoa ei pysty lukemaan");
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +25,9 @@
         <title>Ormax Monier Oy - Hinnastolaskenta 2015</title>
 
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!--[if IE]>
+	        <link rel="stylesheet" type="text/css" href="css/ie9_and_older_style.css">
+        <![endif]-->
 
         <script src="../js/libs/head.min.js"></script>
 

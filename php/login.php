@@ -15,6 +15,9 @@
         <title>Ormax Monier Oy - Hinnastolaskenta 2015</title>
 
         <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <!--[if IE]>
+	        <link rel="stylesheet" type="text/css" href="../css/ie9_and_older_style.css">
+        <![endif]-->
 
         <script src="../js/libs/head.min.js"></script>
 
@@ -34,11 +37,11 @@
                 <form method="post" action="scripts/login_auth.php" accept-charset="utf-8">
                     <div class="input_row">
                         <label>Käyttäjätunnus:</label>
-                        <input name="username" type="text" pattern=".{4,14}" title="4-14 merkkiä" required></input>
+                        <input name="username" type="text" pattern=".{3,14}" title="3-14 merkkiä" required></input>
                     </div>
                     <div class="input_row">
                         <label>Salasana:</label>
-                        <input name="password" type="password" pattern=".{4,14}" title="4-14 merkkiä" required></input>
+                        <input name="password" type="password" pattern=".{3,14}" title="3-14 merkkiä" required></input>
                     </div>
                     <button type="submit">Kirjaudu</button>
                 </form>
