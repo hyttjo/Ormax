@@ -23,8 +23,16 @@ $(document).ready(function () {
     $('#main_table').calx();
 
     $('#tile_selection').change(function () {
+        var to = $(this).find('option:selected').attr('data-to');
+
+        var from = '';
+
+        if (to == 'ormax') {
+            from = 'ormax';
+        }
+
         var tile = $(this).val();
-        $(location).attr('href', 'index.php?tiili=' + tile);
+        $(location).attr('href', 'index.php?from=' + from + '&tiili=' + tile);
     });
 
     function calc_tile_amount() {
@@ -94,7 +102,9 @@ $(document).ready(function () {
         if (ridgetile_amount > 0) { pallet_amount = pallet_amount + Math.ceil(ridgetile_amount / ridge_pallet_size); }
         if (vergetile_amount > 0) { pallet_amount = pallet_amount + Math.ceil(vergetile_amount / verge_pallet_size); }
         pallet_amount = pallet_amount + Math.ceil(pipe_amount / 5);
-        pallet_amount = pallet_amount + Math.ceil(weight_for_pallet_products / 75);
+        if (weight_for_pallet_products > 4) {
+            pallet_amount = pallet_amount + Math.ceil(weight_for_pallet_products / 75);
+        }
 
         $('input.Lava').val(pallet_amount);
         $('#main_table').calx();
@@ -268,11 +278,11 @@ $(document).ready(function () {
                             alert('Katollenostoa ei laskettu toimituskuluihin koska kattotiilien yhteismäärä on 0');
                         }
                         if (tile == 'minster') {
-                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita: \n Minster tiilellä nämä ovat Tummanharmaa ja Antrasiitti värisävyt');
+                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita:\n\nMinster tiilellä nämä ovat Tummanharmaa ja Antrasiitti värisävyt');
                         } else if (tile == 'turmalin') {
-                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita: \n Turmalin tiilellä nämä ovat Enkopoitu Antrasiitti ja Lasitettu Musta värisävyt');
+                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita:\n\nTurmalin tiilellä nämä ovat Enkopoitu Antrasiitti ja Lasitettu Musta värisävyt');
                         } else if (tile == 'granat') {
-                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita: \n Granat tiilellä tämä on Savitiilenpunainen värisävy');
+                            alert('Huom. laskettu toimituskustannus koskee vain varastotuotteita:\n\nGranat tiilellä tämä on Savitiilenpunainen värisävy');
                         }
                     } else {
                         $('#city').val('');

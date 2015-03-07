@@ -1,7 +1,7 @@
 <?php
     session_start();
     include 'mysql.php';
-    
+
     $username = str_replace("'", "", $_POST["username"]);
     $password = str_replace("'", "", $_POST["password"]);
     
@@ -14,9 +14,14 @@
     
     if($num_rows == 1) {
         $_SESSION["logged_in"] = true;
-        $_SESSION["username"] = $row["nimi"];
-        header('Location: ../../index.php');
+        $nimi = $row["nimi"];
+        $_SESSION["username"] = $nimi;
+
+        $query="UPDATE kayttajat SET kayntikerrat = kayntikerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$nimi'";
+        mysqli_query($con, $query) or die(mysqli_error($con));
+
+        header("Location: ../../index.php");
     } else {
-        header('Location: ../login.php?failed');
+        header("Location: ../login.php?failed");
     }
 ?>

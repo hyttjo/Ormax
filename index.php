@@ -4,7 +4,7 @@
     if($_SESSION['logged_in']) {
        $user = $_SESSION['username'];
     } else {
-       header('Location: php/login.php'); 
+       header("Location: php/login.php"); 
     }
 
     if($_GET['tiili']) {
@@ -24,19 +24,19 @@
 
         <title>Ormax Monier Oy - Hinnastolaskenta 2015</title>
 
-        <link rel="stylesheet" type="text/css" href="css/style1.css">
+        <link rel="stylesheet" type="text/css" href="css/ormax_style.css">
         <!--[if IE]>
-	        <link rel="stylesheet" type="text/css" href="css/ie9_and_older_style.css">
+	        <link rel="stylesheet" type="text/css" href="css/ie9_and_older_style1.css">
         <![endif]-->
 
         <script src="../js/libs/head.min.js"></script>
 
         <script>
             head.js(["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js",
-                     "../js/libs/numeral.min.js",
-                     "../js/libs/jquery-calx-2.0.5.min.js",
-                     "../js/script1.js",
-                     "../js/google_analytics.js"]);
+                     "js/libs/numeral.min.js",
+                     "js/libs/jquery-calx-2.0.5.min.js",
+                     "js/script2.js",
+                     "js/google_analytics.js"]);
         </script>
     </head>
     <body>

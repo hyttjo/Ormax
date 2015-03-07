@@ -19,6 +19,12 @@
         $vittinge_e13_selected = 'selected';
     } else {
         $tile_selection = 'ormax';
+    }
+    
+    if ($_GET['from'] == 'ormax') {
+        $to = 'ormax';
+    } else {
+        $to = '';
     }  
 ?>
 
@@ -28,7 +34,7 @@
     <body>
         <table>
             <tr id="logged_in_header" class="<?php echo $user ?>">
-                <td colspan="2">
+                <td>
                     <img src="img/<?php echo $user ?>.png" alt="Käyttäjän logo"></img> 
                 </td>
                 <td id="logout">
@@ -37,18 +43,15 @@
             </tr>
             <tr>
                 <td>
-                    <img id="ormax_logo" src="img/ormax_logo.png" alt="Ormax tiilikatot logo"></img>
-                </td>
-                <td>
                     <h1>Hinnastolaskenta 2015</h1>
                     <select id="tile_selection">
-                        <option value="ormax" <?php echo $ormax_selected; ?>>Ormax-betonikattotiili</option>
-                        <option value="protector" <?php echo $protector_selected; ?>>Protector-betonikattotiili</option>
-                        <option value="minster" <?php echo $minster_selected; ?>>Minster-betonikattotiili</option>
-                        <option value="turmalin" <?php echo $turmalin_selected; ?>>Turmalin-savikattotiili</option>
-                        <option value="granat" <?php echo $granat_selected; ?>>Granat-savikattotiili</option>
-                        <option value="vittinge_t11" <?php echo $vittinge_t11_selected; ?>>Vittinge T11-savikattotiili</option>
-                        <option value="vittinge_e13" <?php echo $vittinge_e13_selected; ?>>Vittinge E13-savikattotiili</option>
+                        <option data-to="<?php echo $to ?>" value="ormax" <?php echo $ormax_selected; ?>>Ormax-betonikattotiili</option>
+                        <option data-to="<?php echo $to ?>" value="protector" <?php echo $protector_selected; ?>>Protector-betonikattotiili</option>
+                        <option data-to="<?php echo $to ?>" value="minster" <?php echo $minster_selected; ?>>Minster-betonikattotiili</option>
+                        <option data-to="<?php echo $to ?>" value="turmalin" <?php echo $turmalin_selected; ?>>Turmalin-savikattotiili</option>
+                        <option data-to="<?php echo $to ?>" value="granat" <?php echo $granat_selected; ?>>Granat-savikattotiili</option>
+                        <option data-to="<?php echo $to ?>" value="vittinge_t11" <?php echo $vittinge_t11_selected; ?>>Vittinge T11-savikattotiili</option>
+                        <option data-to="<?php echo $to ?>" value="vittinge_e13" <?php echo $vittinge_e13_selected; ?>>Vittinge E13-savikattotiili</option>
                     </select>
                 </td>
                 <td id="tile_image">
