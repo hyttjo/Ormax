@@ -1,4 +1,5 @@
-$(document).ready(function () {
+$.noConflict();
+jQuery(document).ready(function ($) {
     numeral.language('fi', {
         delimiters: {
             thousands: ' ',
@@ -105,7 +106,7 @@ $(document).ready(function () {
         if (weight_for_pallet_products > 4) {
             pallet_amount = pallet_amount + Math.ceil(weight_for_pallet_products / 75);
         }
-
+        $('input.Lava').val('');
         $('input.Lava').val(pallet_amount);
         $('#main_table').calx();
     }
@@ -120,6 +121,7 @@ $(document).ready(function () {
         }
 
         if (!$(this).hasClass('Lava')) {
+            $('#main_table').calx();
             calc_pallet_amount();
         }
     });

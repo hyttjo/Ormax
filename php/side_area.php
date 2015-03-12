@@ -104,7 +104,7 @@
             <tr>
                 <th colspan="2">Toimituskustannukset</th>
             </tr>
-            <tr>
+            <tr class="checkboxes">
                 <td>
                     <input id="insurance_delivery" type="checkbox" value="insurance" checked>Kuljetusvakuutus</input>
                 </td>

@@ -14,19 +14,19 @@
 
         <title>Ormax Monier Oy - Hinnastolaskenta 2015</title>
 
-        <link rel="stylesheet" type="text/css" href="../css/ormax_style.css">
+        <link rel="stylesheet" type="text/css" href="../css/ormax_style2.css">
 
         <script src="../js/libs/head.min.js"></script>
 
         <script>
-            head.js(["https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+            head.js(["https://code.jquery.com/jquery-1.9.1.min.js",
                      "../js/libs/numeral.min.js",
                      "../js/libs/jquery-calx-2.0.5.min.js",
-                     "../js/script2.js",
+                     "../js/script3.js",
                      "../js/google_analytics.js"]);
         </script>
     </head>
-    <body>
+    <body onload="parent.postMessage(document.body.scrollHeight, 'http://www.ormax.fi/ammattilaisille/hinnastolaskenta/');">
         <div id="login_wrapper">
             <div id="login">
                 <div id="login_header">Kirjaudu sisään:</div>
