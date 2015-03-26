@@ -51,7 +51,7 @@
                             }
                             $weight_id = "G" . $id;
 
-                            if ($category_name != 'Kattotiilet' && $category_name != 'Erikoistiilet') {           
+                            if ($category_name != 'Kattotiilet') {           
                                 $weight_formula = $amount_id . "*" . $weight_id;
                             }
 

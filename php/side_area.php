@@ -104,12 +104,13 @@
             <tr>
                 <th colspan="2">Toimituskustannukset</th>
             </tr>
-            <tr class="checkboxes">
+            <tr>
+                <td>Katolle nosto:</td>
                 <td>
-                    <input id="insurance_delivery" type="checkbox" value="insurance" checked>Kuljetusvakuutus</input>
-                </td>
-                <td>
-                    <input id="lift_to_roof" type="checkbox" value="lift">Katolle nosto</input>
+                    <select id="lift_to_roof">
+                        <option>Ei</option>
+                        <option>Kyllä</option>
+                    </select>
                 </td>
             </tr>
             <tr>
@@ -127,7 +128,7 @@
             <tr>
                 <td>Rahtihinta:</td>
                 <td>
-                    <input id="delivery_cost" data-cell="H2" readonly></input>
+                    <input id="delivery_cost" data-cell="H2" data-format="0[.]00 $" readonly></input>
                 </td>
             </tr>
             <tr>

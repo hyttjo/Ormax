@@ -1,14 +1,23 @@
 <?php
-    session_start();
+    header('P3P: CP="NOI ADM DEV COM NAV OUR STP"');
 
+    session_start();
+    include 'php/scripts/mysql.php';
+    
     if($_SESSION['logged_in']) {
-       $user = $_SESSION['username'];
+        $user = $_SESSION['username'];
+        $query = "SELECT * FROM kayttajat WHERE nimi = '$user'";
+        $result = mysqli_query($con, $query) or die(mysqli_error($con));
+        $row = mysqli_fetch_array($result);
+        $nimi = $row['nimi'];
+        $query="UPDATE kayttajat SET latauskerrat = latauskerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$nimi'";
+        mysqli_query($con, $query) or die(mysqli_error($con));
     } else {
        header("Location: php/login.php"); 
     }
-
+    
     if($_SERVER['HTTP_REFERER'] == '') {
-        header("Location: http://www.ormax.fi/ammattilaisille/hinnastolaskenta/");  
+        header("Location: http://www.ormax.fi/ammattilaisille/tarjouslaskuri/");  
     }
 
     if($_GET['tiili']) {
@@ -19,7 +28,6 @@
     
     $xml = simplexml_load_file('xml\\' . $tile . '.xml') or die("XML tiedostoa ei pysty lukemaan");
 ?>
-
 <!DOCTYPE html>
 
 <html lang="fi">
@@ -29,7 +37,7 @@
 
         <title>Ormax Monier Oy - Hinnastolaskenta 2015</title>
 
-        <link rel="stylesheet" type="text/css" href="css/ormax_style2.css">
+        <link rel="stylesheet" type="text/css" href="css/ormax_style3.css">
 
         <script src="../js/libs/head.min.js"></script>
 
@@ -37,11 +45,11 @@
             head.js(["https://code.jquery.com/jquery-1.9.1.min.js",
                      "js/libs/numeral.min.js",
                      "js/libs/jquery-calx-2.0.5.min.js",
-                     "js/script3.js",
+                     "js/script5.js",
                      "js/google_analytics.js"]);
         </script>
     </head>
-    <body onload="parent.postMessage(document.body.scrollHeight, 'http://www.ormax.fi/ammattilaisille/hinnastolaskenta/');">
+    <body>
         <div id="container">
             <header>
                 <?php include 'php/header.php'; ?>

@@ -2,7 +2,7 @@ $.noConflict();
 jQuery(document).ready(function ($) {
     numeral.language('fi', {
         delimiters: {
-            thousands: ' ',
+            thousands: '',
             decimal: '.'
         },
         abbreviations: {
@@ -123,6 +123,14 @@ jQuery(document).ready(function ($) {
         if (!$(this).hasClass('Lava')) {
             $('#main_table').calx();
             calc_pallet_amount();
+        }
+
+        if ($('#delivery_cost').val() != '') {
+            if ($(this).attr("id") != "postal_code" && $(this).attr("id") != "discount" && $(this).attr("id") != "verge_length" && $(this).attr("id") != "ridge_length" && $(this).attr("id") != "roof_area") {
+                $('#delivery_cost').val('');
+                $("td[data-cell='H4']").text('Päivitä rahti');
+                $("td[data-cell='H6']").text('Päivitä rahti');
+            }
         }
     });
 
@@ -262,21 +270,20 @@ jQuery(document).ready(function ($) {
         var pallet_amount = $('input.Lava').val();
         var tile_amount = calc_tile_amount();
         var other_product_weight = parseFloat($("td[data-cell='F100']").text());
-        var insurance = $('#insurance_delivery').prop('checked');
-        var lift = $('#lift_to_roof').prop('checked');
+        var lift = $('#lift_to_roof').val();
 
         if (postal_code.length == 5) {
             $.ajax({
                 type: 'post',
                 url: 'php/scripts/calc_delivery_cost.php',
-                data: 'postal_code=' + postal_code + '&tile_amount=' + tile_amount + '&product_price=' + product_price + '&other_product_weight=' + other_product_weight + '&pallet_amount=' + pallet_amount + '&insurance=' + insurance + '&lift=' + lift,
+                data: 'postal_code=' + postal_code + '&tile_amount=' + tile_amount + '&product_price=' + product_price + '&other_product_weight=' + other_product_weight + '&pallet_amount=' + pallet_amount + '&lift=' + lift,
                 success: function (data) {
                     var result = $.parseJSON(data);
 
                     if (result[0] == null) {
                         $('#city').val(result[1]);
                         $('#delivery_cost').val(result[2]);
-                        if (tile_amount < 1 && lift) {
+                        if (tile_amount < 1 && lift == 'Kyllä') {
                             alert('Katollenostoa ei laskettu toimituskuluihin koska kattotiilien yhteismäärä on 0');
                         }
                         if (tile == 'minster') {

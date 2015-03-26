@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include 'mysql.php';
 
     $postal_code = $_POST['postal_code'];
@@ -6,7 +7,6 @@
     $tile_amount = $_POST['tile_amount'];
     $other_product_weight = $_POST['other_product_weight'];
     $pallet_amount = $_POST['pallet_amount']; 
-    $insurance_true_false = $_POST['insurance'];
     $lift_true_false = $_POST['lift'];
 
     $tiles_delivery_cost = 0;
@@ -30,6 +30,14 @@
         $weight_range = '400-700';
     if ($other_product_weight > 701)
         $weight_range = '700-1000';
+
+    $user = $_SESSION['username'];
+    $query = "SELECT * FROM kayttajat WHERE nimi = '$user'";
+    $result = mysqli_query($con, $query) or die(mysqli_error($con));
+    $row = mysqli_fetch_array($result);
+    $nimi = $row["nimi"];
+    $query="UPDATE kayttajat SET laskentakerrat = laskentakerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$nimi'";
+    mysqli_query($con, $query) or die(mysqli_error($con));
 
     $query="SELECT * FROM osoitteisto WHERE postinumero = '$postal_code'";
 
@@ -61,17 +69,15 @@
         $packaging_cost = 17;
     }
 
-    if ($insurance_true_false == 'true') {
-        $insurance = $product_price * 0.008;
-    }
+    $insurance = $product_price * 0.008;
 
-    if ($lift_true_false == 'true') {
+    if ($lift_true_false == 'Kyllä') {
         $lift_to_roof = $tile_amount / 1000 * 149;
     }
 
     $delivery_cost = number_format($tiles_delivery_cost + $other_product_delivery_cost + $insurance + $packaging_cost + $lift_to_roof, 2);
 
-    if($can_lift_to_roof == null && $lift_true_false == 'true') {
+    if($can_lift_to_roof == null && $lift_true_false == 'Kyllä') {
         $fail_message = 'Katolle nosto ei mahdollista kyseiselle postinumeroalueelle.';
     }
 
