@@ -7,6 +7,7 @@
     $tile_amount = $_POST['tile_amount'];
     $other_product_weight = $_POST['other_product_weight'];
     $pallet_amount = $_POST['pallet_amount']; 
+    $pallet_size = $_POST['pallet_size'];
     $lift_true_false = $_POST['lift'];
 
     $tiles_delivery_cost = 0;
@@ -72,6 +73,9 @@
     $insurance = $product_price * 0.008;
 
     if ($lift_true_false == 'Kyllä') {
+        if ($tile_amount < $pallet_size * 4) {
+            $tile_amount = $pallet_size * 4;
+        }
         $lift_to_roof = $tile_amount / 1000 * 149;
     }
 

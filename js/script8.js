@@ -1,5 +1,13 @@
 $.noConflict();
 jQuery(document).ready(function ($) {
+    function cookiesEnabled() {
+        return $.cookie('check', 'valid', { expires: 1 }) && $.cookie('check') == 'valid';
+    }
+
+    if(!cookiesEnabled()) {
+        $('#cookies_message').show();
+    }
+
     numeral.language('fi', {
         delimiters: {
             thousands: '',
@@ -269,6 +277,7 @@ jQuery(document).ready(function ($) {
         var product_price = calc_product_price();
         var pallet_amount = $('input.Lava').val();
         var tile_amount = calc_tile_amount();
+        var pallet_size = $('#tile_pallet_size').text();
         var other_product_weight = parseFloat($("td[data-cell='F100']").text());
         var lift = $('#lift_to_roof').val();
 
@@ -276,7 +285,7 @@ jQuery(document).ready(function ($) {
             $.ajax({
                 type: 'post',
                 url: 'php/scripts/calc_delivery_cost.php',
-                data: 'postal_code=' + postal_code + '&tile_amount=' + tile_amount + '&product_price=' + product_price + '&other_product_weight=' + other_product_weight + '&pallet_amount=' + pallet_amount + '&lift=' + lift,
+                data: 'postal_code=' + postal_code + '&tile_amount=' + tile_amount + '&product_price=' + product_price + '&other_product_weight=' + other_product_weight + '&pallet_amount=' + pallet_amount + '&pallet_size=' + pallet_size + '&lift=' + lift,
                 success: function (data) {
                     var result = $.parseJSON(data);
 
