@@ -160,6 +160,10 @@
         </table>
 
         <div class="center">
+            <button id="send_quote_to_mail">Lähetä tarjous sähköpostiin</button>
+        </div>
+
+        <div class="center">
             <button id="empty_table">Tyhjennä taulukko</button>
         </div>
 

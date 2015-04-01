@@ -48,7 +48,8 @@
         <Kategoria kategoria="Aluskatteet">
             <Tuote tuotenumero="304910308" nimi="Divoroll Top Ru"></Tuote>
             <Tuote tuotenumero="304900008" nimi="Divoroll Universal"></Tuote>
-            <Tuote tuotenumero="304500199" nimi="Divoroll Universal 2S"></Tuote>      
+            <Tuote tuotenumero="304500199" nimi="Divoroll Universal 2S"></Tuote> 
+            <Tuote tuotenumero="304900108" nimi="Span-Flex"></Tuote>     
         </Kategoria>
         <Kategoria kategoria="Kattoturvat">
             <Tuote tuotenumero="810000008" nimi="Kattosiltapaketti 3m"></Tuote>
@@ -100,11 +101,12 @@
             <Tuote>Tiili</Tuote>
             <Tuote>Pelti</Tuote>
         </Info>
-        <Info aluskate_tuotemäärä="3">
+        <Info aluskate_tuotemäärä="4">
             <Tuote>Ei mitään</Tuote>
             <Tuote>Universal</Tuote>
             <Tuote>Universal 2S</Tuote>
             <Tuote>Top Ru</Tuote>
+            <Tuote>Span-Flex</Tuote>
         </Info>
     </Tiilitiedot>
 </Tiili>

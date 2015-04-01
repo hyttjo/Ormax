@@ -1,0 +1,149 @@
+body {
+    margin:  0px;
+    padding: 0px;
+    font-family: Arial;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 2px 10px 2px 25px;
+    text-align: left;
+    color:  #ffffff;
+    font-weight: bold;
+    background-color: #C62D1F;
+    border-left: 1px solid #882118;
+    border-right: 1px solid #882118;
+}
+
+#header {
+    height: 92px; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: top right;
+}
+
+#ormax_logo {
+    width: 20%;
+    padding: 30px 20px 30px 30px;
+}
+
+#header_text {
+   width: 80%;
+   font-size: 135%;
+   vertical-align: bottom;
+   padding: 0px 0px 17px 27px;
+}
+
+#subheader {
+    font-size: 90%;
+}
+
+#main_table {
+    margin: 0px 30px 0px 30px;
+}
+
+#product_table table, #delivery_info_table table, #total_cost_table table {
+    border: 1px solid grey;
+}
+
+#product_table {
+    padding-bottom: 40px;
+}
+
+#logged_in_header td {
+    padding: 0px;
+}
+
+#product_table table th {
+    text-align: center;
+}
+
+#product_table table td {
+    padding:  2px 45px;
+    font-size: 90%;
+    text-align: right;
+}
+
+#product_table table tr:nth-child(even) {
+    background-color: #efefef;
+}
+
+.product_name {
+    padding-left: 25px;
+}
+
+#product_table_total_price td {
+    padding: 2px 45px;
+    background-color: #C62D1F;
+    color:  #ffffff;
+    font-weight: bold;  
+}
+
+#delivery_info_table {
+    padding:  0px 20px 0px 0px;
+    vertical-align: top;
+}
+
+.label {
+    padding:  2px 20px 2px 35px;
+}
+
+.info {
+    padding: 2px 0px 2px 20px;
+    border-left: 1px solid grey;
+}
+
+#total_cost_table {
+    padding:  0px 0px 0px 20px;
+    vertical-align: top;
+}
+
+.alv_row {
+    padding:  2px 20px;
+    background-color: #e8e8e8;
+    font-size: 75%;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    text-align: left;
+}
+
+.total_price {
+    padding:  5px 20px;
+    text-align: center;
+    border-left: 1px solid grey;
+}
+
+#footer { 
+    font-size: 9pt;  
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: bottom center; 
+}
+
+#footer td {
+    height: 48px;
+    padding: 10px 3px 10px 30px;
+}
+
+#footer #1st {
+    width: 60%;
+}
+
+#footer #2nd {
+    width: 25%;
+    color:  #ffffff;
+    vertical-align: top;
+    text-align: right;
+}
+
+#footer #3rd {
+    width: 15%;
+    color:  #ffffff;
+    padding-left: 3px;
+    vertical-align: top;
+}
