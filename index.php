@@ -47,7 +47,7 @@
                      "js/libs/numeral.min.js",
                      "js/libs/jquery-calx-2.0.5.min.js",
                      "js/libs/jquery-ui.js",
-                     "js/script2.js",
+                     "js/script14.js",
                      "js/google_analytics.js"]);
         </script>
     </head>

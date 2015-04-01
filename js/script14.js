@@ -30,6 +30,7 @@ jQuery(document).ready(function ($) {
     numeral.language('fi');
 
     $('#main_table').calx();
+    change_delivery_prices_to_line();
 
     $('#tile_selection').change(function () {
         var to = $(this).find('option:selected').attr('data-to');
@@ -119,8 +120,14 @@ jQuery(document).ready(function ($) {
         $('#main_table').calx();
     }
 
+    function change_delivery_prices_to_line() {
+        $("td[data-cell='H4']").text('-');
+        $("td[data-cell='H6']").text('-');
+    }
+
     function request_to_update_delivery_cost() {
         $('#delivery_cost').val('');
+        $('#main_table').calx();
         $("td[data-cell='H4']").text('Päivitä rahti');
         $("td[data-cell='H6']").text('Päivitä rahti');
     }
@@ -139,10 +146,12 @@ jQuery(document).ready(function ($) {
             calc_pallet_amount();
         }
 
-        if ($('#delivery_cost').val() != '') {
-            if ($(this).attr("id") != "postal_code" && $(this).attr("id") != "discount" && $(this).attr("id") != "verge_length" && $(this).attr("id") != "ridge_length" && $(this).attr("id") != "roof_area" && $(this).attr("id") != "mail_address1" && $(this).attr("id") != "mail_address2" && $(this).attr("id") != "mail_address3" && $(this).attr("id") != "mail_mark_identifier") {
-                request_to_update_delivery_cost()
+        if ($('#delivery_cost').val() > 0) {
+            if ($(this).hasClass('product_input')) {
+                request_to_update_delivery_cost();
             }
+        } else {
+            change_delivery_prices_to_line();
         }
     });
 
@@ -210,10 +219,6 @@ jQuery(document).ready(function ($) {
                     $('input.Tippapelti_2m').val(Math.ceil(ridge_length / 1.9));
                 }
             }
-
-            if ($('#delivery_cost').val() != '') {
-                request_to_update_delivery_cost()
-            }
         }
 
         // Harjatiivisteiden laskenta
@@ -279,6 +284,10 @@ jQuery(document).ready(function ($) {
         }
 
         calc_pallet_amount();
+
+        if ($('#delivery_cost').val() > 0) {
+            request_to_update_delivery_cost();
+        }
     });
 
     $('#calc_delivery_cost').click(function () {
