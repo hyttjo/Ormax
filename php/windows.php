@@ -12,7 +12,9 @@
                 <input id="mail_address1" type="email" placeholder="1. sähköpostiosoite (pakollinen)" required></input>
                 <input id="mail_address2" type="email" placeholder="2. sähköpostiosoite"></input>
                 <input id="mail_address3" type="email" placeholder="3. sähköpostiosoite"></input>
-                <p>Saateteksti:</p>
+                <p>Merkki:</p>
+                <input id="mail_mark_identifier" type="text" maxlength="50"></input>
+                <p>Saateviesti:</p>
                 <textarea id="mail_message"></textarea>
                 <div>
                     <button id="send_mail" type="submit">Lähetä</button>

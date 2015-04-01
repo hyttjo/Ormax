@@ -639,7 +639,7 @@ footer a:hover {
     text-align: left;
 }
 
-#mail_address1, #mail_address2, #mail_address3 {
+#mail_address1, #mail_address2, #mail_address3, #mail_mark_identifier {
     width:  250px;
     max-width: 250px;
     text-align: left;

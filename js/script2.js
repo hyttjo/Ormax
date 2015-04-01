@@ -119,6 +119,12 @@ jQuery(document).ready(function ($) {
         $('#main_table').calx();
     }
 
+    function request_to_update_delivery_cost() {
+        $('#delivery_cost').val('');
+        $("td[data-cell='H4']").text('Päivitä rahti');
+        $("td[data-cell='H6']").text('Päivitä rahti');
+    }
+
     $('input').change(function () {
         if ($(this).val() < 0) {
             $(this).val(0);
@@ -134,10 +140,8 @@ jQuery(document).ready(function ($) {
         }
 
         if ($('#delivery_cost').val() != '') {
-            if ($(this).attr("id") != "postal_code" && $(this).attr("id") != "discount" && $(this).attr("id") != "verge_length" && $(this).attr("id") != "ridge_length" && $(this).attr("id") != "roof_area") {
-                $('#delivery_cost').val('');
-                $("td[data-cell='H4']").text('Päivitä rahti');
-                $("td[data-cell='H6']").text('Päivitä rahti');
+            if ($(this).attr("id") != "postal_code" && $(this).attr("id") != "discount" && $(this).attr("id") != "verge_length" && $(this).attr("id") != "ridge_length" && $(this).attr("id") != "roof_area" && $(this).attr("id") != "mail_address1" && $(this).attr("id") != "mail_address2" && $(this).attr("id") != "mail_address3" && $(this).attr("id") != "mail_mark_identifier") {
+                request_to_update_delivery_cost()
             }
         }
     });
@@ -205,6 +209,10 @@ jQuery(document).ready(function ($) {
                     $('input.Lintueste_5m').val(Math.ceil(ridge_length / 5));
                     $('input.Tippapelti_2m').val(Math.ceil(ridge_length / 1.9));
                 }
+            }
+
+            if ($('#delivery_cost').val() != '') {
+                request_to_update_delivery_cost()
             }
         }
 
@@ -353,6 +361,7 @@ jQuery(document).ready(function ($) {
         var mail_address1 = $('#mail_address1').val();
         var mail_address2 = $('#mail_address2').val();
         var mail_address3 = $('#mail_address3').val();
+        var mail_mark_identifier = $('#mail_mark_identifier').val();
         var mail_message = $('#mail_message').val();
         var tile = $('#tile_selection option:selected').text();
         var discount = $('#discount').val();
@@ -368,6 +377,7 @@ jQuery(document).ready(function ($) {
         json.push({ 'mail_address1': mail_address1 });
         json.push({ 'mail_address2': mail_address2 });
         json.push({ 'mail_address3': mail_address3 });
+        json.push({ 'mail_mark_identifier': mail_mark_identifier });
         json.push({ 'mail_message': mail_message });
         json.push({ 'tile': tile });
         json.push({ 'discount': discount });
@@ -385,8 +395,9 @@ jQuery(document).ready(function ($) {
             var product_name = $(e).next().html();
             var input = $(e).next().next().find('input');
             var product_amount = input.val();
-            var product_sumprice = $(e).next().next().next().html();
-            var product_price = $(e).next().next().next().next().html();
+            var product_sumprice = parseFloat($(e).next().next().next().html());
+            var product_price = (product_sumprice / product_amount).toFixed(2);
+            var product_sumprice = product_sumprice.toFixed(2);
             var input_classes = input.attr('class');
             var category = input_classes.substr(0, input_classes.indexOf(' '));
 

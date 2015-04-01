@@ -29,14 +29,14 @@ th {
 
 #ormax_logo {
     width: 20%;
-    padding: 30px 20px 30px 30px;
+    padding: 40px 20px 30px 30px;
 }
 
 #header_text {
    width: 80%;
    font-size: 135%;
    vertical-align: bottom;
-   padding: 0px 0px 17px 27px;
+   padding: 0px 0px 25px 30px;
 }
 
 #subheader {
@@ -91,10 +91,11 @@ th {
 
 .label {
     padding:  2px 20px 2px 35px;
+    vertical-align: top;
 }
 
 .info {
-    padding: 2px 0px 2px 20px;
+    padding: 2px 10px 2px 20px;
     border-left: 1px solid grey;
 }
 

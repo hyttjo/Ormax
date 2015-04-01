@@ -13,17 +13,18 @@ $data = $_POST['json'];
 $mail_address1 = $data[0]['mail_address1'];
 $mail_address2 = $data[1]['mail_address2'];
 $mail_address3 = $data[2]['mail_address3'];
-$mail_message = str_replace("'", "", $data[3]['mail_message']);
-$tile = $data[4]['tile'];
-$discount = $data[5]['discount'];
-$lift_to_roof = $data[6]['lift_to_roof'];
-$postal_code = $data[7]['postal_code'];
-$city = $data[8]['city'];
-$delivery_cost = $data[9]['delivery_cost'];
-$total_price = $data[10]['total_price'];
-$total_price_with_delivery = $data[11]['total_price_with_delivery'];
-$total_price_tax = $data[12]['total_price_tax'];
-$total_price_with_delivery_tax = $data[13]['total_price_with_delivery_tax'];
+$mail_mark_identifier = $data[3]['mail_mark_identifier'];
+$mail_message = str_replace("'", "", $data[4]['mail_message']);
+$tile = $data[5]['tile'];
+$discount = $data[6]['discount'];
+$lift_to_roof = $data[7]['lift_to_roof'];
+$postal_code = $data[8]['postal_code'];
+$city = $data[9]['city'];
+$delivery_cost = $data[10]['delivery_cost'];
+$total_price = $data[11]['total_price'];
+$total_price_with_delivery = $data[12]['total_price_with_delivery'];
+$total_price_tax = $data[13]['total_price_tax'];
+$total_price_with_delivery_tax = $data[14]['total_price_with_delivery_tax'];
 
 $query="UPDATE kayttajat SET mailikerrat = mailikerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$user'";
 mysqli_query($con, $query) or die(mysqli_error($con));
@@ -96,11 +97,11 @@ $logged_in_header = '';
 $logged_in_header_style = '';
 
 if($user != 'ormax' && $user != 'asentaja') { 
-    if($user == 'rautakesko') { $logged_in_header_style = 'style="background-color: #e6e6e6;"'; }
-    if($user == 'rautanet') { $logged_in_header_style = 'style="background-color: #004fa1;"'; }
-    if($user == 'stark') { $logged_in_header_style = 'style="background-color: #255797;"'; }
-    if($user == 'hankkija') { $logged_in_header_style = 'style="background-color: #0c9859;"'; }
-    if($user == 'sok') { $logged_in_header_style = 'style="background-color: #0d469d;"'; }
+    if($user == 'rautakesko') { $logged_in_header_style = 'style="background-color: #e6e6e6; text-align: left;"'; }
+    if($user == 'rautanet') { $logged_in_header_style = 'style="background-color: #004fa1; text-align: left;"'; }
+    if($user == 'stark') { $logged_in_header_style = 'style="background-color: #255797; text-align: left;"'; }
+    if($user == 'hankkija') { $logged_in_header_style = 'style="background-color: #0c9859; text-align: left;"'; }
+    if($user == 'sok') { $logged_in_header_style = 'style="background-color: #0d469d; text-align: left;"'; }
 
     $logged_in_header .= "<tr id='logged_in_header'>";
         $logged_in_header .= "<td colspan='4' ". $logged_in_header_style .">";
@@ -127,7 +128,7 @@ $html = '
                     <tr id="product_table_total_price">
                         <td></td>
                         <td></td>
-                        <td>'. $total_price .'</td>
+                        <td>'. $total_price .' €</td>
                         <td></td>
                     </tr>
                 </table>
@@ -158,6 +159,10 @@ $html = '
                     <tr>
                         <td class="label">Toimituskustannukset:</td>
                         <td class="info">'. $delivery_cost .' €</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Merkki:</td>
+                        <td class="info">'. $mail_mark_identifier .'</td>
                     </tr>
                 </table>            </td>            <td id="total_cost_table">
                 <table>
@@ -268,7 +273,10 @@ if($mail_message == '') {
 $mail->Body = $header_mail . ' - ' . $date . "\n\n" . $attachment_info . "\n\n" . $header_mail_body . "\n\n" . $mail_message;
 
 //Attach an image file
-$filename = $mail->Subject . ' - ' . $tile . '.pdf'; 
+$filename = $mail->Subject . ' - ' . $mail_mark_identifier . ' - ' . $tile . '.pdf'; 
+
+$filename = sanitize_file_name($filename);
+
 $mail->AddStringAttachment($emailAttachment, $filename);
 
 //send the message, check for errors
@@ -276,4 +284,11 @@ if (!$mail->send()) {
     echo "Virhe: " . $mail->ErrorInfo;
     } else {
     echo "Tarjous on lähetetty.";
+}
+
+function sanitize_file_name($filename) {
+    $filename_raw = $filename;
+    $special_chars = array("?", "[", "]", "/", "\\", "=", "<", ">", ":", ";", ",", "'", "\"", "&", "$", "#", "*", "(", ")", "|", "~", "`", "!", "{", "}");
+    $clean_filename = str_replace($special_chars, ' ', $filename_raw);
+    return $clean_filename;
 }
