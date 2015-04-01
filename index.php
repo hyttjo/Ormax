@@ -16,9 +16,9 @@
        header("Location: php/login.php"); 
     }
     
-    if($_SERVER['HTTP_REFERER'] == '') {
-        header("Location: http://www.ormax.fi/ammattilaisille/tarjouslaskuri/");  
-    }
+    //if($_SERVER['HTTP_REFERER'] == '') {
+    //    header("Location: http://www.ormax.fi/ammattilaisille/tarjouslaskuri/");  
+    //}
 
     if($_GET['tiili']) {
         $tile = $_GET['tiili'];

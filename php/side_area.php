@@ -84,7 +84,10 @@
             <?php } ?> 
             <tr>
                 <td class="center" colspan="2">
-                    <button id="calc_amounts">Laske</button>
+                    <button id="calc_amounts">
+                        <img src="img/calculator_icon.png" alt="laske"></img>
+                        <span>Laske</span>
+                    </button>
                 </td>
             </tr>  
         </table>
@@ -133,7 +136,10 @@
             </tr>
             <tr>
                 <td class="center" colspan="2">
-                    <button id="calc_delivery_cost">Laske</button>
+                    <button id="calc_delivery_cost">
+                        <img src="img/delivery_icon.png" alt="laske"></img>
+                        <span>Laske</span>
+                    </button>
                 </td>
             </tr>
         </table>
@@ -160,11 +166,17 @@
         </table>
 
         <div class="center">
-            <button id="send_quote_to_mail">Lähetä tarjous sähköpostiin</button>
+            <button id="send_quote_to_mail">
+                <img src="img/email_icon.png" alt="lähetä"></img>
+                <span>Lähetä tarjous</span>
+            </button>
         </div>
 
         <div class="center">
-            <button id="empty_table">Tyhjennä taulukko</button>
+            <button id="empty_table">
+                <img src="img/trashcan_icon.png" alt="tyhjennä"></img>
+                <span>Tyhjennä taulukko</span>
+            </button>
         </div>
 
         <table id="tile_info_table">

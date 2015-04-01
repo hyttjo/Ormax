@@ -143,7 +143,9 @@ jQuery(document).ready(function ($) {
 
         if (!$(this).hasClass('Lava')) {
             $('#main_table').calx();
-            calc_pallet_amount();
+            if ($(this).hasClass('product_input')) {
+                calc_pallet_amount();
+            }
         }
 
         if ($('#delivery_cost').val() > 0) {

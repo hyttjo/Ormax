@@ -255,7 +255,7 @@ if($mail_address3 != '') {
 }
 
 //Set the subject line
-$mail->Subject = 'Tarjouslaskenta - Ormax Monier Oy - ' . $date;
+$mail->Subject = 'Tarjouslaskenta - Ormax Monier Oy - ' . $mail_mark_identifier . ' - ' . $date;
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
@@ -273,7 +273,7 @@ if($mail_message == '') {
 $mail->Body = $header_mail . ' - ' . $date . "\n\n" . $attachment_info . "\n\n" . $header_mail_body . "\n\n" . $mail_message;
 
 //Attach an image file
-$filename = $mail->Subject . ' - ' . $mail_mark_identifier . ' - ' . $tile . '.pdf'; 
+$filename = $mail->Subject . ' - ' . $tile . '.pdf'; 
 
 $filename = sanitize_file_name($filename);
 

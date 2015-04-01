@@ -72,6 +72,11 @@ button:active {
 	top: 1px;
 }
 
+button img {
+    float: left;
+    padding:  0px 5px 0px 10px;
+}
+
 .center {
     text-align: center;
 }
@@ -489,13 +494,32 @@ td.D {
     border-left: 1px solid grey;
 }
 
+#calc_amounts, #calc_delivery_cost {
+    padding: 8px 0px 6px 0px;
+}
+
+#calc_amounts span, #calc_delivery_cost span {
+    margin-right: 7px;
+    font-size: 100%;
+}
+
+#calc_amounts img, #calc_delivery_cost img {
+    margin-top: -2px;
+}
+
 #send_quote_to_mail {
     width:  110px;
     margin-bottom: 30px;
+    padding-right: 4px;
+}
+
+#send_quote_to_mail img, #empty_table img {
+    padding:  4px 5px 0px 10px;
 }
 
 #empty_table {
     width:  110px;
+    padding-right: 4px;
 }
 
 #tile_info_table {
