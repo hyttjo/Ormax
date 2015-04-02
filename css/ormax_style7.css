@@ -507,13 +507,13 @@ td.D {
     margin-top: -2px;
 }
 
-#send_quote_to_mail {
+#open_send_mail_window, #open_download_window {
     width:  110px;
     margin-bottom: 30px;
     padding-right: 4px;
 }
 
-#send_quote_to_mail img, #empty_table img {
+#open_send_mail_window img, #open_download_window img, #empty_table img {
     padding:  4px 5px 0px 10px;
 }
 
@@ -559,7 +559,7 @@ footer a:hover {
 
 /******* Windows *******/
 
-#send_mail_window, #info_window {
+#send_mail_window, #info_window, #download_window, #print_window {
     display: none;
 }
 
@@ -589,7 +589,7 @@ footer a:hover {
     margin: 10px 10px 0px 0px;
 }
 
-#info_window_ok, #send_mail {
+#info_window_ok, #send_mail, #download, #print {
     min-width: 75px;
     margin:  20px 5px 10px 0px;
 }
@@ -657,7 +657,7 @@ footer a:hover {
     font-style: italic;
 }
 
-#send_mail_form {
+#send_mail_form, #download_form, #print_form {
     margin: 0px;
     padding: 0px;
     text-align: left;
@@ -675,11 +675,11 @@ textarea {
     resize: vertical;
 }
 
-#send_mail {
+#send_mail, #download {
     float: left;
 }
 
-#loading_container {
+#mail_loading_container, #download_loading_container {
     display: none;
     float: left;
     margin: 20px 0px 0px 5px;

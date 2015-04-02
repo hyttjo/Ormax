@@ -18,8 +18,21 @@
                 <textarea id="mail_message"></textarea>
                 <div>
                     <button id="send_mail" type="submit">Lähetä</button>
-                    <div id="loading_container">
-                        <img id="loading" src="img/loading.gif" alt="loading"></img>
+                    <div id="mail_loading_container">
+                        <img src="img/loading.gif" alt="loading"></img>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div id="download_window" title="Lataa tarjous PDF-muodossa">
+            <form id="download_form" onsubmit="return false" accept-charset="utf-8">
+                <p>Merkki:</p>
+                <input id="download_mark_identifier" type="text" maxlength="50"></input>
+                <div>
+                    <button id="download" type="submit">Lataa</button>
+                    <div id="download_loading_container">
+                        <img src="img/loading.gif" alt="loading"></img>
                     </div>
                 </div>
             </form>

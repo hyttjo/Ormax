@@ -366,13 +366,15 @@ jQuery(document).ready(function ($) {
         empty_table();
     });
 
-    function create_JSON_data() {
+    function create_JSON_data(type) {
         var json = [];
 
         var mail_address1 = $('#mail_address1').val();
         var mail_address2 = $('#mail_address2').val();
         var mail_address3 = $('#mail_address3').val();
         var mail_mark_identifier = $('#mail_mark_identifier').val();
+        var download_mark_identifier = $('#download_mark_identifier').val();
+        var print_mark_identifier = $('#print_mark_identifier').val();
         var mail_message = $('#mail_message').val();
         var tile = $('#tile_selection option:selected').text();
         var discount = $('#discount').val();
@@ -385,11 +387,14 @@ jQuery(document).ready(function ($) {
         var total_price_tax = parseFloat($("td[data-cell='H5']").text());
         var total_price_with_delivery_tax = parseFloat($("td[data-cell='H6']").text());
 
+        json.push({ 'type': type });
         json.push({ 'mail_address1': mail_address1 });
         json.push({ 'mail_address2': mail_address2 });
         json.push({ 'mail_address3': mail_address3 });
-        json.push({ 'mail_mark_identifier': mail_mark_identifier });
         json.push({ 'mail_message': mail_message });
+        json.push({ 'mail_mark_identifier': mail_mark_identifier });
+        json.push({ 'download_mark_identifier': download_mark_identifier });
+        json.push({ 'print_mark_identifier': print_mark_identifier });
         json.push({ 'tile': tile });
         json.push({ 'discount': discount });
         json.push({ 'lift_to_roof': lift_to_roof });
@@ -422,7 +427,7 @@ jQuery(document).ready(function ($) {
 
     $("#send_mail_window").dialog({ autoOpen: false, modal: true, width: 400, closeText: "X", show: "fold", hide: "blind" });
 
-    $('#send_quote_to_mail').click(function () {
+    $('#open_send_mail_window').click(function () {
         $("#send_mail_window").dialog("open");
         return false;
     });
@@ -431,23 +436,48 @@ jQuery(document).ready(function ($) {
         var email = $('#mail_address1').val();
 
         if (email.indexOf('@') > -1 && email.indexOf('.') > -1 && email.length > 5) {
-            $('#loading_container').show();
-            var jsonData = create_JSON_data();
+            $('#mail_loading_container').show();
+            var jsonData = create_JSON_data('mail');
 
             $.ajax({
                 type: 'post',
-                url: 'php/scripts/send_mail.php',
+                url: 'php/scripts/create_pdf.php',
                 data: { json: jsonData },
                 success: function (data) {
                     $("#send_mail_window").dialog("close");
                     $("#info_window_message").html(data);
                     $("#info_window").dialog("open");
-                    $('#loading_container').hide();
                 }
             });
+            $('#mail_mark_identifier').val('');
+            $('#mail_loading_container').hide();
         } else {
             alert('Sähköpostiosoite on virheellinen.');
         }
+    });
+
+    $("#download_window").dialog({ autoOpen: false, modal: true, width: 300, closeText: "X", show: "fold", hide: "blind" });
+
+    $('#open_download_window').click(function () {
+        $("#download_window").dialog("open");
+        return false;
+    });
+
+    $('#download').click(function () {
+        $('#download_loading_container').show();
+        var jsonData = create_JSON_data('download');
+
+        $.ajax({
+            type: 'post',
+            url: 'php/scripts/create_pdf.php',
+            data: { json: jsonData },
+            success: function (data) {
+                $("#download_window").dialog("close");
+                window.location = 'php/scripts/download.php?dir=pdf&filename=' + data;
+            }
+        });
+        $('#download_mark_identifier').val('');
+        $('#download_loading_container').hide();
     });
 
     $("#info_window").dialog({ autoOpen: false, modal: true, width: 300, closeText: "X", show: "fold", hide: "blind" });

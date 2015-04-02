@@ -166,9 +166,16 @@
         </table>
 
         <div class="center">
-            <button id="send_quote_to_mail">
+            <button id="open_send_mail_window">
                 <img src="img/email_icon.png" alt="lähetä"></img>
                 <span>Lähetä tarjous</span>
+            </button>
+        </div>
+
+        <div class="center">
+            <button id="open_download_window">
+                <img src="img/download_icon.png" alt="lataa"></img>
+                <span>Lataa tarjous</span>
             </button>
         </div>
 
