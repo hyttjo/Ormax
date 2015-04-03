@@ -84,6 +84,7 @@
         if($user == 'stark') { $logged_in_header_style = 'style="background-color: #255797; text-align: left;"'; }
         if($user == 'hankkija') { $logged_in_header_style = 'style="background-color: #0c9859; text-align: left;"'; }
         if($user == 'sok') { $logged_in_header_style = 'style="background-color: #0d469d; text-align: left;"'; }
+        if($user == 'puumerkki') { $logged_in_header_style = 'style="background-color: #484848; text-align: left;"'; }
 
         $logged_in_header .= "<tr id='logged_in_header'>";
             $logged_in_header .= "<td colspan='4' ". $logged_in_header_style .">";
@@ -103,11 +104,11 @@
                 $product_table .= '<td class="product_amount">';
                     $product_table .= $data[$i]['product_amount'];
                 $product_table .= '</td>';
-                $product_table .= '<td class="product_sumprice">';
-                    $product_table .= $data[$i]['product_sumprice'];
-                $product_table .= '</td>';
                 $product_table .= '<td class="product_price">';
                     $product_table .= $data[$i]['product_price'];
+                $product_table .= '</td>';
+                $product_table .= '<td class="product_sumprice">';
+                    $product_table .= $data[$i]['product_sumprice'];
                 $product_table .= '</td>';
             $product_table .= '</tr>';
         }
@@ -122,15 +123,15 @@
                         <tr>
                             <th>Tuote</th>
                             <th>Määrä</th>
+                            <th>Kappaleinta €</th>
                             <th>Hinta €</th>
-                            <th>Kappalehinta €</th>
                         </tr>
                         '. $product_table . '
                         <tr id="product_table_total_price">
                             <td></td>
                             <td></td>
-                            <td>'. $total_price .' €</td>
                             <td></td>
+                            <td>'. $total_price .' €</td>
                         </tr>
                     </table>
                 </td>

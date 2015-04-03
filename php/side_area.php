@@ -165,33 +165,36 @@
             </tr>
         </table>
 
-        <div class="center">
-            <button id="open_send_mail_window">
-                <img src="img/email_icon.png" alt="lähetä"></img>
-                <span>Lähetä tarjous</span>
-            </button>
-        </div>
-
-        <div class="center">
-            <button id="open_download_window">
-                <img src="img/download_icon.png" alt="lataa"></img>
-                <span>Lataa tarjous</span>
-            </button>
-        </div>
-
-        <div class="center">
-            <button id="open_print_window">
-                <img src="img/print_icon.png" alt="tulosta"></img>
-                <span>Tulosta tarjous</span>
-            </button>
-        </div>
-
-        <div class="center">
-            <button id="empty_table">
-                <img src="img/trashcan_icon.png" alt="tyhjennä"></img>
-                <span>Tyhjennä taulukko</span>
-            </button>
-        </div>
+        <table id="buttons_table">
+            <tr>
+                <td>
+                    <button id="open_send_mail_window">
+                        <img src="img/email_icon.png" alt="lähetä"></img>
+                        <span>Lähetä tarjous</span>
+                    </button>
+                </td>
+                <td>
+                    <button id="open_download_window">
+                        <img src="img/download_icon.png" alt="lataa"></img>
+                        <span>Lataa tarjous</span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="open_print_window">
+                        <img src="img/print_icon.png" alt="tulosta"></img>
+                        <span>Tulosta tarjous</span>
+                    </button>
+                </td>
+                <td>
+                    <button id="empty_table">
+                        <img src="img/trashcan_icon.png" alt="tyhjennä"></img>
+                        <span>Tyhjennä taulukko</span>
+                    </button>
+                </td>
+            </tr>
+        </table>
 
         <table id="tile_info_table">
             <tr>

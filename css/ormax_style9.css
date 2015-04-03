@@ -298,6 +298,20 @@ header select {
     background-color: #0f52b1;
 }
 
+#logged_in_header.puumerkki td {
+    background-color: #484848;
+}
+
+#logged_in_header.puumerkki #logout a {
+    color: #ffcd00;
+    background-color: #323232;
+}
+
+#logged_in_header.puumerkki #logout a:hover {
+    color: #ffcd00;
+    background-color: #5b5b5b;
+}
+
 /******* Main Table ********/
 
 table {
@@ -507,9 +521,17 @@ td.D {
     margin-top: -2px;
 }
 
+#side_area #buttons_table {
+    border: 0px;
+}
+
+#buttons_table td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 #open_send_mail_window, #open_download_window, #open_print_window, #empty_table {
     width:  110px;
-    margin-bottom: 30px;
     padding-right: 4px;
 }
 

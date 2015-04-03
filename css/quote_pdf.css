@@ -59,6 +59,10 @@ th {
     padding: 0px;
 }
 
+#logged_in_header td img {
+    overflow: hidden;
+}
+
 #product_table table th {
     text-align: center;
 }
