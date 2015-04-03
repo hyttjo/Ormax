@@ -180,6 +180,13 @@
         </div>
 
         <div class="center">
+            <button id="open_print_window">
+                <img src="img/print_icon.png" alt="tulosta"></img>
+                <span>Tulosta tarjous</span>
+            </button>
+        </div>
+
+        <div class="center">
             <button id="empty_table">
                 <img src="img/trashcan_icon.png" alt="tyhjennä"></img>
                 <span>Tyhjennä taulukko</span>

@@ -37,7 +37,7 @@
 
         <title>Ormax Monier Oy - Hinnastolaskenta 2015</title>
 
-        <link rel="stylesheet" type="text/css" href="css/ormax_style7.css">
+        <link rel="stylesheet" type="text/css" href="css/ormax_style9.css">
 
         <script src="../js/libs/head.min.js"></script>
 
@@ -47,7 +47,7 @@
                      "js/libs/numeral.min.js",
                      "js/libs/jquery-calx-2.0.5.min.js",
                      "js/libs/jquery-ui.js",
-                     "js/script14.js",
+                     "js/script16.js",
                      "js/google_analytics.js"]);
         </script>
     </head>

@@ -507,19 +507,14 @@ td.D {
     margin-top: -2px;
 }
 
-#open_send_mail_window, #open_download_window {
+#open_send_mail_window, #open_download_window, #open_print_window, #empty_table {
     width:  110px;
     margin-bottom: 30px;
     padding-right: 4px;
 }
 
-#open_send_mail_window img, #open_download_window img, #empty_table img {
+#open_send_mail_window img, #open_download_window img, #open_print_window img, #empty_table img {
     padding:  4px 5px 0px 10px;
-}
-
-#empty_table {
-    width:  110px;
-    padding-right: 4px;
 }
 
 #tile_info_table {
@@ -663,9 +658,21 @@ footer a:hover {
     text-align: left;
 }
 
-#mail_address1, #mail_address2, #mail_address3, #mail_mark_identifier {
+#mail_address1, #mail_address2, #mail_address3 {
     width:  250px;
     max-width: 250px;
+    text-align: left;
+}
+
+#mail_mark_identifier {
+    width:  390px;
+    max-width: 390px;
+    text-align: left;
+}
+
+#download_mark_identifier, #print_mark_identifier {
+    width:  290px;
+    max-width: 290px;
     text-align: left;
 }
 
@@ -675,11 +682,11 @@ textarea {
     resize: vertical;
 }
 
-#send_mail, #download {
+#send_mail, #download, #print {
     float: left;
 }
 
-#mail_loading_container, #download_loading_container {
+#mail_loading_container, #download_loading_container, #print_loading_container {
     display: none;
     float: left;
     margin: 20px 0px 0px 5px;
@@ -687,4 +694,12 @@ textarea {
 
 #info_window_message {
     text-align: left;
+}
+
+#loading {
+    text-align: center;
+}
+
+#loading img {
+    margin-top: 100px;
 }

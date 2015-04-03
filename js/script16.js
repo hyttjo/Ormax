@@ -428,6 +428,7 @@ jQuery(document).ready(function ($) {
     $("#send_mail_window").dialog({ autoOpen: false, modal: true, width: 400, closeText: "X", show: "fold", hide: "blind" });
 
     $('#open_send_mail_window').click(function () {
+        $('#mail_loading_container').hide();
         $("#send_mail_window").dialog("open");
         return false;
     });
@@ -447,10 +448,10 @@ jQuery(document).ready(function ($) {
                     $("#send_mail_window").dialog("close");
                     $("#info_window_message").html(data);
                     $("#info_window").dialog("open");
+                    $('#mail_mark_identifier').val('');
                 }
             });
-            $('#mail_mark_identifier').val('');
-            $('#mail_loading_container').hide();
+
         } else {
             alert('Sähköpostiosoite on virheellinen.');
         }
@@ -459,6 +460,7 @@ jQuery(document).ready(function ($) {
     $("#download_window").dialog({ autoOpen: false, modal: true, width: 300, closeText: "X", show: "fold", hide: "blind" });
 
     $('#open_download_window').click(function () {
+        $('#download_loading_container').hide();
         $("#download_window").dialog("open");
         return false;
     });
@@ -474,10 +476,37 @@ jQuery(document).ready(function ($) {
             success: function (data) {
                 $("#download_window").dialog("close");
                 window.location = 'php/scripts/download.php?dir=pdf&filename=' + data;
+                $('#download_mark_identifier').val('');
             }
         });
-        $('#download_mark_identifier').val('');
-        $('#download_loading_container').hide();
+    });
+
+    $("#print_window").dialog({ autoOpen: false, modal: true, width: 300, closeText: "X", show: "fold", hide: "blind" });
+
+    $('#open_print_window').click(function () {
+        $('#print_loading_container').hide();
+        $("#print_window").dialog("open");
+        return false;
+    });
+
+    $('#print').click(function () {
+        $('#print_loading_container').show();
+        var loading_message = 'Tarjousta valmistellaan tulostettavaksi...';
+
+        var jsonData = create_JSON_data('print');
+        var printWindow = window.open('php/scripts/loading.php?message=' + loading_message);
+
+        $.ajax({
+            type: 'post',
+            async: false,
+            url: 'php/scripts/create_pdf.php',
+            data: { json: jsonData },
+            success: function (data) {
+                $("#print_window").dialog("close");
+                printWindow.location = 'pdf/' + data;
+                $('#print_mark_identifier').val('');
+            }
+        });
     });
 
     $("#info_window").dialog({ autoOpen: false, modal: true, width: 300, closeText: "X", show: "fold", hide: "blind" });

@@ -1,6 +1,7 @@
 <?php
     session_start();
 
+    include("mysql.php");
     include("mpdf/mpdf.php");
 
     $date = date("d.m.Y");
@@ -74,27 +75,6 @@
         </table>
     ';
 
-    $product_table = '';
-
-    for($i = 0; $i < Count($data); ++$i){
-        if ($data[$i]['category']) {
-            $product_table .= '<tr>';
-                $product_table .= '<td class="product_name" style="text-align: left;">';
-                    $product_table .= $data[$i]['product_name'];
-                $product_table .= '</td>';
-                $product_table .= '<td class="product_amount">';
-                    $product_table .= $data[$i]['product_amount'];
-                $product_table .= '</td>';
-                $product_table .= '<td class="product_sumprice">';
-                    $product_table .= $data[$i]['product_sumprice'];
-                $product_table .= '</td>';
-                $product_table .= '<td class="product_price">';
-                    $product_table .= $data[$i]['product_price'];
-                $product_table .= '</td>';
-            $product_table .= '</tr>';
-        }
-    }
-
     $logged_in_header = '';
     $logged_in_header_style = '';
 
@@ -112,7 +92,26 @@
         $logged_in_header .= '</tr>';
     }
 
+    $product_table = '';
 
+    for($i = 0; $i < Count($data) + 1; ++$i){
+        if ($data[$i]['category']) {
+            $product_table .= '<tr>';
+                $product_table .= '<td class="product_name" style="text-align: left;">';
+                    $product_table .= $data[$i]['product_name'];
+                $product_table .= '</td>';
+                $product_table .= '<td class="product_amount">';
+                    $product_table .= $data[$i]['product_amount'];
+                $product_table .= '</td>';
+                $product_table .= '<td class="product_sumprice">';
+                    $product_table .= $data[$i]['product_sumprice'];
+                $product_table .= '</td>';
+                $product_table .= '<td class="product_price">';
+                    $product_table .= $data[$i]['product_price'];
+                $product_table .= '</td>';
+            $product_table .= '</tr>';
+        }
+    }
 
     $html = '
         <table id="main_table">
@@ -203,22 +202,41 @@
     $header_text = 'Tarjouslaskenta - Ormax Monier Oy - ' . $mark_identifier . ' - ' . $date;
 
     $filename = $header_text . ' - ' . $tile . '.pdf'; 
-    $filename = sanitize_file_name($filename);
+    $filename = sanitize_filename($filename);
 
     if ($type == 'mail') {
         $emailAttachment = $mpdf->Output($filename,'S');  
         include("send_mail.php");
     } else if  ($type == 'download') {
         $pdf = $mpdf->Output('../../pdf/' . $filename,'F');
+
+        $query="UPDATE kayttajat SET tallennuskerrat = tallennuskerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$user'";
+        mysqli_query($con, $query) or die(mysqli_error($con));
+        
         echo $filename;
     } else {
-        $pdf = $mpdf->Output($filename,'I');  
+        $mpdf->SetJS('this.print();');
+        $pdf = $mpdf->Output('../../pdf/' . $filename,'F');
+        
+        $query="UPDATE kayttajat SET tulostuskerrat = tulostuskerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$user'";
+        mysqli_query($con, $query) or die(mysqli_error($con));
+        
+        echo $filename;  
     }
 
-    function sanitize_file_name($filename) {
-        $filename_raw = $filename;
-        $special_chars = array("?", "[", "]", "/", "\\", "=", "<", ">", ":", ";", ",", "'", "\"", "&", "$", "#", "*", "(", ")", "|", "~", "`", "!", "{", "}");
-        $clean_filename = str_replace($special_chars, ' ', $filename_raw);
-        return $clean_filename;
+    function sanitize_filename($filename) {
+        $replace_chars = array(
+            'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
+            'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
+            'Ï'=>'I', 'Ñ'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
+            'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss','à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a',
+            'å'=>'a', 'æ'=>'a', 'ç'=>'c', 'è'=>'e', 'é'=>'e', 'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i',
+            'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
+            'ú'=>'u', 'û'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f'
+        );
+        $filename = strtr($filename, $replace_chars);
+        $filename = preg_replace(array('/[\&]/', '/[\@]/', '/[\#]/'), array(' ja ', ' at ', ' numero '), $filename);
+        $filename = preg_replace('|[^A-Za-z0-9\s\.\_\-]|', '', $filename);
+        return $filename;
     }
 ?>

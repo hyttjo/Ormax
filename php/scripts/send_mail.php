@@ -1,7 +1,6 @@
 <?php
     date_default_timezone_set('Etc/UTC');
 
-    include("mysql.php");
     require 'PHPMailerAutoload.php';    
 
     $query="UPDATE kayttajat SET mailikerrat = mailikerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$user'";

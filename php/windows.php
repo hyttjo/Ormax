@@ -38,6 +38,19 @@
             </form>
         </div>
 
+        <div id="print_window" title="Tulosta tarjous">
+            <form id="print_form" onsubmit="return false" accept-charset="utf-8">
+                <p>Merkki:</p>
+                <input id="print_mark_identifier" type="text" maxlength="50"></input>
+                <div>
+                    <button id="print" type="submit">Tulosta</button>
+                    <div id="print_loading_container">
+                        <img src="img/loading.gif" alt="loading"></img>
+                    </div>
+                </div>
+            </form>
+        </div>
+
         <div id="info_window" title="Info">
             <p id="info_window_message"></p>
             <button id="info_window_ok">Ok</button>
