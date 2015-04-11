@@ -65,6 +65,7 @@ button:hover {
 	background-color: #c62d1f;
     border-radius: 6px;
     border: 1px solid #810e05;
+    cursor: pointer;
 }
 
 button:active {
@@ -312,6 +313,62 @@ header select {
     background-color: #5b5b5b;
 }
 
+#logged_in_header.carlson td {
+    background-color: #0096d1;
+}
+
+#logged_in_header.carlson #logout a {
+    color: #f3f3f3;
+    background-color: #0066b3;
+}
+
+#logged_in_header.carlson #logout a:hover {
+    color: #f3f3f3;
+    background-color: #1d8fdf;
+}
+
+#logged_in_header.rtv td {
+    background-color: #feed01;
+}
+
+#logged_in_header.rtv #logout a {
+    color: #544d00;
+    background-color: #e4d420;
+}
+
+#logged_in_header.rtv #logout a:hover {
+    color: #feed01;
+    background-color: #958d35;
+}
+
+#logged_in_header.hartman td {
+    background-color: #d5efff;
+}
+
+#logged_in_header.hartman #logout a {
+    color: #f3f3f3;
+    background-color: #0070ba;
+}
+
+#logged_in_header.hartman #logout a:hover {
+    color: #f3f3f3;
+    background-color: #0096fa;
+}
+
+#logged_in_header.lakkapaa td {
+    background-color: #4d6fbb;
+}
+
+#logged_in_header.lakkapaa #logout a {
+    color: #f3f3f3;
+    background-color: #16377e;
+}
+
+#logged_in_header.lakkapaa #logout a:hover {
+    color: #16377e;
+    background-color: #fbbb02;
+}
+
 /******* Main Table ********/
 
 table {
@@ -526,17 +583,23 @@ td.D {
 }
 
 #buttons_table td {
+    text-align: center;
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
-#open_send_mail_window, #open_download_window, #open_print_window, #empty_table {
+#open_send_mail_window, #open_download_window, #open_print_window, #empty_table, #info_pdf {
     width:  110px;
     padding-right: 4px;
+    text-align: left;
 }
 
-#open_send_mail_window img, #open_download_window img, #open_print_window img, #empty_table img {
-    padding:  4px 5px 0px 10px;
+#info_pdf {
+    width:  157px;
+}
+
+#open_send_mail_window img, #open_download_window img, #open_print_window img, #empty_table img, #info_pdf img {
+    padding:  4px 8px 0px 10px;
 }
 
 #tile_info_table {
@@ -654,6 +717,7 @@ footer a:hover {
 	background: linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
 	background-color: #c62d1f;
+    cursor: pointer;
 }
 
 .ui-dialog-content input {

@@ -60,6 +60,8 @@ th {
 }
 
 #logged_in_header td img {
+    height: 20px;
+    max-height: 20px;
     overflow: hidden;
 }
 

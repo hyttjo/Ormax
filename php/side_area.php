@@ -194,6 +194,14 @@
                     </button>
                 </td>
             </tr>
+            <tr>
+                <td colspan="2">
+                    <button id="info_pdf">
+                        <img src="img/help_icon.png" alt="käyttöohje"></img>
+                        <span>Tarjouslaskurin käyttöohje</span>
+                    </button>
+                </td>
+            </tr>
         </table>
 
         <table id="tile_info_table">

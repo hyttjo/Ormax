@@ -509,6 +509,11 @@ jQuery(document).ready(function ($) {
         });
     });
 
+    $('#info_pdf').click(function () {
+        window.open('pdf/Tarjouslaskuri%20-%20Käyttöohje%20-%20Ormax%20Monier%20Oy.pdf');
+        return false;
+    });
+
     $("#info_window").dialog({ autoOpen: false, modal: true, width: 300, closeText: "X", show: "fold", hide: "blind" });
 
     $("#info_window_ok").click(function () {

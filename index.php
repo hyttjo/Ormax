@@ -10,15 +10,15 @@
         $result = mysqli_query($con, $query) or die(mysqli_error($con));
         $row = mysqli_fetch_array($result);
         $nimi = $row['nimi'];
-        $query="UPDATE kayttajat SET latauskerrat = latauskerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$nimi'";
+        $query="UPDATE kayttajat SET kayntikerrat = kayntikerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$nimi'";
         mysqli_query($con, $query) or die(mysqli_error($con));
     } else {
        header("Location: php/login.php"); 
     }
     
-    //if($_SERVER['HTTP_REFERER'] == '') {
-    //    header("Location: http://www.ormax.fi/ammattilaisille/tarjouslaskuri/");  
-    //}
+    if($_SERVER['HTTP_REFERER'] == '') {
+        header("Location: http://www.ormax.fi/ammattilaisille/tarjouslaskuri/");  
+    }
 
     if($_GET['tiili']) {
         $tile = $_GET['tiili'];
@@ -37,7 +37,7 @@
 
         <title>Ormax Monier Oy - Hinnastolaskenta 2015</title>
 
-        <link rel="stylesheet" type="text/css" href="css/ormax_style9.css">
+        <link rel="stylesheet" type="text/css" href="css/ormax_style11.css">
 
         <script src="../js/libs/head.min.js"></script>
 
@@ -47,7 +47,7 @@
                      "js/libs/numeral.min.js",
                      "js/libs/jquery-calx-2.0.5.min.js",
                      "js/libs/jquery-ui.js",
-                     "js/script16.js",
+                     "js/script17.js",
                      "js/google_analytics.js"]);
         </script>
     </head>

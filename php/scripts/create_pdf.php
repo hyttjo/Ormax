@@ -78,13 +78,17 @@
     $logged_in_header = '';
     $logged_in_header_style = '';
 
-    if($user != 'ormax' && $user != 'asentaja') { 
+    if($user != 'ormax' && $user != 'asentaja' && $user != 'laskuri') { 
         if($user == 'rautakesko') { $logged_in_header_style = 'style="background-color: #e6e6e6; text-align: left;"'; }
         if($user == 'rautanet') { $logged_in_header_style = 'style="background-color: #004fa1; text-align: left;"'; }
         if($user == 'stark') { $logged_in_header_style = 'style="background-color: #255797; text-align: left;"'; }
         if($user == 'hankkija') { $logged_in_header_style = 'style="background-color: #0c9859; text-align: left;"'; }
         if($user == 'sok') { $logged_in_header_style = 'style="background-color: #0d469d; text-align: left;"'; }
         if($user == 'puumerkki') { $logged_in_header_style = 'style="background-color: #484848; text-align: left;"'; }
+        if($user == 'carlson') { $logged_in_header_style = 'style="background-color: #0096d1; text-align: left;"'; }
+        if($user == 'rtv') { $logged_in_header_style = 'style="background-color: #feed01; text-align: left;"'; }
+        if($user == 'hartman') { $logged_in_header_style = 'style="background-color: #d5efff; text-align: left;"'; }
+        if($user == 'lakkapaa') { $logged_in_header_style = 'style="background-color: #4d6fbb; text-align: left;"'; }
 
         $logged_in_header .= "<tr id='logged_in_header'>";
             $logged_in_header .= "<td colspan='4' ". $logged_in_header_style .">";
@@ -123,7 +127,7 @@
                         <tr>
                             <th>Tuote</th>
                             <th>Määrä</th>
-                            <th>Kappaleinta €</th>
+                            <th>Kappalehinta €</th>
                             <th>Hinta €</th>
                         </tr>
                         '. $product_table . '

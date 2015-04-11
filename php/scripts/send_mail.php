@@ -3,7 +3,7 @@
 
     require 'PHPMailerAutoload.php';    
 
-    $query="UPDATE kayttajat SET mailikerrat = mailikerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$user'";
+    $query="UPDATE kayttajat SET lahetyskerrat = lahetyskerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$user'";
     mysqli_query($con, $query) or die(mysqli_error($con));
 
     $mail = new PHPMailer;

@@ -18,7 +18,7 @@
         $nimi = $row["nimi"];
         $_SESSION["username"] = $nimi;
 
-        $query="UPDATE kayttajat SET kayntikerrat = kayntikerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$nimi'";
+        $query="UPDATE kayttajat SET kirjautumiskerrat = kirjautumiskerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$nimi'";
         mysqli_query($con, $query) or die(mysqli_error($con));
 
         header("Location: ../../index.php");
