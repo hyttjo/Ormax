@@ -16,15 +16,16 @@
     $download_mark_identifier = $data[6]['download_mark_identifier'];
     $print_mark_identifier = $data[7]['print_mark_identifier'];
     $tile = $data[8]['tile'];
-    $discount = $data[9]['discount'];
-    $lift_to_roof = $data[10]['lift_to_roof'];
-    $postal_code = $data[11]['postal_code'];
-    $city = $data[12]['city'];
-    $delivery_cost = $data[13]['delivery_cost'];
-    $total_price = $data[14]['total_price'];
-    $total_price_with_delivery = $data[15]['total_price_with_delivery'];
-    $total_price_tax = $data[16]['total_price_tax'];
-    $total_price_with_delivery_tax = $data[17]['total_price_with_delivery_tax'];
+    $colour = $data[9]['colour'];
+    $discount = $data[10]['discount'];
+    $lift_to_roof = $data[11]['lift_to_roof'];
+    $postal_code = $data[12]['postal_code'];
+    $city = $data[13]['city'];
+    $delivery_cost = $data[14]['delivery_cost'];
+    $total_price = $data[15]['total_price'];
+    $total_price_with_delivery = $data[16]['total_price_with_delivery'];
+    $total_price_tax = $data[17]['total_price_tax'];
+    $total_price_with_delivery_tax = $data[18]['total_price_with_delivery_tax'];
 
     if ($type == 'mail') {
         $mark_identifier = $mail_mark_identifier;
@@ -59,7 +60,7 @@
                 <td id="header_text" colspan="2">
                     Ormax Monier Oy<br> 
                     <span id="subheader"><i>Tarjouslaskenta  - ' . $date . '</i><br>
-                    '. $tile .'</span>
+                    '. $tile .' - '. $colour .'</span>
                 </td>
             </tr>
         </table>
@@ -79,6 +80,8 @@
     $logged_in_header_style = '';
 
     if($user != 'ormax' && $user != 'asentaja' && $user != 'laskuri') { 
+        if($user == 'rautia') { $logged_in_header_style = 'style="background-color: #00599e; text-align: left;"'; }
+        if($user == 'krauta') { $logged_in_header_style = 'style="background-color: #e6e6e6; text-align: left;"'; }
         if($user == 'rautakesko') { $logged_in_header_style = 'style="background-color: #e6e6e6; text-align: left;"'; }
         if($user == 'rautanet') { $logged_in_header_style = 'style="background-color: #004fa1; text-align: left;"'; }
         if($user == 'stark') { $logged_in_header_style = 'style="background-color: #255797; text-align: left;"'; }
@@ -92,7 +95,7 @@
 
         $logged_in_header .= "<tr id='logged_in_header'>";
             $logged_in_header .= "<td colspan='4' ". $logged_in_header_style .">";
-                $logged_in_header .= '<img height="20px" src="../../img/'. $user .'.png"></img>';
+                $logged_in_header .= '<img height="20px" src="../../img/users/'. $user .'.png"></img>';
             $logged_in_header .= '</td>';
         $logged_in_header .= '</tr>';
     }
@@ -102,6 +105,9 @@
     for($i = 0; $i < Count($data) + 1; ++$i){
         if ($data[$i]['category']) {
             $product_table .= '<tr>';
+                $product_table .= '<td class="product_number" style="text-align: center;">';
+                    $product_table .= $data[$i]['product_number'];
+                $product_table .= '</td>';
                 $product_table .= '<td class="product_name" style="text-align: left;">';
                     $product_table .= $data[$i]['product_name'];
                 $product_table .= '</td>';
@@ -125,6 +131,7 @@
                     <table>
                         '. $logged_in_header .'
                         <tr>
+                            <th>Tuotenumero</th>
                             <th>Tuote</th>
                             <th>Määrä</th>
                             <th>Kappalehinta €</th>
@@ -132,6 +139,7 @@
                         </tr>
                         '. $product_table . '
                         <tr id="product_table_total_price">
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -149,6 +157,10 @@
                         <tr>
                             <td class="label">Tiili:</td>
                             <td class="info">'. $tile .'</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Väri:</td>
+                            <td class="info">'. $colour .'</td>
                         </tr>
                         <tr>
                             <td class="label">Katolle nosto:</td>
@@ -206,7 +218,7 @@
 
     $header_text = 'Tarjouslaskenta - Ormax Monier Oy - ' . $mark_identifier . ' - ' . $date;
 
-    $filename = $header_text . ' - ' . $tile . '.pdf'; 
+    $filename = $header_text . ' - ' . $tile . ' - ' . $colour . '.pdf'; 
     $filename = sanitize_filename($filename);
 
     if ($type == 'mail') {

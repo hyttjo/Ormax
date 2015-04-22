@@ -7,7 +7,7 @@
 <html lang="fi">
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="../../css/ormax_style11.css">
+        <link rel="stylesheet" type="text/css" href="../../css/ormax_style15.css">
         <title>Loading</title>
     </head>
     <body>

@@ -52,13 +52,13 @@
         }
     }
 
-    if ($tile_amount == 0 && $other_product_weight > 0) {
+    if ($tile_amount <= 42 && $other_product_weight > 0) {
         $query="SELECT * FROM rahtitaulukko WHERE rahtialue = '$delivery_area'";
         $other_product_delivery_result = mysqli_query($con, $query);
         while ($row = mysqli_fetch_array($other_product_delivery_result)) { 
             $other_product_delivery_cost = $row[$weight_range];  
         }
-    } else if ($tile_amount > 0 && $tile_amount < 1000) {
+    } else if ($tile_amount > 42 && $tile_amount < 1000) {
         $tiles_delivery_cost = $delivery_area;
     } else {
         $tiles_delivery_cost = $tile_amount * $delivery_area / 1000;

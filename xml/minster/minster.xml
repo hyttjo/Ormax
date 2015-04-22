@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tiili nimi="Minster-betonikattotiili">
+ 	<Varivaihtoehdot>
+		<Vari tiedostonimi="tummanharmaa">Tummanharmaa</Vari>
+		<Vari tiedostonimi="antrasiitti">Antrasiitti</Vari>
+	</Varivaihtoehdot>
+    <Tiilitiedot>
+        <Info lavakoko="168"></Info>
+        <Info harjatiilien_lavakoko="150"></Info>
+        <Info päätyreunatiilien_lavakoko="60"></Info>
+        <Info minimimyyntierä="168"></Info>
+        <Info maksimi_tiilet_ilman_lavaa="28"></Info>
+        <Info neliömenekki="11"></Info>
+        <Info harjatiilimenekki="2.3"></Info>
+        <Info päätyreunatiilimenekki="0.75"></Info>
+        <Info lapetiilikiinnikemenekki="34.09"></Info>
+        <Info harjatiilikiinnikemenekki="50"></Info>
+        <Info päätykiinnikemenekki="50"></Info>
+        <Info harjatiiviste_tuotemäärä="1">
+            <Tuote>Ei mitään</Tuote>
+            <Tuote>Metalroll</Tuote>
+        </Info>
+        <Info päätymateriaali_tuotemäärä="2">
+            <Tuote>Ei mitään</Tuote>
+            <Tuote>Tiili</Tuote>
+            <Tuote>Pelti</Tuote>
+        </Info>
+        <Info aluskate_tuotemäärä="4">
+            <Tuote>Ei mitään</Tuote>
+            <Tuote>Universal</Tuote>
+            <Tuote>Universal 2S</Tuote>
+            <Tuote>Top Ru</Tuote>
+            <Tuote>Span-Flex</Tuote>
+        </Info>
+    </Tiilitiedot>
+</Tiili>

@@ -5,8 +5,6 @@
     $id = 0;
 ?>
 
-<!DOCTYPE html>
-
 <html>
     <body>  
         <table id="main_table">
@@ -21,7 +19,7 @@
                 <th class="H"></th>    
             </tr>
             <?php 
-            foreach ($xml -> Tuotteet as $products) {
+            foreach ($xml_products -> Tuotteet as $products) {
                 foreach ($products -> children() as $category) {
                     $category_name = $category['kategoria'];
             ?>
@@ -61,7 +59,7 @@
                 ?>
             <tr>
                 <td class="A product"><?php echo $product_id ?></td>
-                <td class="B product"><?php echo $product_name; ?></td> 
+                <td class="B product"><a href="#"><?php echo $product_name; ?></a></td> 
                 <td class="C product"><input class="<?php echo $category_name . " " . $input_product_class; ?> product_input" data-cell="<?php echo $amount_id; ?>" min="0" max="999999" type="number"></input></td>
                 <td class="D product" data-cell="<?php echo $calc_price_id; ?>" data-formula="<?php echo $price_formula; ?>" data-format="0[.]00"></td>
                 <td class="E product" data-cell="<?php echo $price_id; ?>" data-format="0[.]00"><?php echo $row['hinta']; ?></td> 

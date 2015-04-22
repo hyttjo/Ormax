@@ -1,5 +1,5 @@
 <?php
-    $tile_info_node = $xml->Tiilitiedot;
+    $tile_info_node = $xml_tile->Tiilitiedot;
 
     $pallet_size = $tile_info_node->Info[0]['lavakoko'];
     $ridge_pallet_size = $tile_info_node->Info[1]['harjatiilien_lavakoko'];
@@ -16,8 +16,6 @@
     $verge_materials = $tile_info_node->Info[12];
     $underlayer_materials = $tile_info_node->Info[13]; 
 ?>
-
-<!DOCTYPE html>
 
 <html>
     <body>
@@ -67,7 +65,7 @@
             </tr>
             <?php } ?>
             <tr>
-                <td>Päätyjen pituus:</td>
+                <td>Päätyjen yht. pituus:</td>
                 <td><input id="verge_length" type="number"></input> <span>m</span></td>
             </tr>
             <?php if (count($underlayer_materials) > 1) { ?>
@@ -85,7 +83,7 @@
             <tr>
                 <td class="center" colspan="2">
                     <button id="calc_amounts">
-                        <img src="img/calculator_icon.png" alt="laske"></img>
+                        <img src="img/icons/calculator_icon.png" alt="laske"></img>
                         <span>Laske</span>
                     </button>
                 </td>
@@ -137,7 +135,7 @@
             <tr>
                 <td class="center" colspan="2">
                     <button id="calc_delivery_cost">
-                        <img src="img/delivery_icon.png" alt="laske"></img>
+                        <img src="img/icons/delivery_icon.png" alt="laske"></img>
                         <span>Laske</span>
                     </button>
                 </td>
@@ -169,13 +167,13 @@
             <tr>
                 <td>
                     <button id="open_send_mail_window">
-                        <img src="img/email_icon.png" alt="lähetä"></img>
+                        <img src="img/icons/email_icon.png" alt="lähetä"></img>
                         <span>Lähetä tarjous</span>
                     </button>
                 </td>
                 <td>
                     <button id="open_download_window">
-                        <img src="img/download_icon.png" alt="lataa"></img>
+                        <img src="img/icons/download_icon.png" alt="lataa"></img>
                         <span>Lataa tarjous</span>
                     </button>
                 </td>
@@ -183,13 +181,13 @@
             <tr>
                 <td>
                     <button id="open_print_window">
-                        <img src="img/print_icon.png" alt="tulosta"></img>
+                        <img src="img/icons/print_icon.png" alt="tulosta"></img>
                         <span>Tulosta tarjous</span>
                     </button>
                 </td>
                 <td>
                     <button id="empty_table">
-                        <img src="img/trashcan_icon.png" alt="tyhjennä"></img>
+                        <img src="img/icons/trashcan_icon.png" alt="tyhjennä"></img>
                         <span>Tyhjennä taulukko</span>
                     </button>
                 </td>
@@ -197,7 +195,7 @@
             <tr>
                 <td colspan="2">
                     <button id="info_pdf">
-                        <img src="img/help_icon.png" alt="käyttöohje"></img>
+                        <img src="img/icons/help_icon.png" alt="käyttöohje"></img>
                         <span>Tarjouslaskurin käyttöohje</span>
                     </button>
                 </td>

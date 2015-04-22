@@ -70,7 +70,7 @@ th {
 }
 
 #product_table table td {
-    padding:  2px 45px;
+    padding:  2px 25px;
     font-size: 90%;
     text-align: right;
 }
@@ -84,7 +84,7 @@ th {
 }
 
 #product_table_total_price td {
-    padding: 2px 45px;
+    padding: 2px 15px;
     background-color: #C62D1F;
     color:  #ffffff;
     font-weight: bold;  

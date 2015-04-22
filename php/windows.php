@@ -2,8 +2,6 @@
     session_start();
 ?>
 
-<!DOCTYPE html>
-
 <html>
     <body>
         <div id="send_mail_window" title="Lähetä tarjous sähköpostiin">
@@ -54,6 +52,59 @@
         <div id="info_window" title="Info">
             <p id="info_window_message"></p>
             <button id="info_window_ok">Ok</button>
+        </div>
+
+        <div id="product_window" title="Tuotetiedot">
+            <div id="product_loading_container">
+                <img src="img/loading.gif" alt="loading"></img>
+            </div>
+            <table id="product_info_table">
+                <tr>
+                    <td id="product_info_image" rowspan="9">
+                        <img src="" alt="product_info_image"></img>
+                    </td>
+                    <td>Tuotenumero: </td>
+					<td id="product_info_number"></td>
+                </tr>
+				<tr>
+                    <td>Hinta: </td>
+					<td id="product_info_price"></td>
+                </tr>
+				<tr>
+                    <td>Paino: </td>
+					<td id="product_info_weight"></td>
+                </tr>
+				<tr>
+                    <td>Tuoteryhmä: </td>
+					<td id="product_info_group"></td>
+                </tr>
+				<tr>
+                    <td>Tuoteluokka: </td>
+					<td id="product_info_class"></td>
+                </tr>
+				<tr>
+                    <td>Lavakoko: </td>
+					<td id="product_info_palletsize"></td>
+                </tr>
+				<tr>
+                    <td>Pakkauskoko: </td>
+					<td id="product_info_packagesize"></td>
+                </tr>
+				<tr>
+                    <td>Pakkausyksikkö: </td>
+					<td id="product_info_packageunit"></td>
+                </tr>
+                <tr>
+                    <td>EAN: </td>
+					<td id="product_info_ean"></td>
+                </tr>
+				<tr>
+                    <td colspan="3">
+                        <div id="product_info_description"></div>
+                    </td>
+                </tr>
+            </table>
+            <button id="product_window_close">Sulje</button>
         </div>
     </body>
 </html>

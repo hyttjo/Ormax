@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tiili nimi="Vittinge T11-savikattotiili">
+ 	<Varivaihtoehdot>
+		<Vari tiedostonimi="savitiilenpunainen">Savitiilenpunainen</Vari>
+	</Varivaihtoehdot>
+    <Tiilitiedot>
+        <Info lavakoko="288"></Info>
+        <Info harjatiilien_lavakoko="100"></Info>
+        <Info päätyreunatiilien_lavakoko="60"></Info>
+        <Info minimimyyntierä="144"></Info>
+        <Info maksimi_tiilet_ilman_lavaa="12"></Info>
+        <Info neliömenekki="10.7"></Info>
+        <Info harjatiilimenekki="3.5"></Info>
+        <Info päätyreunatiilimenekki="1.35"></Info>
+        <Info lapetiilikiinnikemenekki="28.09"></Info>
+        <Info harjatiilikiinnikemenekki="50"></Info>
+        <Info päätykiinnikemenekki="50"></Info>
+        <Info harjatiiviste_tuotemäärä="0">
+            <Tuote>Ei mitään</Tuote>
+        </Info>
+        <Info päätymateriaali_tuotemäärä="2">
+            <Tuote>Ei mitään</Tuote>
+            <Tuote>Tiili</Tuote>
+            <Tuote>Pelti</Tuote>
+        </Info>
+        <Info aluskate_tuotemäärä="0">
+            <Tuote>Ei mitään</Tuote>
+        </Info>
+    </Tiilitiedot>
+</Tiili>

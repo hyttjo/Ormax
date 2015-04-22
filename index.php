@@ -16,17 +16,32 @@
        header("Location: php/login.php"); 
     }
     
-    if($_SERVER['HTTP_REFERER'] == '') {
+    if ($_SERVER['HTTP_REFERER'] == '') {
         header("Location: http://www.ormax.fi/ammattilaisille/tarjouslaskuri/");  
     }
 
-    if($_GET['tiili']) {
+    if ($_GET['tiili']) {
         $tile = $_GET['tiili'];
-    }else {
+    } else {
         $tile = "ormax";
     }
-    
-    $xml = simplexml_load_file('xml\\' . $tile . '.xml') or die("XML tiedostoa ei pysty lukemaan");
+
+    $xml_tile = simplexml_load_file('xml\\' . $tile . '\\' . $tile . '.xml') or die("XML tiedostoa ei pysty lukemaan");
+
+    $tile_colours = $xml_tile->Varivaihtoehdot->children();
+    $tile_colours_filenames = array();
+
+    foreach ($tile_colours as $tile_colour) { 
+        array_push($tile_colours_filenames, $tile_colour['tiedostonimi']);
+    }
+
+    if ($_GET['vari']) {
+        $colour_selection = $_GET['vari'];
+    } else {
+        $colour_selection = $tile_colours_filenames[0];
+    }
+
+    $xml_products = simplexml_load_file('xml\\' . $tile . '\\' . $tile . '_' . $colour_selection . '.xml') or die("XML tiedostoa ei pysty lukemaan");
 ?>
 <!DOCTYPE html>
 
@@ -37,7 +52,7 @@
 
         <title>Ormax Monier Oy - Hinnastolaskenta 2015</title>
 
-        <link rel="stylesheet" type="text/css" href="css/ormax_style11.css">
+        <link rel="stylesheet" type="text/css" href="css/ormax_style15.css">
 
         <script src="../js/libs/head.min.js"></script>
 
@@ -47,7 +62,7 @@
                      "js/libs/numeral.min.js",
                      "js/libs/jquery-calx-2.0.5.min.js",
                      "js/libs/jquery-ui.js",
-                     "js/script17.js",
+                     "js/script22.js",
                      "js/google_analytics.js"]);
         </script>
     </head>
