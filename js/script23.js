@@ -32,31 +32,35 @@ jQuery(document).ready(function ($) {
     $('#main_table').calx();
     change_delivery_prices_to_line();
 
-    $('#tile_selection').change(function () {
-        var to = $(this).find('option:selected').attr('data-to');
-
-        var from = '';
-
-        if (to == 'ormax') {
-            from = 'ormax';
-        }
-
-        var tile = $(this).val();
-        $(location).attr('href', 'index.php?from=' + from + '&tiili=' + tile);
+    $('#tile_selection a').click(function () {
+        $('#colour_selection ul').hide();
+        $('#tile_selection ul').toggle();
     });
 
-    $('#colour_selection').change(function () {
-        var to = $(this).find('option:selected').attr('data-to');
+    $('#colour_selection a').click(function () {
+        $('#tile_selection ul').hide();
+        $('#colour_selection ul').toggle();
+    });
 
-        var from = '';
+    $('.dropdown li a').click(function () {
+        $('body').css('cursor', 'progress');
+        var html = $(this).html();
+        var text = $(this).text();
+        var parent = $(this).closest('.dropdown');
+        if (parent.attr('id') == 'tile_selection') {
+           parent.find('a:first').text(text); 
+        } else {
+            parent.find('a:first').html(html); 
+        }   
+        parent.find('a:first').append('<img src="img/icons/arrow_icon.png" alt="lista_nuoli"></img>');
+        $('.dropdown ul').hide();
+    });
 
-        if (to == 'ormax') {
-            from = 'ormax';
+    $(document).bind('click', function (e) {
+        var $clicked = $(e.target);
+        if (!$clicked.parents().hasClass('dropdown')) {
+            $('.dropdown ul').hide();
         }
-
-        var tile = $('#tile_selection').val();
-        var colour = $(this).val();
-        $(location).attr('href', 'index.php?from=' + from + '&tiili=' + tile + '&vari=' + colour);
     });
 
     function calc_tile_amount() {
@@ -405,8 +409,8 @@ jQuery(document).ready(function ($) {
         var download_mark_identifier = $('#download_mark_identifier').val();
         var print_mark_identifier = $('#print_mark_identifier').val();
         var mail_message = $('#mail_message').val();
-        var tile = $('#tile_selection option:selected').text();
-        var colour = $('#colour_selection option:selected').text();
+        var tile = $('#tile_selection a:first').text();
+        var colour = $('#colour_selection a:first').text();
         var discount = $('#discount').val();
         var lift_to_roof = $('#lift_to_roof').val();
         var postal_code = $('#postal_code').val();
@@ -572,8 +576,8 @@ jQuery(document).ready(function ($) {
                 $("#product_info_image img").attr("src", json.img_src);
                 $("#product_info_price").html(json.price + ' €');
                 $("#product_info_weight").html(json.weight + ' kg');
-                $("#product_info_group").html(json.group);
-                $("#product_info_class").html(json.class);
+                $("#product_info_group").html(json.product_group);
+                $("#product_info_class").html(json.product_class);
                 $("#product_info_palletsize").html(json.palletsize);
                 $("#product_info_packagesize").html(json.packagesize);
                 $("#product_info_packageunit").html(json.packageunit);
