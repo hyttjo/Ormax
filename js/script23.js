@@ -409,8 +409,8 @@ jQuery(document).ready(function ($) {
         var download_mark_identifier = $('#download_mark_identifier').val();
         var print_mark_identifier = $('#print_mark_identifier').val();
         var mail_message = $('#mail_message').val();
-        var tile = $('#tile_selection a:first').text();
-        var colour = $('#colour_selection a:first').text();
+        var tile = $.trim($('#tile_selection a:first').text());
+        var colour = $.trim($('#colour_selection a:first').text());
         var discount = $('#discount').val();
         var lift_to_roof = $('#lift_to_roof').val();
         var postal_code = $('#postal_code').val();
