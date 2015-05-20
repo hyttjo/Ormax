@@ -3,6 +3,8 @@
 
     include("mysql.php");
     include("mpdf/mpdf.php");
+    
+    date_default_timezone_set("Europe/Helsinki");
 
     $date = date("d.m.Y");
     $user = $_SESSION['username'];
@@ -29,12 +31,18 @@
 
     if ($type == 'mail') {
         $mark_identifier = $mail_mark_identifier;
+        $sql_type = 'email ('. $mail_address1 .')';
     } else if  ($type == 'download') {
         $mark_identifier = $download_mark_identifier;
+        $sql_type = 'lataus';
     } else {
         $mark_identifier = $print_mark_identifier;
+        $sql_type = 'tulostus';
     }
 
+    if ($discount == '') {
+        $discount = '0';
+    } 
     if ($delivery_cost == '') {
         $delivery_cost = '0';
     }
@@ -94,7 +102,7 @@
         if($user == 'lakkapaa') { $logged_in_header_style = 'style="background-color: #4d6fbb; text-align: left;"'; }
 
         $logged_in_header .= "<tr id='logged_in_header'>";
-            $logged_in_header .= "<td colspan='4' ". $logged_in_header_style .">";
+            $logged_in_header .= "<td colspan='5' ". $logged_in_header_style .">";
                 $logged_in_header .= '<img height="20px" src="../../img/users/'. $user .'.png"></img>';
             $logged_in_header .= '</td>';
         $logged_in_header .= '</tr>';
@@ -217,8 +225,13 @@
     $mpdf->SetHTMLFooter($footer);
 
     $header_text = 'Tarjouslaskenta - Ormax Monier Oy - ' . $mark_identifier . ' - ' . $date;
+    
+    $query = 'SELECT MAX(id) FROM valmiit_laskennat'; 
+    $result =  mysqli_query($con, $query) or die(mysqli_error($con));
+    $id = mysqli_fetch_array($result);
+    $id = $id[0] + 1;
 
-    $filename = $header_text . ' - ' . $tile . ' - ' . $colour . '.pdf'; 
+    $filename = $header_text . ' - ' . $id . ' - ' . $tile . ' - ' . $colour . '.pdf'; 
     $filename = sanitize_filename($filename);
 
     if ($type == 'mail') {
@@ -240,6 +253,17 @@
         
         echo $filename;  
     }
+
+    $total_price = floatval($total_price);
+    $total_price_tax = floatval($total_price_tax);
+    $total_price_with_delivery = floatval($total_price_with_delivery);
+    $total_price_with_delivery_tax = floatval($total_price_with_delivery_tax);
+    $delivery_cost = floatval($delivery_cost);
+    $sql_order = 'Ei';
+
+    $query="INSERT INTO valmiit_laskennat(tekija, pvm, tiedostonimi, tiili, vari, postinumero, paikkakunta, tuotteiden_hinta, tuotteiden_hinta_alv, loppusumma, loppusumma_alv, toimituskustannukset, alennusprosentti, katollenosto, merkki, tarjouksen_tyyppi, tilaus) 
+    values('$user', DATE_ADD(now(), INTERVAL 9 HOUR), '$filename', '$tile', '$colour', '$postal_code', '$city', '$total_price', '$total_price_tax', '$total_price_with_delivery', '$total_price_with_delivery_tax', '$delivery_cost', '$discount', '$lift_to_roof', '$mark_identifier', '$sql_type', '$sql_order')";
+    mysqli_query($con, $query) or die(mysqli_error($con));
 
     function sanitize_filename($filename) {
         $replace_chars = array(

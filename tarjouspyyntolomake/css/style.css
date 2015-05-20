@@ -1,0 +1,138 @@
+body {
+    font-size: 80%;
+    font-family: arial;
+}
+
+form {
+    padding: 0px 10px 10px 10px;
+    background-color: #f3efee;
+    border-radius: 10px;
+}
+
+#contact, #product, #message, #attachment {
+    padding: 0px 10px 10px 10px;
+}
+
+#attachment div {
+    padding: 5px;
+}
+
+#attachment input {
+    width: initial;
+    padding-bottom: 10px;
+}
+
+#attachment label {
+    width: 100%;
+    float: left;
+}
+
+#submit {
+    clear: both;
+    border-top: 1px solid #c4c4c4;
+    padding: 10px; 
+    text-align: center;
+}
+
+p {
+    padding-top: 20px;
+    clear: both;
+    color: #aa321e;
+    font-weight: bold;
+}
+
+label span {
+    margin-left: 5px;
+    color: #aa321e;
+}
+
+label {
+    width: 100%;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    float: left;
+}
+
+select {
+    padding-left: 10px;
+    width: 100%;
+    float: left;
+}
+
+option {
+    padding-left: 20px;   
+}
+
+textarea {
+    width: 100%;
+    min-height: 175px;
+    float: left;
+    resize: vertical;
+}
+
+.left {
+    padding-top: 5px;
+    width: 48%;
+    float: left;
+}
+
+.right {
+    padding-top: 5px;
+    width: 48%;
+    float: right;
+}
+
+.both {
+    padding-top: 10px;
+    width: 100%;
+    clear: both;
+}
+
+#submit button {
+    width:  100px;
+    margin-bottom: 5px;
+    padding: 6px 0px 6px 0px;
+    font-weight: bold;
+    color: #f4f4f4;
+    text-shadow: 1px 1px 0px #500000;
+	-moz-box-shadow: inset 0px 1px 0px 0px #f5978e;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #f5978e;
+	box-shadow: inset 0px 1px 0px 0px #f5978e;
+	background-color: #f24537;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #d02718;
+}
+
+#submit button:hover {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+	background: -moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background: -webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background: -o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background: -ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+	background: linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+	background-color: #c62d1f;
+    border-radius: 6px;
+    border: 1px solid #810e05;
+    cursor: pointer;
+}
+
+#submit button:active {
+	position: relative;
+	top: 1px;
+}
+
+#result_message {
+    margin: 10px 40px;
+    padding: 20px;
+    background-color: #f3efee;
+    border-radius: 10px;
+    color: #aa321e;
+    font-weight: bold;
+    text-align: center;
+}

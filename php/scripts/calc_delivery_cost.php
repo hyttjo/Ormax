@@ -93,6 +93,10 @@
         $fail_message = 'Postinumerolla ei löydy kuntaa.';
     }
 
+    $query="INSERT INTO toimituskulu_laskennat(tekija, pvm, postinumero, paikkakunta, katollenosto, toimituskustannukset, tuotteiden_hinta, tuotteiden_paino, tiilimaara, lavamaara, virheviesti) 
+    values('$user', DATE_ADD(now(), INTERVAL 9 HOUR), '$postal_code', '$city', '$lift_true_false', '$delivery_cost', '$product_price', '$other_product_weight', '$tile_amount', '$pallet_amount', '$fail_message')";
+    mysqli_query($con, $query) or die(mysqli_error($con));
+
     echo json_encode(array(
         $fail_message,
         $city, 
