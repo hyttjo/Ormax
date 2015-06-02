@@ -48,10 +48,10 @@ jQuery(document).ready(function ($) {
         var text = $(this).text();
         var parent = $(this).closest('.dropdown');
         if (parent.attr('id') == 'tile_selection') {
-           parent.find('a:first').text(text); 
+            parent.find('a:first').text(text);
         } else {
-            parent.find('a:first').html(html); 
-        }   
+            parent.find('a:first').html(html);
+        }
         parent.find('a:first').append('<img src="img/icons/arrow_icon.png" alt="lista_nuoli"></img>');
         $('.dropdown ul').hide();
     });
@@ -114,7 +114,7 @@ jQuery(document).ready(function ($) {
         return product_price - pallet_price;
     }
 
-    function calc_pallet_amount() {
+    function calc_pallet_amount_old() {
         var pallet_amount = 0;
         var maintile_amount = parseInt($('input.Lapetiili').val());
         var ridgetile_amount = parseInt($('input.Harjatiili').val());
@@ -148,15 +148,34 @@ jQuery(document).ready(function ($) {
     }
 
     function change_delivery_prices_to_line() {
-        $("td[data-cell='H4']").text('-');
-        $("td[data-cell='H6']").text('-');
+        $("td[data-cell='I4']").text('-');
+        $("td[data-cell='I6']").text('-');
     }
 
     function request_to_update_delivery_cost() {
         $('#delivery_cost').val('');
         $('#main_table').calx();
-        $("td[data-cell='H4']").text('Päivitä rahti');
-        $("td[data-cell='H6']").text('Päivitä rahti');
+        $("td[data-cell='I4']").text('Päivitä rahti');
+        $("td[data-cell='I6']").text('Päivitä rahti');
+    }
+
+    function calc_pallet_amount() {
+        $('input.Lava').val('');
+        var pallet_amount = 0;
+
+        $('.product_input').each(function (i, e) {
+            var product_amount = $(e).val();
+
+            if (product_amount > 0) {
+                var pallet_size = $(e).parent().next().next().next().next().next().text();
+                pallet_amount += (product_amount / pallet_size);
+            }
+        });
+
+        if (pallet_amount > 0.17) {
+            $('input.Lava').val(Math.ceil(pallet_amount));
+        }
+        $('#main_table').calx();
     }
 
     $('input').change(function () {
@@ -185,6 +204,7 @@ jQuery(document).ready(function ($) {
 
         if (!$(this).hasClass('Lava')) {
             $('#main_table').calx();
+
             if ($(this).hasClass('product_input')) {
                 calc_pallet_amount();
             }
@@ -416,10 +436,10 @@ jQuery(document).ready(function ($) {
         var postal_code = $('#postal_code').val();
         var city = $('#city').val();
         var delivery_cost = $('#delivery_cost').val();
-        var total_price = parseFloat($("td[data-cell='H3']").text());
-        var total_price_with_delivery = parseFloat($("td[data-cell='H4']").text());
-        var total_price_tax = parseFloat($("td[data-cell='H5']").text());
-        var total_price_with_delivery_tax = parseFloat($("td[data-cell='H6']").text());
+        var total_price = parseFloat($("td[data-cell='I3']").text());
+        var total_price_with_delivery = parseFloat($("td[data-cell='I4']").text());
+        var total_price_tax = parseFloat($("td[data-cell='I5']").text());
+        var total_price_with_delivery_tax = parseFloat($("td[data-cell='I6']").text());
 
         json.push({ 'type': type });
         json.push({ 'mail_address1': mail_address1 });

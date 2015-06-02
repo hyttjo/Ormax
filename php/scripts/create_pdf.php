@@ -187,6 +187,10 @@
                             <td class="info">'. $delivery_cost .' €</td>
                         </tr>
                         <tr>
+                            <td class="label">Alennusprosentti:</td>
+                            <td class="info">'. $discount .' %</td>
+                        </tr>
+                        <tr>
                             <td class="label">Merkki:</td>
                             <td class="info">'. $mark_identifier .'</td>
                         </tr>

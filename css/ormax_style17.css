@@ -492,8 +492,12 @@ th {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
 }
 
-.A, .E, .F, .G {
+.A, .E, .F, .G, .H {
   display: none;  
+}
+
+.H {
+    text-align: center;
 }
 
 .product_cat {
@@ -567,7 +571,7 @@ td.D {
     padding-right: 25px;
 }
 
-.H {
+.I {
     border-left: 1px solid grey;
 }
 
@@ -680,7 +684,7 @@ td.D {
     border-top: 1px dashed grey;
 }
 
-[data-cell='H4'], [data-cell='H6'] {
+[data-cell='I4'], [data-cell='I6'] {
     border-left: 1px solid grey;
 }
 

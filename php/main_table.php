@@ -15,8 +15,9 @@
                 <th class="D">Hinta</th> 
                 <th class="E">Yksikkö hinta</th>
                 <th class="F">Paino</th> 
-                <th class="G">Yksikkö paino</th>  
-                <th class="H"></th>    
+                <th class="G">Yksikkö paino</th>
+                <th class="H">Lavakoko</th>   
+                <th class="I"></th>    
             </tr>
             <?php 
             foreach ($xml_products -> Tuotteet as $products) {
@@ -41,13 +42,14 @@
                             $calc_price_id = "D" . $id; 
                             $price_id = "E" . $id;
                             $calc_weight_id = "F" . $id;
+                            $weight_id = "G" . $id;
+                            $pallet_size_id = "H" . $id;
 
                             if($category_name == 'Lavat') {
                                 $price_formula = $amount_id . "*" . $price_id; 
                             } else {
-                                $price_formula = $amount_id . "*" . $price_id . "*((100-H1)/100)";   
+                                $price_formula = $amount_id . "*" . $price_id . "*((100-I1)/100)";   
                             }
-                            $weight_id = "G" . $id;
 
                             if ($category_name != 'Kattotiilet') {           
                                 $weight_formula = $amount_id . "*" . $weight_id;
@@ -65,8 +67,9 @@
                 <td class="E product" data-cell="<?php echo $price_id; ?>" data-format="0[.]00"><?php echo $row['hinta']; ?></td> 
                 <td class="F product <?php echo $category_name; ?>" data-cell="<?php echo $calc_weight_id; ?>" data-formula="<?php echo $weight_formula; ?>" data-format="0[.]00"></td>
                 <td class="G product" data-cell="<?php echo $weight_id; ?>" data-format="0[.]00"><?php echo $row['paino']; ?></td>
+                <td class="H product" data-cell="<?php echo $pallet_size_id; ?>" data-format="0[.]00"><?php echo $row['lavakoko']; ?></td>
                 <?php if ($id == 1) { ?>
-                    <td class="H" id="side_area" rowspan="100"><?php include 'php/side_area.php'; ?></td>
+                    <td class="I" id="side_area" rowspan="100"><?php include 'php/side_area.php'; ?></td>
                 <?php }?> 
             </tr>
             <?php 
@@ -83,6 +86,7 @@
                 <td class="E"></td>
                 <td class="F" data-cell="F100" data-formula="SUM(F1:F99)" data-format="0[.]00"></td>
                 <td class="G"></td>
+                <td class="H"></td>
             </tr>
         </table>
     </body>

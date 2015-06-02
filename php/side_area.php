@@ -96,7 +96,7 @@
             </tr>
             <tr>
                 <td class="center">
-                    <input id="discount" data-cell="H1" type="number" min="0" max="100"><b>%</b></input>
+                    <input id="discount" data-cell="I1" type="number" min="0" max="100"><b>%</b></input>
                 </td>
             </tr>
         </table>
@@ -129,7 +129,7 @@
             <tr>
                 <td>Rahtihinta:</td>
                 <td>
-                    <input id="delivery_cost" data-cell="H2" data-format="0[.]00 $" readonly></input>
+                    <input id="delivery_cost" data-cell="I2" data-format="0[.]00 $" readonly></input>
                 </td>
             </tr>
             <tr>
@@ -151,15 +151,15 @@
                 <td class="alv_row" colspan="2">Arvonlisävero 0 %</td>
             </tr>
             <tr>
-                <td data-cell ="H3" data-formula="D100" data-format="0[.]00 $"></td>
-                <td data-cell ="H4" data-formula="H3+H2" data-format="0[.]00 $"></td>
+                <td data-cell ="I3" data-formula="D100" data-format="0[.]00 $"></td>
+                <td data-cell ="I4" data-formula="I3+I2" data-format="0[.]00 $"></td>
             </tr>
             <tr>
                 <td  class="alv_row" colspan="2">Sis. arvonlisäveron 24 %</td>
             </tr>
             <tr>
-                <td data-cell ="H5" data-formula="H3*1.24" data-format="0[.]00 $"></td>
-                <td data-cell ="H6" data-formula="H4*1.24" data-format="0[.]00 $"></td>
+                <td data-cell ="I5" data-formula="I3*1.24" data-format="0[.]00 $"></td>
+                <td data-cell ="I6" data-formula="I4*1.24" data-format="0[.]00 $"></td>
             </tr>
         </table>
 
