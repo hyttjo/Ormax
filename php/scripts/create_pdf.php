@@ -239,10 +239,11 @@
     $filename = sanitize_filename($filename);
 
     if ($type == 'mail') {
+        $mpdf->Output('../../pdf/' . $user . '/'  . $filename,'F');
         $emailAttachment = $mpdf->Output($filename,'S');  
         include("send_mail.php");
     } else if  ($type == 'download') {
-        $pdf = $mpdf->Output('../../pdf/' . $filename,'F');
+        $pdf = $mpdf->Output('../../pdf/' . $user . '/'  . $filename,'F');
 
         $query="UPDATE kayttajat SET tallennuskerrat = tallennuskerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$user'";
         mysqli_query($con, $query) or die(mysqli_error($con));
@@ -250,7 +251,7 @@
         echo $filename;
     } else {
         $mpdf->SetJS('this.print();');
-        $pdf = $mpdf->Output('../../pdf/' . $filename,'F');
+        $pdf = $mpdf->Output('../../pdf/' . $user . '/' . $filename,'F');
         
         $query="UPDATE kayttajat SET tulostuskerrat = tulostuskerrat + 1, viimeksikaynyt = DATE_ADD(now(), INTERVAL 9 HOUR) WHERE nimi='$user'";
         mysqli_query($con, $query) or die(mysqli_error($con));

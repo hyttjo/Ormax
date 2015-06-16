@@ -1,7 +1,10 @@
 <?php
+    session_start();    
+
+    $user = $_SESSION['username'];
     $dir = $_GET['dir'];
     $file = $_GET['filename'];
-    $fileurl = '../../' . $dir . '/' . $file;
+    $fileurl = '../../' . $dir . '/' . $user . '/' . $file;
 
     header('Cache-Control: public');
     header('Content-Description: application/download');

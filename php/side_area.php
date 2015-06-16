@@ -201,7 +201,24 @@
                 </td>
             </tr>
         </table>
-
+        <?php if($user == 'ormax') { ?>
+        <table id="admin_table">
+            <tr>
+                <th>Hallintapaneeli</th>
+            </tr>
+            <tr>
+                <td class="info_row">Näkyy vain Ormax-tunnuksilla</td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="open_statistics_window">
+                        <img src="img/icons/statistics_icon.png" alt="tilastot"></img>
+                        <span>Käyttötilastot</span>
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <?php } ?>
         <table id="tile_info_table">
             <tr>
                 <th colspan="2">Teknisiä tietoja</th>

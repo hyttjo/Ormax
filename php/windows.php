@@ -106,5 +106,37 @@
             </table>
             <button id="product_window_close">Sulje</button>
         </div>
+
+        <div id="statistics_window" title="Käyttötilastot">
+            <button id="user_statistics_show">
+                <img src="img/icons/user_icon.png" alt="käyttäjät"></img>
+                <span>Käyttäjät</span>
+            </button>
+            <button id="amount_calc_statistics_show">
+                <img src="img/icons/calculator_icon.png" alt="määrälaskennat"></img>
+                <span>Määrälaskennat</span>
+            </button>
+            <button id="delivery_cost_statistics_show">
+                <img src="img/icons/delivery_icon.png" alt="toimituskustannukset"></img>
+                <span>Toimituskululaskennat</span>
+            </button>
+            <button id="pdf_statistics_show">
+                <img src="img/icons/document_icon.png" alt="tarjoukset"></img>
+                <span>Valmiit tarjoukset</span>
+            </button>
+            <div id="user_statistics_container">
+                <table id="user_statistics_table"></table>
+            </div>
+            <div id="amount_calc_statistics_container">
+                <table id="amount_calc_statistics_table"></table>
+            </div>
+            <div id="delivery_cost_statistics_container">
+                <table id="delivery_cost_statistics_table"></table>
+            </div>
+            <div id="pdf_statistics_container">
+                <table id="pdf_statistics_table"></table>
+            </div>
+            <button id="statistics_window_close">Sulje</button>
+        </div>
     </body>
 </html>
