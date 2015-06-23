@@ -50,10 +50,7 @@
                             } else {
                                 $price_formula = $amount_id . "*" . $price_id . "*((100-I1)/100)";   
                             }
-
-                            if ($category_name != 'Kattotiilet') {           
-                                $weight_formula = $amount_id . "*" . $weight_id;
-                            }
+                            $weight_formula = $amount_id . "*" . $weight_id;
 
                             $input_product_class = str_replace(" ", "_", $product_name);
                             $input_product_class = str_replace(".", "", $input_product_class);

@@ -201,7 +201,7 @@
                 </td>
             </tr>
         </table>
-        <?php if($user == 'ormax') { ?>
+        <?php //if($user == 'ormax') { ?>
         <table id="admin_table">
             <tr>
                 <th>Hallintapaneeli</th>
@@ -218,7 +218,7 @@
                 </td>
             </tr>
         </table>
-        <?php } ?>
+        <?php //} ?>
         <table id="tile_info_table">
             <tr>
                 <th colspan="2">Teknisiä tietoja</th>

@@ -124,6 +124,10 @@
                 <img src="img/icons/document_icon.png" alt="tarjoukset"></img>
                 <span>Valmiit tarjoukset</span>
             </button>
+            <button id="chart_statistics_show">
+                <img src="img/icons/charts_icon.png" alt="kaaviot"></img>
+                <span>Kaaviot</span>
+            </button>
             <div id="user_statistics_container">
                 <table id="user_statistics_table"></table>
             </div>
@@ -135,6 +139,29 @@
             </div>
             <div id="pdf_statistics_container">
                 <table id="pdf_statistics_table"></table>
+            </div>
+            <div id="chart_statistics_container">
+                <table id="chart_statistics_table">
+                    <tr>
+                        <td id="chart_statistics_tiles_and_colour">
+                            Valmiit tarjoukset<br>
+                            Tiilet / Värit
+                        </td>
+                        <td rowspan="3" id="chart_statistics_img_area">
+                            <img id="chart_statistics_img_secondary" src="img/blank.png" alt="kaavio 2"></img>
+                            <img id="chart_statistics_img_primary" src="img/loading.gif" alt="kaavio 1"></img>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="chart_statistics_delivery_map">
+                            Valmiit tarjoukset<br>
+                            postinumeroalueittain
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="chart_statistics_empty_tab_space"></td>
+                    </tr>
+                </table>
             </div>
             <button id="statistics_window_close">Sulje</button>
         </div>
