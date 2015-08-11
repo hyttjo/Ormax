@@ -1,4 +1,6 @@
 <?php
+    include("statistics_pdfs_tile_and_color.php");    
+
     include("pChart/class/pData.class.php");
     include("pChart/class/pDraw.class.php");
     include("pChart/class/pImage.class.php");
@@ -163,7 +165,7 @@
     $pChartPicture->setFontProperties(array("R"=>0,"G"=>0,"B"=>0,"FontName"=>"pChart/fonts/arialbd.ttf","FontSize"=>10));
     $pChartPicture->drawBarChart(array("DisplayValues" => TRUE, "DisplayColor"=>array('R'=>0, 'G'=>0, 'B'=>0)));
 
-    $pChartPicture->render("pdfs_tile_colour.png");
+    $pChartPicture->autoOutput("pdfs_tile_colour.png");
 
     function get_tile_total_count($tile_colour_results, $tile) {
         $tile_total = 0;

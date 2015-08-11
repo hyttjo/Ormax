@@ -21,8 +21,6 @@
 
     $tile_colour_results = get_tile_statistics($con, $tiles, $colours);
 
-    include("statistics_tile_and_color_chart.php");
-
     function get_tile_statistics($con, $tiles, $colours) {
         $tiles_colours = array();
 

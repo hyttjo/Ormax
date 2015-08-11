@@ -1,4 +1,6 @@
 <?php
+    include("statistics_delivery_map.php");       
+
     $area_00_10 = get_00_10_area();
     $area_11_14 = get_11_14_area();
     $area_15_19 = get_15_19_area();
@@ -122,7 +124,9 @@
     print_city($map, array(290,450), 'Kajaani', array(310,450), $text_colour, $text_size);
     print_city($map, array(230,260), 'Rovaniemi', array(220,240), $text_colour, $text_size);
 
-    imagepng($map, 'pdfs_delivery_map.png');
+    header('Content-Type: image/png');
+
+    imagepng($map);
     imagedestroy($map);
     
     function fill_postal_area($image, $postal_area, $area_colour) {

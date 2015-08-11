@@ -5,7 +5,7 @@
     
     $color_range = array(200, 20, 0, 250, 250, 250);
 
-    $result_total_count = mysqli_query($con, "SELECT COUNT(postinumero) FROM toimituskulu_laskennat") or die(mysqli_error($con));
+    $result_total_count = mysqli_query($con, "SELECT COUNT(postinumero) FROM valmiit_laskennat") or die(mysqli_error($con));
     $total_count_array = mysqli_fetch_array($result_total_count);
     $total_count = $total_count_array[0];
     
@@ -67,7 +67,7 @@
     $min_max_counts = get_min_max_counts($area_results, $total_count);
 
     function get_area_results($con, $lowerbound, $upperbound, $total_count) {
-        $query = "SELECT COUNT(postinumero) FROM toimituskulu_laskennat WHERE postinumero BETWEEN $lowerbound AND $upperbound";
+        $query = "SELECT COUNT(postinumero) FROM valmiit_laskennat WHERE postinumero BETWEEN $lowerbound AND $upperbound";
         
         $result = mysqli_query($con, $query) or die(mysqli_error($con));
         $area_count = mysqli_fetch_array($result);
@@ -90,8 +90,4 @@
         }
         return array($temp_min, $temp_max);
     }
-
-    include ("statistics_create_postal_area_map.php");
-
-    include ("statistics_postal_area_chart.php");
 ?>

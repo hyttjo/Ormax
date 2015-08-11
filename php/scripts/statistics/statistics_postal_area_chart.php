@@ -1,4 +1,6 @@
 <?php
+    include("statistics_delivery_map.php");    
+
     include("pChart/class/pData.class.php");
     include("pChart/class/pDraw.class.php");
     include("pChart/class/pImage.class.php");
@@ -64,20 +66,20 @@
     $pChart->setAxisName(0,"Kappalemäärä / postinumeroalue");
     $pChart->setAxisUnit(0,"");
 
-    $pChartPicture = new pImage(250,450,$pChart);
+    $pChartPicture = new pImage(260,480,$pChart);
     $Settings = array("R"=>255, "G"=>255, "B"=>255);
-    $pChartPicture->drawFilledRectangle(0,0,250,450,$Settings);
+    $pChartPicture->drawFilledRectangle(0,0,250,470,$Settings);
 
     $pChartPicture->setShadow(TRUE,array("X"=>1,"Y"=>1,"R"=>50,"G"=>50,"B"=>50,"Alpha"=>20));
 
     $pChartPicture->setFontProperties(array("FontName"=>"pChart/fonts/arial.ttf","FontSize"=>14));
     $TextSettings = array("Align"=>TEXT_ALIGN_TOPMIDDLE
     , "R"=>0, "G"=>0, "B"=>0);
-    $pChartPicture->drawText(125,5,"Valmiit tarjoukset",$TextSettings);
-    $pChartPicture->drawText(125,22,"postinumeroalueittain",$TextSettings);
+    $pChartPicture->drawText(130,5,"Valmiit tarjoukset",$TextSettings);
+    $pChartPicture->drawText(130,22,"postinumeroalueittain",$TextSettings);
 
     $pChartPicture->setShadow(FALSE);
-    $pChartPicture->setGraphArea(40,70,243,440);
+    $pChartPicture->setGraphArea(40,80,253,470);
     $pChartPicture->setFontProperties(array("R"=>0,"G"=>0,"B"=>0,"FontName"=>"pChart/fonts/arial.ttf","FontSize"=>8));
 
     $Settings = array("Pos"=>SCALE_POS_TOPBOTTOM
@@ -91,6 +93,6 @@
     $Config = array("DisplayValues"=>1, "Gradient"=>1, "AroundZero"=>1);
     $pChartPicture->drawBarChart($Config);
 
-    $pChartPicture->render("pdfs_postal_area_chart.png");
+    $pChartPicture->autoOutput("pdfs_postal_area_chart.png");
 ?>
 

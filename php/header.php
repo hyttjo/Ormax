@@ -1,5 +1,7 @@
 <?php
-    session_start();    
+    session_start();
+    
+    $year = date("Y");    
 
     if ($tile == 'protector') {
         $tile_selected = 'Protector-betonikattotiili';
@@ -43,7 +45,7 @@
             </tr>
             <tr>
                 <td>
-                    <h1>Hinnastolaskenta 2015</h1>
+                    <h1>Hinnastolaskenta <?php echo $year; ?></h1>
                     <div id="tile_selection" class="dropdown">
                         <a href="#">
                             <?php echo $tile_selected; ?>

@@ -796,15 +796,7 @@ jQuery(document).ready(function ($) {
     function show_pdfs_tile_colour() {
         $('#chart_statistics_tiles_and_colour').css('font-weight', 'bold');
         $('#chart_statistics_tiles_and_colour').css('background', '#e6e6e6');
-
-        $.ajax({
-            type: "post",
-            url: "php/scripts/statistics/statistics_pdfs_tile_and_color.php",
-            data: "",
-            success: function (data) {
-                $('#chart_statistics_img_primary').attr("src", "php/scripts/statistics/pdfs_tile_colour.png?timestamp=" + new Date().getTime());
-            }
-        });
+        $('#chart_statistics_img_secondary').attr("src", "php/scripts/statistics/statistics_tile_and_color_chart.php");
     }
 
     $('#chart_statistics_delivery_map').click(function () {
@@ -816,21 +808,13 @@ jQuery(document).ready(function ($) {
     function show_pdfs_delivery_map() {
         $('#chart_statistics_delivery_map').css('font-weight', 'bold');
         $('#chart_statistics_delivery_map').css('background', '#e6e6e6');
-
-        $.ajax({
-            type: "post",
-            url: "php/scripts/statistics/statistics_delivery_map.php",
-            data: "",
-            success: function (data) {
-                $('#chart_statistics_img_secondary').attr("src", "php/scripts/statistics/pdfs_postal_area_chart.png?timestamp=" + new Date().getTime());
-                $('#chart_statistics_img_primary').attr("src", "php/scripts/statistics/pdfs_delivery_map.png?timestamp=" + new Date().getTime());
-            }
-        });
+        $('#chart_statistics_img_secondary').attr('src', '/php/scripts/statistics/statistics_postal_area_chart.php');
+        $('#chart_statistics_img_primary').attr('src', '/php/scripts/statistics/statistics_create_postal_area_map.php');
     }
 
     function hide_chart_tab_selection() {
         $('#chart_statistics_img_secondary').attr('src', 'img/blank.png');
-        $('#chart_statistics_img_primary').attr('src', 'img/loading.gif');
+        $('#chart_statistics_img_primary').attr('src', 'img/blank.png');
         $('#chart_statistics_tiles_and_colour').css('font-weight', 'normal');
         $('#chart_statistics_tiles_and_colour').css('background', 'none');
         $('#chart_statistics_delivery_map').css('font-weight', 'normal');

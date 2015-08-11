@@ -1028,14 +1028,14 @@ thead th {
 
 #chart_statistics_img_area {
     min-height: 350px;
-    max-height: 550px;
+    max-height: 580px;
     border-top: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
 }
 
 #chart_statistics_img_area img {
-    max-height: 450px;
+    max-height: 480px;
 }
 
 #chart_statistics_tiles_and_colour, #chart_statistics_delivery_map {
